@@ -1,0 +1,457 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Image */
+.header-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Store Info Section */
+.store-info {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.store-info h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.store-info img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.store-info p {
+    margin: 5px 0;
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+/* Sidebar */
+/* Sticky Navigation */
+/* Sidebar */
+.container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+  }
+.menu-categories {
+    position: -webkit-sticky; /* Safari compatibility */
+    position: sticky;
+    top: 0;
+    width: 200px; /* Fixed width for sidebar */
+    height: 100vh; /* Full viewport height */
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  /* Sidebar List Styles */
+  .menu-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-categories ul li {
+    margin: 10px 0;
+  }
+  
+  .menu-categories ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 5px 10px;
+  }
+  
+  .menu-categories ul li a:hover {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+  
+
+/* Menu Items Section */
+.menu-items {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+
+.menu-category {
+    margin-bottom: 40px;
+}
+
+.menu-category h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff6347;
+    display: inline-block;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    position: relative;
+  }
+  
+  /* Details on the Left */
+  .menu-item-details {
+    flex: 1;
+  }
+  
+  /* Item Title */
+  .menu-item-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Item Description */
+  .menu-item-details p:first-of-type {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* Price Styling */
+  .menu-item-details p:last-of-type {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+
+.menu-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
+
+.menu-item select, .menu-item button {
+    margin-top: 10px;
+}
+
+.menu-item:hover {
+    transform: scale(1.02);
+}
+
+/* Image on the Right */
+.menu-item-image {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+  
+  .menu-item-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+/* Add to Cart Button */
+/* Small Add to Cart Button */
+.add-to-cart {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Makes it circular */
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+  
+  .add-to-cart:hover {
+    background-color: #ff4500;
+  }
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .menu-categories {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .cart {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-item img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Enhanced Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for emphasis */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+#total-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff6347;
+}
+
+button.add-to-cart {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.add-to-cart:hover {
+  background-color: #ff4500;
+}
+
+.close {
+  color: #333;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #ff4500;
+}
+
+  
+ /* Centered and Styled Cart Button */
+.cart {
+  position: fixed;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: auto;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#cart-count {
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* Center and color for Cart Details toggle */
+#cart-details-toggle {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+#cart-details-toggle:hover {
+  background-color: #ff4500;
+}
+
+/* Full-Screen Cart Details Overlay */
+.cart-details {
+  display: none; /* Hidden by default, shown when toggled */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(255, 255, 255, 0.97); /* Slight transparency for overlay effect */
+  box-sizing: border-box;
+  overflow-y: auto; /* Enables scrolling within the cart details */
+  z-index: 10000; /* High z-index to cover other elements */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content horizontally */
+  justify-content: flex-start; /* Content starts at the top */
+  padding-top: 20px; /* Space at the top for close button */
+}
+
+/* Cart Content Container */
+.cart-content {
+  width: 100%; /* Full width */
+  max-width: 600px; /* Limit width for readability */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 60px; /* Centers content vertically with padding at top */
+}
+
+/* Cart Header */
+.cart-details h2 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Close Button for Cart Overlay */
+.cart-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-close-btn:hover {
+  background-color: #ff4500;
+}
+
+/* Cart Summary Styling */
+.cart-summary p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+/* Matching Add (+) Button Style to Delete (x) Button */
+.add-btn, .delete-btn {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-btn:hover, .delete-btn:hover {
+  background-color: #ff4500;
+}
+/* Remove bullet points from cart items */
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+#cart-items li {
+  margin-bottom: 10px;
+}
