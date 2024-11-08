@@ -3,8 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Restaurant Menu Template</title>
+    <title>Top's China Restaurant Ettrick VA</title>
+    <meta
+      name="description"
+      content="Order from Top’s China for delicious Chinese takeout in Ettrick, VA. Explore our menu of fresh appetizers, soups, fried rice, and Chef's Specialties. Open late every day except Monday. Quick and easy ordering online. Pickup and delivery available."
+    />
+
+    <meta
+      name="keywords"
+      content="Top's China, Chinese takeout Ettrick VA, Chinese food delivery Ettrick, fried rice, soup, appetizers, Chef's Specialties, best Chinese food Ettrick"
+    />
+
     <link rel="stylesheet" href="styles.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VNEVXGNED0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VNEVXGNED0");
+    </script>
   </head>
   <body>
     <!-- Header Section -->
@@ -17,7 +41,7 @@
       <h1>Top's China</h1>
       <img src="images/topschina-logo.png" alt="Logo" />
       <p>20849 Woodpecker Rd Petersburg, Virginia, 23803</p>
-      <p>Phone: (804) 520-0380</p>
+      <p>Phone: <a href="tel:+18045200380">(804) 520-0380</a></p>
       <p>Hours: Monday Close | Tuesday-Sunday 10:30 am - 11:00 pm</p>
 
       <p>Cuisine: Chinese Takeout</p>
@@ -25,37 +49,57 @@
 
     <!-- Sidebar and Menu Section -->
     <div class="container">
-      <!-- Sidebar with Categories -->
       <nav class="menu-categories">
         <ul>
+          <!-- Search bar in the sidebar with icon -->
+          <li class="search-icon-container">
+            <button id="search-icon" onclick="openSearchOverlay()">🔍</button>
+          </li>
           <li><a href="#appetizers">Appetizers</a></li>
           <li><a href="#soup">Soup</a></li>
-          <li><a href="#chopSuey">Chop Suey</a></li>
-          <li><a href="#chowMeiFun">Chow Mei Fun</a></li>
-          <li><a href="#chicken">Chicken</a></li>
-          <li><a href="#chow-mein">Chow Mein</a></li>
           <li><a href="#fried-rice">Fried Rice</a></li>
           <li><a href="#lo-mein">Lo Mein</a></li>
-          <li><a href="#egg-foo-young">Egg Foo Young</a></li>
+          <li><a href="#chowMeiFun">Chow Mei Fun</a></li>
+          <li><a href="#chicken">Chicken</a></li>
           <li><a href="#pork">Pork</a></li>
           <li><a href="#beef">Beef</a></li>
           <li><a href="#seafood">Seafood</a></li>
-          <li><a href="#sweet-sour">Sweet and Sour</a></li>
           <li><a href="#vegetables">Vegetables</a></li>
+          <li><a href="#sweet-sour">Sweet and Sour</a></li>
+          <li><a href="#egg-foo-young">Egg Foo Young</a></li>
+          <li><a href="#chopSuey">Chop Suey</a></li>
+          <li><a href="#chow-mein">Chow Mein</a></li>
           <li><a href="#moo-shu">Moo Shu</a></li>
           <li><a href="#side-order">Side Order</a></li>
           <li><a href="#chefs-specialties">Chef's Specialties</a></li>
+          <li><a href="#house-specialties">House Specialties</a></li>
           <li><a href="#combination-plates">Combination Plates</a></li>
           <li><a href="#all-day-special">All Day Special</a></li>
         </ul>
       </nav>
 
+      <!-- Search Overlay (Hidden initially) -->
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-overlay-content">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for items..."
+            oninput="filterItems()"
+          />
+          <button onclick="closeSearchOverlay()" class="close-search">
+            Close
+          </button>
+          <ul id="search-results" class="search-results"></ul>
+        </div>
+      </div>
+
       <!-- Menu Items Section -->
       <section class="menu-items">
         <!-- Appetizers Section -->
-        <div id="appetizers" class="menu-category">
-          <h2>Appetizers</h2>
+        <h2>Appetizers</h2>
 
+        <div id="appetizers" class="menu-category">
           <!-- Fried Shrimp Item -->
           <div class="menu-item" onclick="openModal('friedShrimp')">
             <div class="menu-item-details">
@@ -63,7 +107,7 @@
               <p>
                 Golden, crispy fried shrimp served with tangy dipping sauce.
               </p>
-              <p>$7.25 +</p>
+              <p>7.25+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FriedShrimp.jpg" alt="Fried Shrimp" />
@@ -77,7 +121,7 @@
               <p>
                 A classic pork egg roll with a crispy shell and savory filling.
               </p>
-              <p>$1.80 +</p>
+              <p>1.90+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/PorkEggRoll.webp" alt="Pork Egg Roll" />
@@ -91,7 +135,7 @@
               <p>
                 A delicious shrimp roll filled with tender shrimp and spices.
               </p>
-              <p>$1.90 +</p>
+              <p>3.50+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/ShrimpRoll.jpg" alt="Shrimp Roll" />
@@ -103,7 +147,7 @@
             <div class="menu-item-details">
               <h3>Vegetable Spring Roll (2)</h3>
               <p>Fresh, crisp spring rolls filled with assorted vegetables.</p>
-              <p>$2.99 +</p>
+              <p>2.99+</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -118,7 +162,7 @@
             <div class="menu-item-details">
               <h3>Fried Wonton (10)</h3>
               <p>Crunchy wontons filled with a savory pork and veggie mix.</p>
-              <p>$5.50 +</p>
+              <p>6.25+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FriedWonton.jpg" alt="Fried Wonton" />
@@ -132,7 +176,7 @@
               <p>
                 Juicy, marinated spare ribs without the bone, perfectly grilled.
               </p>
-              <p>$6.50 (L) $12.95 +</p>
+              <p>(Pt) 6.75+ | (Qt) 14.95+</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -147,7 +191,7 @@
             <div class="menu-item-details">
               <h3>BBQ Spare Ribs (with bone)</h3>
               <p>Succulent BBQ spare ribs cooked with a smoky glaze.</p>
-              <p>(S) $8.50 (L) $14.99 +</p>
+              <p>(Pt) 8.50+ | (Qt) 14.99+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/BBQSpareRibs.jpg" alt="BBQ Spare Ribs" />
@@ -162,7 +206,7 @@
                 Beef skewers marinated in teriyaki sauce and grilled to
                 perfection.
               </p>
-              <p>$7.50 +</p>
+              <p>7.50+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/TeriyakiBeef.jpg" alt="Teriyaki Beef" />
@@ -174,7 +218,7 @@
             <div class="menu-item-details">
               <h3>Teriyaki Chicken (5)</h3>
               <p>Grilled chicken skewers coated in a rich teriyaki glaze.</p>
-              <p>$7.25 +</p>
+              <p>7.25+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/TeriyakiChicken.jpg" alt="Teriyaki Chicken" />
@@ -186,7 +230,7 @@
             <div class="menu-item-details">
               <h3>Pu Pu Platter (For 2)</h3>
               <p>An assortment of popular appetizers perfect for sharing.</p>
-              <p>$14.55 +</p>
+              <p>14.99+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/PuPuPlatter.jpg" alt="Pu Pu Platter" />
@@ -198,7 +242,7 @@
             <div class="menu-item-details">
               <h3>Crab Rangoon (8)</h3>
               <p>Crispy wontons stuffed with creamy crab and cheese filling.</p>
-              <p>$5.25 +</p>
+              <p>5.75+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/CrabRangoon.jpg" alt="Crab Rangoon" />
@@ -210,7 +254,7 @@
             <div class="menu-item-details">
               <h3>Fried Donuts (10)</h3>
               <p>Golden, sweet donuts dusted with powdered sugar.</p>
-              <p>$4.85 +</p>
+              <p>5.75+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FriedDonuts.jpg" alt="Fried Donuts" />
@@ -222,7 +266,7 @@
             <div class="menu-item-details">
               <h3>French Fries</h3>
               <p>Classic French fries, crispy and golden-brown.</p>
-              <p>(S) $2.75 (L) $3.75 +</p>
+              <p>(Pt) 3.25 | (Qt) 4.25+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FrenchFries.jpg" alt="French Fries" />
@@ -234,7 +278,7 @@
             <div class="menu-item-details">
               <h3>Steamed Dumplings (8)</h3>
               <p>Choice of steamed dumplings filled with savory pork.</p>
-              <p>$7.50 +</p>
+              <p>7.99+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/SteamedDumplings.jpg" alt="Steamed Dumplings" />
@@ -247,7 +291,7 @@
               <p>
                 Choice of steamed or fried dumplings filled with savory pork.
               </p>
-              <p>$7.50 +</p>
+              <p>7.99+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FriedDumplings.jpg" alt="Fried Dumplings" />
@@ -257,16 +301,16 @@
         </div>
 
         <!-- Soup Section -->
-        <div id="soup" class="menu-category">
-          <h2>Soup (with Crispy Noodles)</h2>
+        <h2>Soup (with Crispy Noodles)</h2>
 
+        <div id="soup" class="menu-category">
           <div class="menu-item" onclick="openModal('hotAndSourSoup')">
             <div class="menu-item-details">
               <h3>Hot and Sour Soup</h3>
               <p>
                 A spicy and tangy soup with tofu, mushrooms, and vegetables.
               </p>
-              <p>Pt $3.99, Qt $5.25 +</p>
+              <p>(Pt) 3.99+ | (Qt) 5.50+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/HotAndSourSoup.jpg" alt="Hot and Sour Soup" />
@@ -278,7 +322,7 @@
             <div class="menu-item-details">
               <h3>Wonton Soup</h3>
               <p>A light broth with tender pork wontons and green onions.</p>
-              <p>Pt $2.95, Qt $4.95 +</p>
+              <p>(Pt) 3.25+ | (Qt) 5.50+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/WontonSoup.jpg" alt="Wonton Soup" />
@@ -290,7 +334,7 @@
             <div class="menu-item-details">
               <h3>Egg Drop Soup</h3>
               <p>Silky egg ribbons in a savory chicken broth.</p>
-              <p>Pt $2.95, Qt $4.95 +</p>
+              <p>(Pt) 2.95 | (Qt) 5.50+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/EggDropSoup.jpg" alt="Egg Drop Soup" />
@@ -302,7 +346,7 @@
             <div class="menu-item-details">
               <h3>Egg Drop with Wonton Soup</h3>
               <p>A hearty combination of egg drop soup and pork wontons.</p>
-              <p>$4.95 +</p>
+              <p>5.50+</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -313,19 +357,29 @@
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('chickenNoodleOrRiceSoup')">
+          <div class="menu-item" onclick="openModal('chickenNoodleSoup')">
             <div class="menu-item-details">
-              <h3>Chicken Noodle or Rice Soup</h3>
-              <p>
-                Classic chicken broth with noodles or rice and tender chicken.
-              </p>
-              <p>$4.95 +</p>
+              <h3>Chicken Noodle Soup</h3>
+              <p>Classic chicken broth with noodles and tender chicken.</p>
+              <p>5.50+</p>
             </div>
             <div class="menu-item-image">
               <img
                 src="images/ChickenNoodleSoup.jpg"
-                alt="Chicken Noodle or Rice Soup"
+                alt="Chicken Noodle Soup"
               />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chickenNoodleOrRiceSoup')">
+            <div class="menu-item-details">
+              <h3>Chicken Rice Soup</h3>
+              <p>Classic chicken broth with rice and tender chicken.</p>
+              <p>5.50+</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChickenRiceSoup.jpg" alt="Chicken Rice Soup" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
@@ -336,7 +390,7 @@
               <p>
                 A rich soup with shrimp, chicken, pork, and fresh vegetables.
               </p>
-              <p>$6.75 +</p>
+              <p>7.50+</p>
             </div>
             <div class="menu-item-image">
               <img src="images/HouseSpecialSoup.jpg" alt="House Special Soup" />
@@ -348,7 +402,7 @@
             <div class="menu-item-details">
               <h3>Roast Pork Yat Gaw Mein</h3>
               <p>Noodles in savory broth with roast pork and green onions.</p>
-              <p>$4.95 +</p>
+              <p>6.99+</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -363,7 +417,7 @@
             <div class="menu-item-details">
               <h3>Mixed Vegetable Soup</h3>
               <p>A nourishing soup with a blend of seasonal vegetables.</p>
-              <p>$4.95 +</p>
+              <p>5.75+</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -374,403 +428,16 @@
             </div>
           </div>
         </div>
-        <!-- Chop Suey Section -->
-        <div id="chopSuey" class="menu-category">
-          <h2>Chop Suey</h2>
-
-          <div class="menu-item" onclick="openModal('vegetablesChopSuey')">
-            <div class="menu-item-details">
-              <h3>Vegetables Chop Suey</h3>
-              <p>Mixed vegetables in a savory sauce served with white rice.</p>
-              <p>(Pt) $6.50 (Qt) $7.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/VegetablesChopSuey.jpg"
-                alt="Vegetables Chop Suey"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div
-            class="menu-item"
-            onclick="openModal('roastPorkOrChickenChopSuey')"
-          >
-            <div class="menu-item-details">
-              <h3>Roast Pork or Chicken Chop Suey</h3>
-              <p>
-                Choice of roast pork or chicken in a hearty sauce served with
-                white rice.
-              </p>
-              <p>(Pt) $6.99 (Qt) $9.75</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkOrChickenChopSuey.jpg"
-                alt="Roast Pork or Chicken Chop Suey"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('beefOrShrimpChopSuey')">
-            <div class="menu-item-details">
-              <h3>Beef or Shrimp Chop Suey</h3>
-              <p>
-                Beef or shrimp cooked with vegetables in a savory sauce, served
-                with white rice.
-              </p>
-              <p>(Pt) $7.99 (Qt) $10.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeefOrShrimpChopSuey.jpg"
-                alt="Beef or Shrimp Chop Suey"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('houseSpecialChopSuey')">
-            <div class="menu-item-details">
-              <h3>House Special Chop Suey</h3>
-              <p>
-                A special blend of meats and vegetables in a delicious sauce,
-                served with white rice.
-              </p>
-              <p>(Pt) $8.25 (Qt) $10.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HouseSpecialChopSuey.jpg"
-                alt="House Special Chop Suey"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chow Mei Fun Section -->
-        <div id="chowMeiFun" class="menu-category">
-          <h2>Chow Mei Fun</h2>
-
-          <div
-            class="menu-item"
-            onclick="openModal('roastPorkOrChickenChowMeiFun')"
-          >
-            <div class="menu-item-details">
-              <h3>Roast Pork or Chicken Chow Mei Fun</h3>
-              <p>
-                Stir-fried thin rice noodles with roast pork or chicken and
-                vegetables.
-              </p>
-              <p>$9.75</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkOrChickenChowMeiFun.jpg"
-                alt="Roast Pork or Chicken Chow Mei Fun"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('beefOrShrimpChowMeiFun')">
-            <div class="menu-item-details">
-              <h3>Beef or Shrimp Chow Mei Fun</h3>
-              <p>
-                Stir-fried thin rice noodles with beef or shrimp and vegetables.
-              </p>
-              <p>$10.25</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeefOrShrimpChowMeiFun.jpg"
-                alt="Beef or Shrimp Chow Mei Fun"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('houseSpecialChowMeiFun')">
-            <div class="menu-item-details">
-              <h3>House Special Chow Mei Fun</h3>
-              <p>
-                A special mix of meats and vegetables stir-fried with thin rice
-                noodles.
-              </p>
-              <p>$10.25</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HouseSpecialChowMeiFun.jpg"
-                alt="House Special Chow Mei Fun"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('singaporeChowMeiFun')">
-            <div class="menu-item-details">
-              <h3>Singapore Chow Mei Fun</h3>
-              <p>
-                Spicy stir-fried rice noodles with curry, shrimp, and roast
-                pork.
-              </p>
-              <p>$10.25</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/SingaporeChowMeiFun.jpg"
-                alt="Singapore Chow Mei Fun"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chicken Section -->
-        <div id="chicken" class="menu-category">
-          <h2>Chicken</h2>
-
-          <div class="menu-item" onclick="openModal('mooGooGaiPan')">
-            <div class="menu-item-details">
-              <h3>Moo Goo Gai Pan</h3>
-              <p>
-                Chicken with mushrooms and vegetables in a light sauce, served
-                with white rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/MooGooGaiPan.jpg" alt="Moo Goo Gai Pan" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('chickenWithCashewNuts')">
-            <div class="menu-item-details">
-              <h3>Chicken with Cashew Nuts</h3>
-              <p>
-                Chicken stir-fried with cashews and vegetables, served with
-                white rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithCashewNuts.jpg"
-                alt="Chicken with Cashew Nuts"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('chickenWithBroccoli')">
-            <div class="menu-item-details">
-              <h3>Chicken with Broccoli</h3>
-              <p>
-                Chicken and broccoli stir-fried in a savory sauce, served with
-                white rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithBroccoli.jpg"
-                alt="Chicken with Broccoli"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('chickenWithOysterSauce')">
-            <div class="menu-item-details">
-              <h3>Chicken with Oyster Sauce</h3>
-              <p>
-                Chicken stir-fried in a rich oyster sauce with vegetables,
-                served with white rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithOysterSauce.jpg"
-                alt="Chicken with Oyster Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('chickenWithSnowPeas')">
-            <div class="menu-item-details">
-              <h3>Chicken with Snow Peas</h3>
-              <p>
-                Chicken and snow peas in a delicate sauce, served with white
-                rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithSnowPeas.jpg"
-                alt="Chicken with Snow Peas"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div
-            class="menu-item"
-            onclick="openModal('chickenWithBlackBeanSauce')"
-          >
-            <div class="menu-item-details">
-              <h3>Chicken with Black Bean Sauce</h3>
-              <p>
-                Chicken in a flavorful black bean sauce with vegetables, served
-                with white rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithBlackBeanSauce.jpg"
-                alt="Chicken with Black Bean Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('kungPaoChicken')">
-            <div class="menu-item-details">
-              <h3>Kung Pao Chicken</h3>
-              <p>
-                Spicy chicken with peanuts and vegetables, served with white
-                rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/KungPaoChicken.jpg" alt="Kung Pao Chicken" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('curryChickenWithOnion')">
-            <div class="menu-item-details">
-              <h3>Curry Chicken with Onion</h3>
-              <p>
-                Chicken cooked in curry sauce with onions, served with white
-                rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/CurryChickenWithOnion.jpg"
-                alt="Curry Chicken with Onion"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('chickenWithGarlicSauce')">
-            <div class="menu-item-details">
-              <h3>Chicken with Garlic Sauce</h3>
-              <p>
-                Chicken in a rich garlic sauce with vegetables, served with
-                white rice.
-              </p>
-              <p>(Pt) $7.25 (Qt) $12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithGarlicSauce.jpg"
-                alt="Chicken with Garlic Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chow Mein Section -->
-        <div id="chow-mein" class="menu-category">
-          <h2>Chow Mein (with Rice and Crispy Noodles)</h2>
-          <div class="menu-item" onclick="openModal('vegetableChowMein')">
-            <div class="menu-item-details">
-              <h3>Vegetable Chow Mein</h3>
-              <p>Classic chow mein with fresh vegetables and crispy noodles.</p>
-              <p>6.00 Pt, 8.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/VegetableChowMein.jpg"
-                alt="Vegetable Chow Mein"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div
-            class="menu-item"
-            onclick="openModal('chickenOrRoastPorkChowMein')"
-          >
-            <div class="menu-item-details">
-              <h3>Chicken or Roast Pork Chow Mein</h3>
-              <p>
-                Chow mein with your choice of tender chicken or savory roast
-                pork.
-              </p>
-              <p>6.50 Pt, 10.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenPorkChowMein.jpg"
-                alt="Chicken or Roast Pork Chow Mein"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('beefOrShrimpChowMein')">
-            <div class="menu-item-details">
-              <h3>Beef or Shrimp Chow Mein</h3>
-              <p>
-                Chow mein with hearty beef or juicy shrimp and crispy noodles.
-              </p>
-              <p>7.25 Pt, 10.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeefShrimpChowMein.jpg"
-                alt="Beef or Shrimp Chow Mein"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('houseSpecialChowMein')">
-            <div class="menu-item-details">
-              <h3>House Special Chow Mein</h3>
-              <p>Chow mein with a special blend of meats and vegetables.</p>
-              <p>7.99 Pt, 10.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HouseSpecialChowMein.jpg"
-                alt="House Special Chow Mein"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
 
         <!-- Fried Rice Section -->
+        <h2>Fried Rice</h2>
+
         <div id="fried-rice" class="menu-category">
-          <h2>Fried Rice</h2>
           <div class="menu-item" onclick="openModal('vegetablesFriedRice')">
             <div class="menu-item-details">
-              <h3>Vegetables Fried Rice</h3>
+              <h3>Vegetable Fried Rice</h3>
               <p>Fried rice with mixed vegetables.</p>
-              <p>5.00 Pt, 7.00 Qt</p>
+              <p>(Pt) 6.00 | (Qt) 7.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -780,20 +447,25 @@
               <button class="add-to-cart">+</button>
             </div>
           </div>
-          <div
-            class="menu-item"
-            onclick="openModal('roastPorkOrChickenFriedRice')"
-          >
+          <div class="menu-item" onclick="openModal('roastPorkFriedRice')">
             <div class="menu-item-details">
-              <h3>Roast Pork or Chicken Fried Rice</h3>
-              <p>Fried rice with your choice of roast pork or chicken.</p>
-              <p>6.00 Pt, 8.50 Qt</p>
+              <h3>Roast Pork Fried Rice</h3>
+              <p>Fried rice with roast pork.</p>
+              <p>(Pt) 6.75 | (Qt) 8.95</p>
             </div>
             <div class="menu-item-image">
-              <img
-                src="images/PorkChickenFriedRice.jpg"
-                alt="Roast Pork or Chicken Fried Rice"
-              />
+              <img src="images/PorkFriedRice.jpg" alt="Roast Pork Fried Rice" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div class="menu-item" onclick="openModal('chickenFriedRice')">
+            <div class="menu-item-details">
+              <h3>Chicken Fried Rice</h3>
+              <p>Fried rice with chicken.</p>
+              <p>(Pt) 6.75 | (Qt) 8.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChickenFriedRice.jpg" alt="Chicken Fried Rice" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
@@ -801,7 +473,7 @@
             <div class="menu-item-details">
               <h3>Beef Fried Rice</h3>
               <p>Fried rice with flavorful beef pieces.</p>
-              <p>6.75 Pt, 9.75 Qt</p>
+              <p>(Pt) 6.99 | (Qt) 9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/BeefFriedRice.jpg" alt="Beef Fried Rice" />
@@ -812,7 +484,7 @@
             <div class="menu-item-details">
               <h3>Shrimp Fried Rice</h3>
               <p>Fried rice with succulent shrimp.</p>
-              <p>6.75 Pt, 9.75 Qt</p>
+              <p>(Pt) 6.99 | (Qt) 9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/ShrimpFriedRice.jpg" alt="Shrimp Fried Rice" />
@@ -823,7 +495,7 @@
             <div class="menu-item-details">
               <h3>House Special Fried Rice</h3>
               <p>A flavorful mix of meats and vegetables in fried rice.</p>
-              <p>6.99 Pt, 9.75 Qt</p>
+              <p>(Pt) 7.25 | (Qt) 10.50</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -833,12 +505,11 @@
               <button class="add-to-cart">+</button>
             </div>
           </div>
-
           <div class="menu-item" onclick="openModal('crabMeatFriedRice')">
             <div class="menu-item-details">
               <h3>Crab Meat Fried Rice</h3>
               <p>Fried rice with tender crab meat.</p>
-              <p>6.99 Pt, 9.75 Qt</p>
+              <p>(Pt) 7.95 | (Qt) 10.50</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -851,47 +522,61 @@
         </div>
 
         <!-- Lo Mein Section -->
+        <h2>Lo Mein (Soft Noodles)</h2>
+
         <div id="lo-mein" class="menu-category">
-          <h2>Lo Mein (Soft Noodles)</h2>
           <div class="menu-item" onclick="openModal('vegetablesLoMein')">
             <div class="menu-item-details">
-              <h3>Vegetables Lo Mein</h3>
+              <h3>Vegetable Lo Mein</h3>
               <p>Soft noodles with fresh vegetables.</p>
-              <p>6.00 Pt, 7.95 Qt</p>
+              <p>(Pt) 6.00 | (Qt) 7.99</p>
             </div>
             <div class="menu-item-image">
               <img src="images/VegetableLoMein.jpg" alt="Vegetable Lo Mein" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
-          <div
-            class="menu-item"
-            onclick="openModal('roastPorkOrChickenLoMein')"
-          >
+          <div class="menu-item" onclick="openModal('roastPorkLoMein')">
             <div class="menu-item-details">
-              <h3>Roast Pork or Chicken Lo Mein</h3>
-              <p>Soft noodles with roast pork or chicken.</p>
-              <p>6.50 Pt, 8.95 Qt</p>
+              <h3>Roast Pork Lo Mein</h3>
+              <p>Soft noodles with roast pork.</p>
+              <p>(Pt) 6.75 | (Qt) 8.99</p>
             </div>
             <div class="menu-item-image">
-              <img
-                src="images/PorkChickenLoMein.jpg"
-                alt="Roast Pork or Chicken Lo Mein"
-              />
+              <img src="images/PorkLoMein.jpg" alt="Roast Pork Lo Mein" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
-          <div class="menu-item" onclick="openModal('beefOrShrimpLoMein')">
+          <div class="menu-item" onclick="openModal('chickenLoMein')">
             <div class="menu-item-details">
-              <h3>Beef or Shrimp Lo Mein</h3>
-              <p>Soft noodles with your choice of beef or shrimp.</p>
-              <p>6.99 Pt, 9.75 Qt</p>
+              <h3>Chicken Lo Mein</h3>
+              <p>Soft noodles with chicken.</p>
+              <p>(Pt) 6.75 | (Qt) 8.99</p>
             </div>
             <div class="menu-item-image">
-              <img
-                src="images/BeefShrimpLoMein.jpg"
-                alt="Beef or Shrimp Lo Mein"
-              />
+              <img src="images/ChickenLoMein.jpg" alt="Chicken Lo Mein" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div class="menu-item" onclick="openModal('beefLoMein')">
+            <div class="menu-item-details">
+              <h3>Beef Lo Mein</h3>
+              <p>Soft noodles with flavorful beef.</p>
+              <p>(Pt) 6.99 | (Qt) 9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BeefLoMein.jpg" alt="Beef Lo Mein" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div class="menu-item" onclick="openModal('shrimpLoMein')">
+            <div class="menu-item-details">
+              <h3>Shrimp Lo Mein</h3>
+              <p>Soft noodles with shrimp.</p>
+              <p>(Pt) 6.99 | (Qt) 9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ShrimpLoMein.jpg" alt="Shrimp Lo Mein" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
@@ -899,7 +584,7 @@
             <div class="menu-item-details">
               <h3>House Special Lo Mein</h3>
               <p>Special lo mein with a variety of meats and vegetables.</p>
-              <p>7.25 Pt, 9.95 Qt</p>
+              <p>(Pt) 7.25 | (Qt) 10.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -913,7 +598,7 @@
             <div class="menu-item-details">
               <h3>Crab Meat Lo Mein</h3>
               <p>Soft noodles stir-fried with crab meat and vegetables.</p>
-              <p>7.25 Pt, 9.95 Qt</p>
+              <p>(Pt) 7.25 | (Qt) 10.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/CrabMeatLoMein.jpg" alt="Crab Meat Lo Mein" />
@@ -921,630 +606,1155 @@
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('houseSpecialLoMein')">
-            <div class="menu-item-details">
-              <h3>House Special Lo Mein</h3>
-              <p>A special blend of meats and vegetables with soft noodles.</p>
-              <p>7.25 Pt, 9.95 Qt</p>
+          <!-- Chow Mei Fun Section -->
+          <h2>Chow Mei Fun</h2>
+
+          <div id="chowMeiFun" class="menu-category">
+            <div class="menu-item" onclick="openModal('roastPorkChowMeiFun')">
+              <div class="menu-item-details">
+                <h3>Roast Pork Chow Mei Fun</h3>
+                <p>
+                  Stir-fried thin rice noodles with roast pork and vegetables.
+                </p>
+                <p>10.25</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkChowMeiFun.jpg"
+                  alt="Roast Pork Chow Mei Fun"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HouseSpecialLoMein.jpg"
-                alt="House Special Lo Mein"
-              />
-              <button class="add-to-cart">+</button>
+
+            <div class="menu-item" onclick="openModal('chickenChowMeiFun')">
+              <div class="menu-item-details">
+                <h3>Chicken Chow Mei Fun</h3>
+                <p>Stir-fried thin rice noodles with chicken and vegetables.</p>
+                <p>10.25</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenChowMeiFun.jpg"
+                  alt="Chicken Chow Mei Fun"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('beefChowMeiFun')">
+              <div class="menu-item-details">
+                <h3>Beef Chow Mei Fun</h3>
+                <p>Stir-fried thin rice noodles with beef and vegetables.</p>
+                <p>11.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/BeefChowMeiFun.jpg" alt="Beef Chow Mei Fun" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('shrimpChowMeiFun')">
+              <div class="menu-item-details">
+                <h3>Shrimp Chow Mei Fun</h3>
+                <p>Stir-fried thin rice noodles with shrimp and vegetables.</p>
+                <p>11.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpChowMeiFun.jpg"
+                  alt="Shrimp Chow Mei Fun"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('houseSpecialChowMeiFun')"
+            >
+              <div class="menu-item-details">
+                <h3>House Special Chow Mei Fun</h3>
+                <p>
+                  A special mix of meats and vegetables stir-fried with thin
+                  rice noodles.
+                </p>
+                <p>11.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/HouseSpecialChowMeiFun.jpg"
+                  alt="House Special Chow Mei Fun"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('singaporeChowMeiFun')">
+              <div class="menu-item-details">
+                <h3>Singapore Chow Mei Fun</h3>
+                <p>
+                  Spicy stir-fried rice noodles with curry, shrimp, and roast
+                  pork.
+                </p>
+                <p>11.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/SingaporeChowMeiFun.jpg"
+                  alt="Singapore Chow Mei Fun"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Egg Foo Young Section -->
-        <div id="egg-foo-young" class="menu-category">
-          <h2>Egg Foo Young</h2>
+          <!-- Chicken Section -->
+          <h2>Chicken</h2>
 
-          <div class="menu-item" onclick="openModal('chickenEggFooYoung')">
-            <div class="menu-item-details">
-              <h3>Chicken Egg Foo Young</h3>
-              <p>
-                Fluffy egg patties filled with chicken, served with white rice.
-              </p>
-              <p>$8.50</p>
+          <div id="chicken" class="menu-category">
+            <div class="menu-item" onclick="openModal('mooGooGaiPan')">
+              <div class="menu-item-details">
+                <h3>Moo Goo Gai Pan</h3>
+                <p>
+                  Chicken with mushrooms and vegetables in a light sauce, served
+                  with white rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/MooGooGaiPan.jpg" alt="Moo Goo Gai Pan" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenEggFooYoung.jpg"
-                alt="Chicken Egg Foo Young"
-              />
-              <button class="add-to-cart">+</button>
+
+            <div class="menu-item" onclick="openModal('chickenWithCashewNuts')">
+              <div class="menu-item-details">
+                <h3>Chicken with Cashew Nuts</h3>
+                <p>
+                  Chicken stir-fried with cashews and vegetables, served with
+                  white rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithCashewNuts.jpg"
+                  alt="Chicken with Cashew Nuts"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('chickenWithBroccoli')">
+              <div class="menu-item-details">
+                <h3>Chicken with Broccoli</h3>
+                <p>
+                  Chicken and broccoli stir-fried in a savory sauce, served with
+                  white rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithBroccoli.jpg"
+                  alt="Chicken with Broccoli"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('chickenWithOysterSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Chicken with Oyster Sauce</h3>
+                <p>
+                  Chicken stir-fried in a rich oyster sauce with vegetables,
+                  served with white rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithOysterSauce.jpg"
+                  alt="Chicken with Oyster Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('chickenWithSnowPeas')">
+              <div class="menu-item-details">
+                <h3>Chicken with Snow Peas</h3>
+                <p>
+                  Chicken and snow peas in a delicate sauce, served with white
+                  rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithSnowPeas.jpg"
+                  alt="Chicken with Snow Peas"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('chickenWithBlackBeanSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Chicken with Black Bean Sauce</h3>
+                <p>
+                  Chicken in a flavorful black bean sauce with vegetables,
+                  served with white rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithBlackBeanSauce.jpg"
+                  alt="Chicken with Black Bean Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('kungPaoChicken')">
+              <div class="menu-item-details">
+                <h3>Kung Pao Chicken</h3>
+                <p>
+                  Spicy chicken with peanuts and vegetables, served with white
+                  rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/KungPaoChicken.jpg" alt="Kung Pao Chicken" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('curryChickenWithOnion')">
+              <div class="menu-item-details">
+                <h3>Curry Chicken with Onion</h3>
+                <p>
+                  Chicken cooked in curry sauce with onions, served with white
+                  rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/CurryChickenWithOnion.jpg"
+                  alt="Curry Chicken with Onion"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('chickenWithGarlicSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Chicken with Garlic Sauce</h3>
+                <p>
+                  Chicken in a rich garlic sauce with vegetables, served with
+                  white rice.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithGarlicSauce.jpg"
+                  alt="Chicken with Garlic Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('roastPorkEggFooYoung')">
-            <div class="menu-item-details">
-              <h3>Roast Pork Egg Foo Young</h3>
-              <p>Egg patties filled with roast pork, served with white rice.</p>
-              <p>$8.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkEggFooYoung.jpg"
-                alt="Roast Pork Egg Foo Young"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('beefEggFooYoung')">
-            <div class="menu-item-details">
-              <h3>Beef Egg Foo Young</h3>
-              <p>
-                Fluffy egg patties filled with beef, served with white rice.
-              </p>
-              <p>$9.25</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/BeefEggFooYoung.jpg" alt="Beef Egg Foo Young" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('shrimpEggFooYoung')">
-            <div class="menu-item-details">
-              <h3>Shrimp Egg Foo Young</h3>
-              <p>Egg patties filled with shrimp, served with white rice.</p>
-              <p>$9.25</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpEggFooYoung.jpg"
-                alt="Shrimp Egg Foo Young"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('lobsterEggFooYoung')">
-            <div class="menu-item-details">
-              <h3>Lobster Egg Foo Young</h3>
-              <p>Egg patties filled with lobster, served with white rice.</p>
-              <p>$9.75</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/LobsterEggFooYoung.jpg"
-                alt="Lobster Egg Foo Young"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('houseSpecialEggFooYoung')">
-            <div class="menu-item-details">
-              <h3>House Special Egg Foo Young</h3>
-              <p>
-                A special blend of meats and vegetables in fluffy egg patties,
-                served with white rice.
-              </p>
-              <p>$9.75</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HouseSpecialEggFooYoung.jpg"
-                alt="House Special Egg Foo Young"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pork Section -->
-        <div id="pork" class="menu-category">
+          <!-- Pork Section -->
           <h2>Pork (with White Rice)</h2>
-          <div
-            class="menu-item"
-            onclick="openModal('roastPorkWithMixedVegetables')"
-          >
-            <div class="menu-item-details">
-              <h3>Roast Pork with Mixed Vegetables</h3>
-              <p>Tender roast pork with mixed seasonal vegetables.</p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkWithMixedVegetables.jpg"
-                alt="Roast Pork with Mixed Vegetables"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('roastPorkWithMushroom')">
-            <div class="menu-item-details">
-              <h3>Roast Pork with Mushroom</h3>
-              <p>Delicious roast pork paired with mushrooms.</p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkWithMushroom.jpg"
-                alt="Roast Pork with Mushroom"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('roastPorkWithSnowPeas')">
-            <div class="menu-item-details">
-              <h3>Roast Pork with Snow Peas</h3>
-              <p>Roast pork stir-fried with fresh snow peas.</p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkWithSnowPeas.jpg"
-                alt="Roast Pork with Snow Peas"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div
-            class="menu-item"
-            onclick="openModal('roastPorkWithPepperTomato')"
-          >
-            <div class="menu-item-details">
-              <h3>Roast Pork with Pepper & Tomato</h3>
-              <p>
-                Roast pork with bell peppers and tomatoes in a savory sauce.
-              </p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkWithPepperTomato.jpg"
-                alt="Roast Pork with Pepper & Tomato"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('roastPorkWithBeanCurd')">
-            <div class="menu-item-details">
-              <h3>Roast Pork with Bean Curd</h3>
-              <p>Roast pork stir-fried with soft bean curd.</p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkWithBeanCurd.jpg"
-                alt="Roast Pork with Bean Curd"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('roastPorkWithCashewNuts')">
-            <div class="menu-item-details">
-              <h3>Roast Pork with Cashew Nuts</h3>
-              <p>Roast pork with crunchy cashews.</p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkWithCashewNuts.jpg"
-                alt="Roast Pork with Cashew Nuts"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('roastPorkWithBroccoli')">
-            <div class="menu-item-details">
-              <h3>Roast Pork with Broccoli</h3>
-              <p>Succulent roast pork served with broccoli.</p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/RoastPorkWithBroccoli.jpg"
-                alt="Roast Pork with Broccoli"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('porkWithScallions')">
-            <div class="menu-item-details">
-              <h3>Pork with Scallions</h3>
-              <p>Pork stir-fried with scallions for a fresh flavor.</p>
-              <p>7.25 Pt, 12.50 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/PorkWithScallions.jpg"
-                alt="Pork with Scallions"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
 
-        <!-- Beef Section -->
-        <div id="beef" class="menu-category">
+          <div id="pork" class="menu-category">
+            <div
+              class="menu-item"
+              onclick="openModal('roastPorkWithMixedVegetables')"
+            >
+              <div class="menu-item-details">
+                <h3>Roast Pork with Mixed Vegetables</h3>
+                <p>Tender roast pork with mixed seasonal vegetables.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkWithMixedVegetables.jpg"
+                  alt="Roast Pork with Mixed Vegetables"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('roastPorkWithMushroom')">
+              <div class="menu-item-details">
+                <h3>Roast Pork with Mushroom</h3>
+                <p>Delicious roast pork paired with mushrooms.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkWithMushroom.jpg"
+                  alt="Roast Pork with Mushroom"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('roastPorkWithSnowPeas')">
+              <div class="menu-item-details">
+                <h3>Roast Pork with Snow Peas</h3>
+                <p>Roast pork stir-fried with fresh snow peas.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkWithSnowPeas.jpg"
+                  alt="Roast Pork with Snow Peas"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('roastPorkWithPepperTomato')"
+            >
+              <div class="menu-item-details">
+                <h3>Roast Pork with Pepper & Tomato</h3>
+                <p>
+                  Roast pork with bell peppers and tomatoes in a savory sauce.
+                </p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkWithPepperTomato.jpg"
+                  alt="Roast Pork with Pepper & Tomato"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('roastPorkWithBeanCurd')">
+              <div class="menu-item-details">
+                <h3>Roast Pork with Bean Curd</h3>
+                <p>Roast pork stir-fried with soft bean curd.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkWithBeanCurd.jpg"
+                  alt="Roast Pork with Bean Curd"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('roastPorkWithCashewNuts')"
+            >
+              <div class="menu-item-details">
+                <h3>Roast Pork with Cashew Nuts</h3>
+                <p>Roast pork with crunchy cashews.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkWithCashewNuts.jpg"
+                  alt="Roast Pork with Cashew Nuts"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('roastPorkWithBroccoli')">
+              <div class="menu-item-details">
+                <h3>Roast Pork with Broccoli</h3>
+                <p>Succulent roast pork served with broccoli.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkWithBroccoli.jpg"
+                  alt="Roast Pork with Broccoli"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('porkWithScallions')">
+              <div class="menu-item-details">
+                <h3>Pork with Scallions</h3>
+                <p>Pork stir-fried with scallions for a fresh flavor.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/PorkWithScallions.jpg"
+                  alt="Pork with Scallions"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Beef Section -->
           <h2>Beef (with White Rice)</h2>
-          <div class="menu-item" onclick="openModal('pepperSteakWithOnions')">
-            <div class="menu-item-details">
-              <h3>Pepper Steak with Onions</h3>
-              <p>Flavorful pepper steak cooked with onions.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
+
+          <div id="beef" class="menu-category">
+            <div class="menu-item" onclick="openModal('pepperSteakWithOnions')">
+              <div class="menu-item-details">
+                <h3>Pepper Steak with Onions</h3>
+                <p>Flavorful pepper steak cooked with onions.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/PepperSteakWithOnions.jpg"
+                  alt="Pepper Steak with Onions"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/PepperSteakWithOnions.jpg"
-                alt="Pepper Steak with Onions"
-              />
-              <button class="add-to-cart">+</button>
+
+            <div
+              class="menu-item"
+              onclick="openModal('beefWithMixedVegetables')"
+            >
+              <div class="menu-item-details">
+                <h3>Beef with Mixed Vegetables</h3>
+                <p>Tender beef cooked with a variety of vegetables.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefWithMixedVegetables.jpg"
+                  alt="Beef with Mixed Vegetables"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('beefWithSnowPeas')">
+              <div class="menu-item-details">
+                <h3>Beef with Snow Peas</h3>
+                <p>Savory beef stir-fried with snow peas.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefWithSnowPeas.jpg"
+                  alt="Beef with Snow Peas"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('beefWithBroccoli')">
+              <div class="menu-item-details">
+                <h3>Beef with Broccoli</h3>
+                <p>Classic beef and broccoli in a savory sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefWithBroccoli.jpg"
+                  alt="Beef with Broccoli"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('curryBeefWithOnion')">
+              <div class="menu-item-details">
+                <h3>Curry Beef with Onion</h3>
+                <p>Beef with onion in a flavorful curry sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/CurryBeefWithOnion.jpg"
+                  alt="Curry Beef with Onion"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('mongolianBeef')">
+              <div class="menu-item-details">
+                <h3>Mongolian Beef</h3>
+                <p>Savory Mongolian-style beef stir-fry.</p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/MongolianBeef.jpg" alt="Mongolian Beef" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
-          <div class="menu-item" onclick="openModal('beefWithMixedVegetables')">
-            <div class="menu-item-details">
-              <h3>Beef with Mixed Vegetables</h3>
-              <p>Tender beef cooked with a variety of vegetables.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeefWithMixedVegetables.jpg"
-                alt="Beef with Mixed Vegetables"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('beefWithSnowPeas')">
-            <div class="menu-item-details">
-              <h3>Beef with Snow Peas</h3>
-              <p>Savory beef stir-fried with snow peas.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeefWithSnowPeas.jpg"
-                alt="Beef with Snow Peas"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('beefWithBroccoli')">
-            <div class="menu-item-details">
-              <h3>Beef with Broccoli</h3>
-              <p>Classic beef and broccoli in a savory sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/BeefWithBroccoli.jpg" alt="Beef with Broccoli" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('curryBeefWithOnion')">
-            <div class="menu-item-details">
-              <h3>Curry Beef with Onion</h3>
-              <p>Beef with onion in a flavorful curry sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/CurryBeefWithOnion.jpg"
-                alt="Curry Beef with Onion"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-          <div class="menu-item" onclick="openModal('mongolianBeef')">
-            <div class="menu-item-details">
-              <h3>Mongolian Beef</h3>
-              <p>Savory Mongolian-style beef stir-fry.</p>
-              <p>14.95</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/MongolianBeef.jpg" alt="Mongolian Beef" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-        <!-- Seafood Section -->
-        <div id="seafood" class="menu-category">
+
+          <!-- Seafood Section -->
           <h2>Seafood (with White Rice)</h2>
 
-          <div class="menu-item" onclick="openModal('shrimpWithLobsterSauce')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Lobster Sauce</h3>
-              <p>Shrimp cooked in a rich lobster sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
+          <div id="seafood" class="menu-category">
+            <div
+              class="menu-item"
+              onclick="openModal('shrimpWithLobsterSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Shrimp with Lobster Sauce</h3>
+                <p>Shrimp cooked in a rich lobster sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithLobsterSauce.jpg"
+                  alt="Shrimp with Lobster Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithLobsterSauce.jpg"
-                alt="Shrimp with Lobster Sauce"
-              />
-              <button class="add-to-cart">+</button>
+
+            <div class="menu-item" onclick="openModal('shrimpWithMushroom')">
+              <div class="menu-item-details">
+                <h3>Shrimp with Mushroom</h3>
+                <p>Shrimp and mushrooms stir-fried to perfection.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithMushroom.jpg"
+                  alt="Shrimp with Mushroom"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('shrimpWithMixedVegetables')"
+            >
+              <div class="menu-item-details">
+                <h3>Shrimp with Mixed Vegetables</h3>
+                <p>Shrimp cooked with a variety of fresh vegetables.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithMixedVegetables.jpg"
+                  alt="Shrimp with Mixed Vegetables"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('shrimpWithCashewNuts')">
+              <div class="menu-item-details">
+                <h3>Shrimp with Cashew Nuts</h3>
+                <p>Shrimp stir-fried with crunchy cashew nuts.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithCashewNuts.jpg"
+                  alt="Shrimp with Cashew Nuts"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('shrimpWithBroccoli')">
+              <div class="menu-item-details">
+                <h3>Shrimp with Broccoli</h3>
+                <p>Shrimp stir-fried with fresh broccoli.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithBroccoli.jpg"
+                  alt="Shrimp with Broccoli"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('shrimpWithSnowPeas')">
+              <div class="menu-item-details">
+                <h3>Shrimp with Snow Peas</h3>
+                <p>Shrimp and crisp snow peas in a savory sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithSnowPeas.jpg"
+                  alt="Shrimp with Snow Peas"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('shrimpWithBlackBeanSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Shrimp with Black Bean Sauce</h3>
+                <p>Shrimp in a flavorful black bean sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithBlackBeanSauce.jpg"
+                  alt="Shrimp with Black Bean Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('shrimpWithChiliSauce')">
+              <div class="menu-item-details">
+                <h3>Shrimp with Chili Sauce</h3>
+                <p>Shrimp cooked in a spicy chili sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithChiliSauce.jpg"
+                  alt="Shrimp with Chili Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('kungPaoShrimp')">
+              <div class="menu-item-details">
+                <h3>Kung Pao Shrimp</h3>
+                <p>Shrimp with peanuts and vegetables in a spicy sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/KungPaoShrimp.jpg" alt="Kung Pao Shrimp" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('shrimpWithGarlicSauce')">
+              <div class="menu-item-details">
+                <h3>Shrimp with Garlic Sauce</h3>
+                <p>Shrimp in a savory garlic sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithGarlicSauce.jpg"
+                  alt="Shrimp with Garlic Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('curryShrimpWithOnion')">
+              <div class="menu-item-details">
+                <h3>Curry Shrimp with Onion</h3>
+                <p>Shrimp and onions in a flavorful curry sauce.</p>
+                <p>(Pt) 8.25 | (Qt) 12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/CurryShrimpWithOnion.jpg"
+                  alt="Curry Shrimp with Onion"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
-
-          <div class="menu-item" onclick="openModal('shrimpWithMushroom')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Mushroom</h3>
-              <p>Shrimp and mushrooms stir-fried to perfection.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithMushroom.jpg"
-                alt="Shrimp with Mushroom"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div
-            class="menu-item"
-            onclick="openModal('shrimpWithMixedVegetables')"
-          >
-            <div class="menu-item-details">
-              <h3>Shrimp with Mixed Vegetables</h3>
-              <p>Shrimp cooked with a variety of fresh vegetables.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithMixedVegetables.jpg"
-                alt="Shrimp with Mixed Vegetables"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('shrimpWithCashewNuts')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Cashew Nuts</h3>
-              <p>Shrimp stir-fried with crunchy cashew nuts.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithCashewNuts.jpg"
-                alt="Shrimp with Cashew Nuts"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('shrimpWithBroccoli')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Broccoli</h3>
-              <p>Shrimp stir-fried with fresh broccoli.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithBroccoli.jpg"
-                alt="Shrimp with Broccoli"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('shrimpWithSnowPeas')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Snow Peas</h3>
-              <p>Shrimp and crisp snow peas in a savory sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithSnowPeas.jpg"
-                alt="Shrimp with Snow Peas"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div
-            class="menu-item"
-            onclick="openModal('shrimpWithBlackBeanSauce')"
-          >
-            <div class="menu-item-details">
-              <h3>Shrimp with Black Bean Sauce</h3>
-              <p>Shrimp in a flavorful black bean sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithBlackBeanSauce.jpg"
-                alt="Shrimp with Black Bean Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('shrimpWithChiliSauce')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Chili Sauce</h3>
-              <p>Shrimp cooked in a spicy chili sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithChiliSauce.jpg"
-                alt="Shrimp with Chili Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('kungPaoShrimp')">
-            <div class="menu-item-details">
-              <h3>Kung Pao Shrimp</h3>
-              <p>Shrimp with peanuts and vegetables in a spicy sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/KungPaoShrimp.jpg" alt="Kung Pao Shrimp" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('shrimpWithGarlicSauce')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Garlic Sauce</h3>
-              <p>Shrimp in a savory garlic sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithGarlicSauce.jpg"
-                alt="Shrimp with Garlic Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('curryShrimpWithOnion')">
-            <div class="menu-item-details">
-              <h3>Curry Shrimp with Onion</h3>
-              <p>Shrimp and onions in a flavorful curry sauce.</p>
-              <p>7.49 Pt, 12.99 Qt</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/CurryShrimpWithOnion.jpg"
-                alt="Curry Shrimp with Onion"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sweet and Sour Section -->
-        <div id="sweet-sour" class="menu-category">
-          <h2>Sweet and Sour (with White Rice)</h2>
-
-          <div
-            class="menu-item"
-            onclick="openModal('sweetAndSourPorkOrChicken')"
-          >
-            <div class="menu-item-details">
-              <h3>Sweet and Sour Pork or Chicken</h3>
-              <p>Crispy pork or chicken in a tangy sweet and sour sauce.</p>
-              <p>11.25</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/SweetAndSourPorkOrChicken.jpg"
-                alt="Sweet and Sour Pork or Chicken"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('sweetAndSourShrimp')">
-            <div class="menu-item-details">
-              <h3>Sweet and Sour Shrimp</h3>
-              <p>Shrimp in a tangy sweet and sour sauce.</p>
-              <p>12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/SweetAndSourShrimp.jpg"
-                alt="Sweet and Sour Shrimp"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('sweetAndSourTriple')">
-            <div class="menu-item-details">
-              <h3>Sweet and Sour Triple</h3>
-              <p>
-                A combination of pork, chicken, and shrimp in sweet and sour
-                sauce.
-              </p>
-              <p>13.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/SweetAndSourTriple.jpg"
-                alt="Sweet and Sour Triple"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Vegetables Section -->
-        <div id="vegetables" class="menu-category">
+          <!-- Vegetables Section -->
           <h2>Vegetables (with White Rice)</h2>
 
-          <div
-            class="menu-item"
-            onclick="openModal('sauteedBroccoliWithGarlicSauce')"
-          >
-            <div class="menu-item-details">
-              <h3>Sauteed Broccoli with Garlic Sauce</h3>
-              <p>Broccoli sauteed in a savory garlic sauce.</p>
-              <p>8.99</p>
+          <div id="vegetables" class="menu-category">
+            <div
+              class="menu-item"
+              onclick="openModal('sauteedBroccoliWithGarlicSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Sauteed Broccoli with Garlic Sauce</h3>
+                <p>Broccoli sauteed in a savory garlic sauce.</p>
+                <p>10.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/SauteedBroccoliWithGarlicSauce.jpg"
+                  alt="Sauteed Broccoli with Garlic Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/SauteedBroccoliWithGarlicSauce.jpg"
-                alt="Sauteed Broccoli with Garlic Sauce"
-              />
-              <button class="add-to-cart">+</button>
+
+            <div class="menu-item" onclick="openModal('mixedVegetables')">
+              <div class="menu-item-details">
+                <h3>Mixed Vegetables</h3>
+                <p>Fresh mixed vegetables stir-fried to perfection.</p>
+                <p>10.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/MixedVegetables.jpg" alt="Mixed Vegetables" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('beanCurdSzechuanStyle')">
+              <div class="menu-item-details">
+                <h3>Bean Curd Szechuan Style</h3>
+                <p>Spicy Szechuan-style bean curd with vegetables.</p>
+                <p>10.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeanCurdSzechuanStyle.jpg"
+                  alt="Bean Curd Szechuan Style"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('beanCurdHomeStyle')">
+              <div class="menu-item-details">
+                <h3>Bean Curd Home Style</h3>
+                <p>Home-style cooked bean curd with vegetables.</p>
+                <p>10.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeanCurdHomeStyle.jpg"
+                  alt="Bean Curd Home Style"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('mixedVegetables')">
-            <div class="menu-item-details">
-              <h3>Mixed Vegetables</h3>
-              <p>Fresh mixed vegetables stir-fried to perfection.</p>
-              <p>8.99</p>
+          <!-- Sweet and Sour Section -->
+          <h2>Sweet and Sour (with White Rice)</h2>
+
+          <div id="sweet-sour" class="menu-category">
+            <div class="menu-item" onclick="openModal('sweetAndSourChicken')">
+              <div class="menu-item-details">
+                <h3>Sweet and Sour Chicken</h3>
+                <p>Crispy chicken in a tangy sweet and sour sauce.</p>
+                <p>12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/SweetAndSourChicken.jpg"
+                  alt="Sweet and Sour Chicken"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/MixedVegetables.jpg" alt="Mixed Vegetables" />
-              <button class="add-to-cart">+</button>
+
+            <div class="menu-item" onclick="openModal('sweetAndSourPork')">
+              <div class="menu-item-details">
+                <h3>Sweet and Sour Pork</h3>
+                <p>Crispy pork in a tangy sweet and sour sauce.</p>
+                <p>12.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/SweetAndSourPork.jpg"
+                  alt="Sweet and Sour Pork"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('sweetAndSourShrimp')">
+              <div class="menu-item-details">
+                <h3>Sweet and Sour Shrimp</h3>
+                <p>Shrimp in a tangy sweet and sour sauce.</p>
+                <p>13.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/SweetAndSourShrimp.jpg"
+                  alt="Sweet and Sour Shrimp"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('sweetAndSourTriple')">
+              <div class="menu-item-details">
+                <h3>Sweet and Sour Triple</h3>
+                <p>
+                  A combination of pork, chicken, and shrimp in sweet and sour
+                  sauce.
+                </p>
+                <p>13.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/SweetAndSourTriple.jpg"
+                  alt="Sweet and Sour Triple"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('beanCurdSzechuanStyle')">
-            <div class="menu-item-details">
-              <h3>Bean Curd Szechuan Style</h3>
-              <p>Spicy Szechuan-style bean curd with vegetables.</p>
-              <p>9.45</p>
+          <!-- Egg Foo Young Section -->
+          <h2>Egg Foo Young</h2>
+
+          <div id="egg-foo-young" class="menu-category">
+            <div class="menu-item" onclick="openModal('chickenEggFooYoung')">
+              <div class="menu-item-details">
+                <h3>Chicken Egg Foo Young</h3>
+                <p>
+                  Fluffy egg patties filled with chicken, served with white
+                  rice.
+                </p>
+                <p>8.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenEggFooYoung.jpg"
+                  alt="Chicken Egg Foo Young"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeanCurdSzechuanStyle.jpg"
-                alt="Bean Curd Szechuan Style"
-              />
-              <button class="add-to-cart">+</button>
+
+            <div class="menu-item" onclick="openModal('roastPorkEggFooYoung')">
+              <div class="menu-item-details">
+                <h3>Roast Pork Egg Foo Young</h3>
+                <p>
+                  Egg patties filled with roast pork, served with white rice.
+                </p>
+                <p>8.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkEggFooYoung.jpg"
+                  alt="Roast Pork Egg Foo Young"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('beefEggFooYoung')">
+              <div class="menu-item-details">
+                <h3>Beef Egg Foo Young</h3>
+                <p>
+                  Fluffy egg patties filled with beef, served with white rice.
+                </p>
+                <p>9.25</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefEggFooYoung.jpg"
+                  alt="Beef Egg Foo Young"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('shrimpEggFooYoung')">
+              <div class="menu-item-details">
+                <h3>Shrimp Egg Foo Young</h3>
+                <p>Egg patties filled with shrimp, served with white rice.</p>
+                <p>9.25</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpEggFooYoung.jpg"
+                  alt="Shrimp Egg Foo Young"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('crabMeatEggFooYoung')">
+              <div class="menu-item-details">
+                <h3>Crab Meat Egg Foo Young</h3>
+                <p>
+                  Egg patties filled with crab meat, served with white rice.
+                </p>
+                <p>9.75</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/CrabMeatEggFooYoung.jpg"
+                  alt="Crab Meat Egg Foo Young"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('houseSpecialEggFooYoung')"
+            >
+              <div class="menu-item-details">
+                <h3>House Special Egg Foo Young</h3>
+                <p>
+                  A special blend of meats and vegetables in fluffy egg patties,
+                  served with white rice.
+                </p>
+                <p>9.75</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/HouseSpecialEggFooYoung.jpg"
+                  alt="House Special Egg Foo Young"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('beanCurdHomeStyle')">
+          <!-- Chop Suey Section -->
+          <h2>Chop Suey</h2>
+
+          <div id="chopSuey" class="menu-category">
+            <div class="menu-item" onclick="openModal('vegetablesChopSuey')">
+              <div class="menu-item-details">
+                <h3>Vegetables Chop Suey</h3>
+                <p>
+                  Mixed vegetables in a savory sauce served with white rice.
+                </p>
+                <p>(Pt) 6.50 (Qt) 7.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/VegetablesChopSuey.jpg"
+                  alt="Vegetables Chop Suey"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <!-- Roast Pork Chop Suey -->
+            <div class="menu-item" onclick="openModal('roastPorkChopSuey')">
+              <div class="menu-item-details">
+                <h3>Roast Pork Chop Suey</h3>
+                <p>Roast pork in a hearty sauce served with white rice.</p>
+                <p>(Pt) 6.99 (Qt) 9.75</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkOrChickenChopSuey.jpg"
+                  alt="Roast Pork Chop Suey"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <!-- Chicken Chop Suey -->
+            <div class="menu-item" onclick="openModal('chickenChopSuey')">
+              <div class="menu-item-details">
+                <h3>Chicken Chop Suey</h3>
+                <p>Chicken in a hearty sauce served with white rice.</p>
+                <p>(Pt) 6.99 (Qt) 9.75</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/RoastPorkOrChickenChopSuey.jpg"
+                  alt="Chicken Chop Suey"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <!-- Beef Chop Suey -->
+            <div class="menu-item" onclick="openModal('beefChopSuey')">
+              <div class="menu-item-details">
+                <h3>Beef Chop Suey</h3>
+                <p>
+                  Beef cooked with vegetables in a savory sauce, served with
+                  white rice.
+                </p>
+                <p>(Pt) 7.99 (Qt) 10.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefOrShrimpChopSuey.jpg"
+                  alt="Beef Chop Suey"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <!-- Shrimp Chop Suey -->
+            <div class="menu-item" onclick="openModal('shrimpChopSuey')">
+              <div class="menu-item-details">
+                <h3>Shrimp Chop Suey</h3>
+                <p>
+                  Shrimp cooked with vegetables in a savory sauce, served with
+                  white rice.
+                </p>
+                <p>(Pt) 7.99 (Qt) 10.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefOrShrimpChopSuey.jpg"
+                  alt="Shrimp Chop Suey"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('houseSpecialChopSuey')">
+              <div class="menu-item-details">
+                <h3>House Special Chop Suey</h3>
+                <p>
+                  A special blend of meats and vegetables in a delicious sauce,
+                  served with white rice.
+                </p>
+                <p>(Pt) 8.25 (Qt) 10.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/HouseSpecialChopSuey.jpg"
+                  alt="House Special Chop Suey"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chow Mein Section -->
+          <h2>Chow Mein (with Rice and Crispy Noodles)</h2>
+
+          <div id="chow-mein" class="menu-category">
+            <div class="menu-item" onclick="openModal('vegetableChowMein')">
+              <div class="menu-item-details">
+                <h3>Vegetable Chow Mein</h3>
+                <p>
+                  Classic chow mein with fresh vegetables and crispy noodles.
+                </p>
+                <p>6.00 Pt, 8.50 Qt</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/VegetableChowMein.jpg"
+                  alt="Vegetable Chow Mein"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+            <!-- Chicken Chow Mein -->
+            <div class="menu-item" onclick="openModal('chickenChowMein')">
+              <div class="menu-item-details">
+                <h3>Chicken Chow Mein</h3>
+                <p>Chow mein with tender chicken and crispy noodles.</p>
+                <p>(Pt) 6.50, (Qt) 10.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenPorkChowMein.jpg"
+                  alt="Chicken Chow Mein"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <!-- Roast Pork Chow Mein -->
+            <div class="menu-item" onclick="openModal('roastPorkChowMein')">
+              <div class="menu-item-details">
+                <h3>Roast Pork Chow Mein</h3>
+                <p>Chow mein with savory roast pork and crispy noodles.</p>
+                <p>(Pt) 6.50, (Qt) 10.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenPorkChowMein.jpg"
+                  alt="Roast Pork Chow Mein"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <!-- Beef Chow Mein -->
+            <div class="menu-item" onclick="openModal('beefChowMein')">
+              <div class="menu-item-details">
+                <h3>Beef Chow Mein</h3>
+                <p>Chow mein with hearty beef and crispy noodles.</p>
+                <p>(Pt) 7.25, (Qt) 10.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/BeefShrimpChowMein.jpg" alt="Beef Chow Mein" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <!-- Shrimp Chow Mein -->
+            <div class="menu-item" onclick="openModal('shrimpChowMein')">
+              <div class="menu-item-details">
+                <h3>Shrimp Chow Mein</h3>
+                <p>Chow mein with juicy shrimp and crispy noodles.</p>
+                <p>(Pt) 7.25, (Qt) 10.99</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefShrimpChowMein.jpg"
+                  alt="Shrimp Chow Mein"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('houseSpecialChowMein')">
+              <div class="menu-item-details">
+                <h3>House Special Chow Mein</h3>
+                <p>Chow mein with a special blend of meats and vegetables.</p>
+                <p>7.99 Pt, 10.99 Qt</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/HouseSpecialChowMein.jpg"
+                  alt="House Special Chow Mein"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Moo Shu Section -->
+          <h2>Moo Shu</h2>
+          <div class="menu-item" onclick="openModal('mooShuVegetables')">
             <div class="menu-item-details">
-              <h3>Bean Curd Home Style</h3>
-              <p>Home-style cooked bean curd with vegetables.</p>
-              <p>9.45</p>
+              <h3>Moo Shu Vegetables</h3>
+              <p>Stir-fried vegetables, served with 4 pancakes.</p>
+              <p>10.99</p>
             </div>
             <div class="menu-item-image">
-              <img
-                src="images/BeanCurdHomeStyle.jpg"
-                alt="Bean Curd Home Style"
-              />
+              <img src="images/MooShuVegetables.jpg" alt="Moo Shu Vegetables" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
         </div>
-        <!-- Moo Shu Section -->
         <div id="moo-shu" class="menu-category">
-          <h2>Moo Shu</h2>
-
           <div class="menu-item" onclick="openModal('mooShuChicken')">
             <div class="menu-item-details">
               <h3>Moo Shu Chicken</h3>
               <p>Chicken stir-fried with vegetables, served with 4 pancakes.</p>
-              <p>$11.99</p>
+              <p>11.99</p>
             </div>
             <div class="menu-item-image">
               <img src="images/MooShuChicken.jpg" alt="Moo Shu Chicken" />
@@ -1556,7 +1766,7 @@
             <div class="menu-item-details">
               <h3>Moo Shu Pork</h3>
               <p>Pork stir-fried with vegetables, served with 4 pancakes.</p>
-              <p>$11.99</p>
+              <p>11.99</p>
             </div>
             <div class="menu-item-image">
               <img src="images/MooShuPork.jpg" alt="Moo Shu Pork" />
@@ -1564,537 +1774,629 @@
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('mooShuShrimpOrBeef')">
+          <!-- Moo Shu Shrimp -->
+          <div class="menu-item" onclick="openModal('mooShuShrimp')">
             <div class="menu-item-details">
-              <h3>Moo Shu Shrimp or Beef</h3>
-              <p>
-                Choice of shrimp or beef stir-fried with vegetables, served with
-                4 pancakes.
-              </p>
-              <p>$12.99</p>
+              <h3>Moo Shu Shrimp</h3>
+              <p>Shrimp stir-fried with vegetables, served with 4 pancakes.</p>
+              <p>12.99</p>
             </div>
             <div class="menu-item-image">
-              <img
-                src="images/MooShuShrimpOrBeef.jpg"
-                alt="Moo Shu Shrimp or Beef"
-              />
+              <img src="images/MooShuShrimpOrBeef.jpg" alt="Moo Shu Shrimp" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('mooShuVegetables')">
+          <!-- Moo Shu Beef -->
+          <div class="menu-item" onclick="openModal('mooShuBeef')">
             <div class="menu-item-details">
-              <h3>Moo Shu Vegetables</h3>
-              <p>Stir-fried vegetables, served with 4 pancakes.</p>
-              <p>$10.99</p>
+              <h3>Moo Shu Beef</h3>
+              <p>Beef stir-fried with vegetables, served with 4 pancakes.</p>
+              <p>12.99</p>
             </div>
             <div class="menu-item-image">
-              <img src="images/MooShuVegetables.jpg" alt="Moo Shu Vegetables" />
+              <img src="images/MooShuShrimpOrBeef.jpg" alt="Moo Shu Beef" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
-        </div>
 
-        <!-- Side Order Section -->
-        <div id="side-order" class="menu-category">
+          <!-- Side Order Section -->
           <h2>Side Order</h2>
 
-          <div class="menu-item" onclick="openModal('steamedRice')">
-            <div class="menu-item-details">
-              <h3>Steamed Rice</h3>
-              <p>Fluffy steamed rice served hot.</p>
-              <p>2.00 Pt, 4.00 Qt</p>
+          <div id="side-order" class="menu-category">
+            <div class="menu-item" onclick="openModal('steamedRice')">
+              <div class="menu-item-details">
+                <h3>Steamed Rice</h3>
+                <p>Fluffy steamed rice served hot.</p>
+                <p>2.00 Pt, 4.00 Qt</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/SteamedRice.jpg" alt="Steamed Rice" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/SteamedRice.jpg" alt="Steamed Rice" />
-              <button class="add-to-cart">+</button>
+
+            <div class="menu-item" onclick="openModal('fortuneCookies')">
+              <div class="menu-item-details">
+                <h3>Fortune Cookies (5)</h3>
+                <p>Crunchy fortune cookies for good luck.</p>
+                <p>0.75</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/FortuneCookies.jpg" alt="Fortune Cookies" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('friedNoodles')">
+              <div class="menu-item-details">
+                <h3>Fried Noodles</h3>
+                <p>Golden fried noodles, perfect as a snack.</p>
+                <p>0.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/FriedNoodles.jpg" alt="Fried Noodles" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('homeMadeSweetTea')">
+              <div class="menu-item-details">
+                <h3>Home Made Sweet Tea (Lg)</h3>
+                <p>Large homemade sweet tea, refreshing and chilled.</p>
+                <p>1.75</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/HomeMadeSweetTea.jpg"
+                  alt="Home Made Sweet Tea"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('lemonade')">
+              <div class="menu-item-details">
+                <h3>Lemonade (Lg)</h3>
+                <p>Large lemonade, tangy and refreshing.</p>
+                <p>1.75</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/Lemonade.jpg" alt="Lemonade" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('fortuneCookies')">
-            <div class="menu-item-details">
-              <h3>Fortune Cookies (5)</h3>
-              <p>Crunchy fortune cookies for good luck.</p>
-              <p>0.75</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/FortuneCookies.jpg" alt="Fortune Cookies" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('friedNoodles')">
-            <div class="menu-item-details">
-              <h3>Fried Noodles</h3>
-              <p>Golden fried noodles, perfect as a snack.</p>
-              <p>0.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/FriedNoodles.jpg" alt="Fried Noodles" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('homeMadeSweetTea')">
-            <div class="menu-item-details">
-              <h3>Home Made Sweet Tea (Lg)</h3>
-              <p>Large homemade sweet tea, refreshing and chilled.</p>
-              <p>1.75</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HomeMadeSweetTea.jpg"
-                alt="Home Made Sweet Tea"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('lemonade')">
-            <div class="menu-item-details">
-              <h3>Lemonade (Lg)</h3>
-              <p>Large lemonade, tangy and refreshing.</p>
-              <p>1.75</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/Lemonade.jpg" alt="Lemonade" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Chef’s Specialties Section -->
-        <div id="chefs-specialties" class="menu-category">
+          <!-- Chef’s Specialties Section -->
           <h2>Chef’s Specialties</h2>
 
-          <div class="menu-item" onclick="openModal('subgumWonton')">
-            <div class="menu-item-details">
-              <h3>Subgum Wonton</h3>
-              <p>
-                A delicious combination of meat, vegetables, and crispy wontons,
-                served with white rice.
-              </p>
-              <p>$14.95</p>
+          <div id="chefs-specialties" class="menu-category">
+            <div class="menu-item" onclick="openModal('subgumWonton')">
+              <div class="menu-item-details">
+                <h3>Subgum Wonton</h3>
+                <p>
+                  A delicious combination of meat, vegetables, and crispy
+                  wontons, served with white rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/SubgumWonton.jpg" alt="Subgum Wonton" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/SubgumWonton.jpg" alt="Subgum Wonton" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('butterflyShrimp')">
-            <div class="menu-item-details">
-              <h3>Butterfly Shrimp</h3>
-              <p>Golden fried butterfly shrimp, served with white rice.</p>
-              <p>$13.95</p>
+            <div class="menu-item" onclick="openModal('butterflyShrimp')">
+              <div class="menu-item-details">
+                <h3>Butterfly Shrimp</h3>
+                <p>Golden fried butterfly shrimp, served with white rice.</p>
+                <p>13.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/ButterflyShrimp.jpg" alt="Butterfly Shrimp" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/ButterflyShrimp.jpg" alt="Butterfly Shrimp" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('steakKew')">
-            <div class="menu-item-details">
-              <h3>Steak Kew</h3>
-              <p>
-                Tender steak cubes with vegetables in a savory sauce, served
-                with white rice.
-              </p>
-              <p>$14.95</p>
+            <div class="menu-item" onclick="openModal('steakKew')">
+              <div class="menu-item-details">
+                <h3>Steak Kew</h3>
+                <p>
+                  Tender steak cubes with vegetables in a savory sauce, served
+                  with white rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/SteakKew.jpg" alt="Steak Kew" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/SteakKew.jpg" alt="Steak Kew" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('happyFamily')">
-            <div class="menu-item-details">
-              <h3>Happy Family</h3>
-              <p>
-                A delightful mix of meats and vegetables, served with white
-                rice.
-              </p>
-              <p>$15.95</p>
+            <div class="menu-item" onclick="openModal('happyFamily')">
+              <div class="menu-item-details">
+                <h3>Happy Family</h3>
+                <p>
+                  A delightful mix of meats and vegetables, served with white
+                  rice.
+                </p>
+                <p>15.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/HappyFamily.jpg" alt="Happy Family" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/HappyFamily.jpg" alt="Happy Family" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('hawaiianFiveO')">
-            <div class="menu-item-details">
-              <h3>Hawaiian Five "O"</h3>
-              <p>
-                A tropical dish with a mix of meats and fruits, served with
-                white rice.
-              </p>
-              <p>$13.95</p>
+            <div class="menu-item" onclick="openModal('hawaiianFiveO')">
+              <div class="menu-item-details">
+                <h3>Hawaiian Five "O"</h3>
+                <p>
+                  A tropical dish with a mix of meats and fruits, served with
+                  white rice.
+                </p>
+                <p>13.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/HawaiianFiveO.jpg" alt="Hawaiian Five O" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/HawaiianFiveO.jpg" alt="Hawaiian Five O" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('fourSeasons')">
-            <div class="menu-item-details">
-              <h3>Four Seasons</h3>
-              <p>
-                A special mix of four different types of meat with vegetables,
-                served with white rice.
-              </p>
-              <p>$14.95</p>
+            <div class="menu-item" onclick="openModal('fourSeasons')">
+              <div class="menu-item-details">
+                <h3>Four Seasons</h3>
+                <p>
+                  A special mix of four different types of meat with vegetables,
+                  served with white rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/FourSeasons.jpg" alt="Four Seasons" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/FourSeasons.jpg" alt="Four Seasons" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('dragonPhoenix')">
-            <div class="menu-item-details">
-              <h3>Dragon & Phoenix</h3>
-              <p>
-                A combination of seafood and chicken in a special sauce, served
-                with white rice.
-              </p>
-              <p>$13.95</p>
+            <div class="menu-item" onclick="openModal('dragonPhoenix')">
+              <div class="menu-item-details">
+                <h3>Dragon & Phoenix</h3>
+                <p>
+                  A combination of seafood and chicken in a special sauce,
+                  served with white rice.
+                </p>
+                <p>13.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/DragonPhoenix.jpg" alt="Dragon & Phoenix" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/DragonPhoenix.jpg" alt="Dragon & Phoenix" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('harvestChickenShrimp')">
-            <div class="menu-item-details">
-              <h3>Harvest Chicken & Shrimp</h3>
-              <p>
-                Chicken and shrimp stir-fried with vegetables in a light sauce,
-                served with white rice.
-              </p>
-              <p>$14.95</p>
+            <div class="menu-item" onclick="openModal('harvestChickenShrimp')">
+              <div class="menu-item-details">
+                <h3>Harvest Chicken & Shrimp</h3>
+                <p>
+                  Chicken and shrimp stir-fried with vegetables in a light
+                  sauce, served with white rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/HarvestChickenShrimp.jpg"
+                  alt="Harvest Chicken & Shrimp"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HarvestChickenShrimp.jpg"
-                alt="Harvest Chicken & Shrimp"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('sesameChicken')">
-            <div class="menu-item-details">
-              <h3>Sesame Chicken</h3>
-              <p>
-                Sweet and savory chicken topped with sesame seeds, served with
-                white rice.
-              </p>
-              <p>$12.50</p>
+            <div class="menu-item" onclick="openModal('sesameChicken')">
+              <div class="menu-item-details">
+                <h3>Sesame Chicken</h3>
+                <p>
+                  Sweet and savory chicken topped with sesame seeds, served with
+                  white rice.
+                </p>
+                <p>12.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/SesameChicken.jpg" alt="Sesame Chicken" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/SesameChicken.jpg" alt="Sesame Chicken" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('sesameBeef')">
-            <div class="menu-item-details">
-              <h3>Sesame Beef</h3>
-              <p>
-                Sweet and savory beef topped with sesame seeds, served with
-                white rice.
-              </p>
-              <p>$14.95</p>
+            <div class="menu-item" onclick="openModal('sesameBeef')">
+              <div class="menu-item-details">
+                <h3>Sesame Beef</h3>
+                <p>
+                  Sweet and savory beef topped with sesame seeds, served with
+                  white rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/SesameBeef.jpg" alt="Sesame Beef" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/SesameBeef.jpg" alt="Sesame Beef" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('seafoodDelight')">
-            <div class="menu-item-details">
-              <h3>Seafood Delight</h3>
-              <p>
-                An assortment of seafood cooked with vegetables, served with
-                white rice.
-              </p>
-              <p>$15.95</p>
+            <div class="menu-item" onclick="openModal('seafoodDelight')">
+              <div class="menu-item-details">
+                <h3>Seafood Delight</h3>
+                <p>
+                  An assortment of seafood cooked with vegetables, served with
+                  white rice.
+                </p>
+                <p>15.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/SeafoodDelight.jpg" alt="Seafood Delight" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/SeafoodDelight.jpg" alt="Seafood Delight" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('crispyShrimp')">
-            <div class="menu-item-details">
-              <h3>Crispy Shrimp</h3>
-              <p>
-                Crispy-fried shrimp with a tangy dipping sauce, served with
-                white rice.
-              </p>
-              <p>$13.95</p>
+            <div class="menu-item" onclick="openModal('crispyShrimp')">
+              <div class="menu-item-details">
+                <h3>Crispy Shrimp</h3>
+                <p>
+                  Crispy-fried shrimp with a tangy dipping sauce, served with
+                  white rice.
+                </p>
+                <p>13.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/CrispyShrimp.jpg" alt="Crispy Shrimp" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/CrispyShrimp.jpg" alt="Crispy Shrimp" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('tripleDelight')">
-            <div class="menu-item-details">
-              <h3>Triple Delight</h3>
-              <p>
-                A delightful combination of chicken, beef, and shrimp with
-                vegetables, served with white rice.
-              </p>
-              <p>$14.95</p>
+            <div class="menu-item" onclick="openModal('tripleDelight')">
+              <div class="menu-item-details">
+                <h3>Triple Delight</h3>
+                <p>
+                  A delightful combination of chicken, beef, and shrimp with
+                  vegetables, served with white rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/TripleDelight.jpg" alt="Triple Delight" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/TripleDelight.jpg" alt="Triple Delight" />
-              <button class="add-to-cart">+</button>
+            <div
+              class="menu-item"
+              onclick="openModal('shreddedBeefWithGarlicSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Shredded Beef with Garlic Sauce</h3>
+                <p>
+                  Tender shredded beef in a rich garlic sauce, served with white
+                  rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShreddedBeefWithGarlicSauce.jpg"
+                  alt="Shredded Beef with Garlic Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-          </div>
-          <div
-            class="menu-item"
-            onclick="openModal('shreddedBeefWithGarlicSauce')"
-          >
-            <div class="menu-item-details">
-              <h3>Shredded Beef with Garlic Sauce</h3>
-              <p>
-                Tender shredded beef in a rich garlic sauce, served with white
-                rice.
-              </p>
-              <p>$14.95</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShreddedBeefWithGarlicSauce.jpg"
-                alt="Shredded Beef with Garlic Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('beefAndShrimpHunanStyle')">
-            <div class="menu-item-details">
-              <h3>Beef & Shrimp Hunan Style</h3>
-              <p>
-                Spicy beef and shrimp cooked Hunan-style with vegetables, served
-                with white rice.
-              </p>
-              <p>$15.95</p>
+            <div
+              class="menu-item"
+              onclick="openModal('beefAndShrimpHunanStyle')"
+            >
+              <div class="menu-item-details">
+                <h3>Beef & Shrimp Hunan Style</h3>
+                <p>
+                  Spicy beef and shrimp cooked Hunan-style with vegetables,
+                  served with white rice.
+                </p>
+                <p>15.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefAndShrimpHunanStyle.jpg"
+                  alt="Beef & Shrimp Hunan Style"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeefAndShrimpHunanStyle.jpg"
-                alt="Beef & Shrimp Hunan Style"
-              />
-              <button class="add-to-cart">+</button>
+
+            <div
+              class="menu-item"
+              onclick="openModal('chickenWithOrangeFlavor')"
+            >
+              <div class="menu-item-details">
+                <h3>Chicken with Orange Flavor</h3>
+                <p>
+                  Orange-flavored chicken with a tangy sauce, served with white
+                  rice.
+                </p>
+                <p>12.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithOrangeFlavor.jpg"
+                  alt="Chicken with Orange Flavor"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('hunanChicken')">
+              <div class="menu-item-details">
+                <h3>Hunan Chicken</h3>
+                <p>
+                  Spicy Hunan-style chicken with vegetables, served with white
+                  rice.
+                </p>
+                <p>12.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/HunanChicken.jpg" alt="Hunan Chicken" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('hunanBeef')">
+              <div class="menu-item-details">
+                <h3>Hunan Beef</h3>
+                <p>
+                  Spicy Hunan-style beef with vegetables, served with white
+                  rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/HunanBeef.jpg" alt="Hunan Beef" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('generalTsosChicken')">
+              <div class="menu-item-details">
+                <h3>General Tso's Chicken</h3>
+                <p>
+                  Sweet and spicy chicken with a crispy coating, served with
+                  white rice.
+                </p>
+                <p>12.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/GeneralTsosChicken.jpg"
+                  alt="General Tso's Chicken"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('scallopsAndShrimpWithGarlicSauce')"
+            >
+              <div class="menu-item-details">
+                <h3>Scallops & Shrimp with Garlic Sauce</h3>
+                <p>
+                  Delicious scallops and shrimp in a rich garlic sauce, served
+                  with white rice.
+                </p>
+                <p>15.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ScallopsAndShrimpWithGarlicSauce.jpg"
+                  alt="Scallops & Shrimp with Garlic Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('beefWithSzechuanStyle')">
+              <div class="menu-item-details">
+                <h3>Beef with Szechuan Style</h3>
+                <p>
+                  Spicy Szechuan-style beef with vegetables, served with white
+                  rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/BeefWithSzechuanStyle.jpg"
+                  alt="Beef with Szechuan Style"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('chickenWithSzechuanStyle')"
+            >
+              <div class="menu-item-details">
+                <h3>Chicken with Szechuan Style</h3>
+                <p>
+                  Spicy Szechuan-style chicken with vegetables, served with
+                  white rice.
+                </p>
+                <p>12.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ChickenWithSzechuanStyle.jpg"
+                  alt="Chicken with Szechuan Style"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div
+              class="menu-item"
+              onclick="openModal('shrimpWithSzechuanStyle')"
+            >
+              <div class="menu-item-details">
+                <h3>Shrimp with Szechuan Style</h3>
+                <p>
+                  Spicy Szechuan-style shrimp with vegetables, served with white
+                  rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/ShrimpWithSzechuanStyle.jpg"
+                  alt="Shrimp with Szechuan Style"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('orangeBeef')">
+              <div class="menu-item-details">
+                <h3>Orange Beef</h3>
+                <p>
+                  Beef in a tangy orange-flavored sauce, served with white rice.
+                </p>
+                <p>14.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/OrangeBeef.jpg" alt="Orange Beef" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('generalShrimp')">
+              <div class="menu-item-details">
+                <h3>General Shrimp</h3>
+                <p>
+                  Sweet and spicy shrimp with a crispy coating, served with
+                  white rice.
+                </p>
+                <p>13.95</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/GeneralShrimp.jpg" alt="General Shrimp" />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
+
+            <div class="menu-item" onclick="openModal('bourbonChicken')">
+              <div class="menu-item-details">
+                <h3>Bourbon Chicken</h3>
+                <p>Chicken in a sweet bourbon sauce, served with white rice.</p>
+                <p>12.50</p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/BourbonChicken.jpg" alt="Bourbon Chicken" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
+          <!-- House Specialties Section -->
+          <h2>House Specialties</h2>
+          <div id="house-specialties" class="menu-category">
+            <!-- Fried Chicken Wings -->
+            <div class="menu-item" onclick="openModal('friedChickenWings')">
+              <div class="menu-item-details">
+                <h3>H1. Fried Chicken Wings (4)</h3>
+                <p>
+                  Plain: 7.25 | w. Fried Rice or French Fries: 8.25 | w. Pork or
+                  Chicken Fried Rice: 8.99 | w. Shrimp or Beef Fried Rice: 9.25
+                </p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/FriedChickenWings.jpg"
+                  alt="Fried Chicken Wings"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
+            </div>
 
-          <div class="menu-item" onclick="openModal('chickenWithOrangeFlavor')">
-            <div class="menu-item-details">
-              <h3>Chicken with Orange Flavor</h3>
-              <p>
-                Orange-flavored chicken with a tangy sauce, served with white
-                rice.
-              </p>
-              <p>$12.50</p>
+            <!-- Honey Wings -->
+            <div class="menu-item" onclick="openModal('honeyWings')">
+              <div class="menu-item-details">
+                <h3>H2. Honey Wings (4)</h3>
+                <p>
+                  Plain: 7.50 | w. Fried Rice or French Fries: 8.99 | w. Pork or
+                  Chicken Fried Rice: 9.49 | w. Shrimp or Beef Fried Rice: 9.99
+                </p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/HoneyWings.jpg" alt="Honey Wings" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithOrangeFlavor.jpg"
-                alt="Chicken with Orange Flavor"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('hunanChicken')">
-            <div class="menu-item-details">
-              <h3>Hunan Chicken</h3>
-              <p>
-                Spicy Hunan-style chicken with vegetables, served with white
-                rice.
-              </p>
-              <p>$12.50</p>
+            <!-- Fried Chicken Wings with Garlic Sauce -->
+            <div
+              class="menu-item"
+              onclick="openModal('friedChickenWingsGarlic')"
+            >
+              <div class="menu-item-details">
+                <h3>H3. Fried Chicken Wings with Garlic Sauce</h3>
+                <p>
+                  Plain: 7.50 | w. Fried Rice or French Fries: 8.99 | w. Pork or
+                  Chicken Fried Rice: 9.49 | w. Shrimp or Beef Fried Rice: 9.99
+                </p>
+              </div>
+              <div class="menu-item-image">
+                <img
+                  src="images/FriedChickenWingsGarlic.jpg"
+                  alt="Fried Chicken Wings with Garlic Sauce"
+                />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/HunanChicken.jpg" alt="Hunan Chicken" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('hunanBeef')">
-            <div class="menu-item-details">
-              <h3>Hunan Beef</h3>
-              <p>
-                Spicy Hunan-style beef with vegetables, served with white rice.
-              </p>
-              <p>$14.95</p>
+            <!-- Fried Crab Sticks -->
+            <div class="menu-item" onclick="openModal('friedCrabSticks')">
+              <div class="menu-item-details">
+                <h3>H4. Fried Crab Sticks (5)</h3>
+                <p>
+                  Plain: 6.50 | w. Fried Rice or French Fries: 7.49 | w. Pork or
+                  Chicken Fried Rice: 7.99 | w. Shrimp or Beef Fried Rice: 8.49
+                </p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/FriedCrabSticks.jpg" alt="Fried Crab Sticks" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
-            <div class="menu-item-image">
-              <img src="images/HunanBeef.jpg" alt="Hunan Beef" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
 
-          <div class="menu-item" onclick="openModal('generalTsosChicken')">
-            <div class="menu-item-details">
-              <h3>General Tso's Chicken</h3>
-              <p>
-                Sweet and spicy chicken with a crispy coating, served with white
-                rice.
-              </p>
-              <p>$12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/GeneralTsosChicken.jpg"
-                alt="General Tso's Chicken"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div
-            class="menu-item"
-            onclick="openModal('scallopsAndShrimpWithGarlicSauce')"
-          >
-            <div class="menu-item-details">
-              <h3>Scallops & Shrimp with Garlic Sauce</h3>
-              <p>
-                Delicious scallops and shrimp in a rich garlic sauce, served
-                with white rice.
-              </p>
-              <p>$15.95</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ScallopsAndShrimpWithGarlicSauce.jpg"
-                alt="Scallops & Shrimp with Garlic Sauce"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('beefWithSzechuanStyle')">
-            <div class="menu-item-details">
-              <h3>Beef with Szechuan Style</h3>
-              <p>
-                Spicy Szechuan-style beef with vegetables, served with white
-                rice.
-              </p>
-              <p>$14.95</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/BeefWithSzechuanStyle.jpg"
-                alt="Beef with Szechuan Style"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div
-            class="menu-item"
-            onclick="openModal('chickenWithSzechuanStyle')"
-          >
-            <div class="menu-item-details">
-              <h3>Chicken with Szechuan Style</h3>
-              <p>
-                Spicy Szechuan-style chicken with vegetables, served with white
-                rice.
-              </p>
-              <p>$12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ChickenWithSzechuanStyle.jpg"
-                alt="Chicken with Szechuan Style"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('shrimpWithSzechuanStyle')">
-            <div class="menu-item-details">
-              <h3>Shrimp with Szechuan Style</h3>
-              <p>
-                Spicy Szechuan-style shrimp with vegetables, served with white
-                rice.
-              </p>
-              <p>$14.95</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/ShrimpWithSzechuanStyle.jpg"
-                alt="Shrimp with Szechuan Style"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('orangeBeef')">
-            <div class="menu-item-details">
-              <h3>Orange Beef</h3>
-              <p>
-                Beef in a tangy orange-flavored sauce, served with white rice.
-              </p>
-              <p>$14.95</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/OrangeBeef.jpg" alt="Orange Beef" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('generalShrimp')">
-            <div class="menu-item-details">
-              <h3>General Shrimp</h3>
-              <p>
-                Sweet and spicy shrimp with a crispy coating, served with white
-                rice.
-              </p>
-              <p>$13.95</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/GeneralShrimp.jpg" alt="General Shrimp" />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
-          <div class="menu-item" onclick="openModal('bourbonChicken')">
-            <div class="menu-item-details">
-              <h3>Bourbon Chicken</h3>
-              <p>Chicken in a sweet bourbon sauce, served with white rice.</p>
-              <p>$12.50</p>
-            </div>
-            <div class="menu-item-image">
-              <img src="images/BourbonChicken.jpg" alt="Bourbon Chicken" />
-              <button class="add-to-cart">+</button>
+            <!-- Fried Scallops -->
+            <div class="menu-item" onclick="openModal('friedScallops')">
+              <div class="menu-item-details">
+                <h3>H5. Fried Scallops (10)</h3>
+                <p>
+                  Plain: 6.50 | w. Fried Rice or French Fries: 7.49 | w. Pork or
+                  Chicken Fried Rice: 7.99 | w. Shrimp or Beef Fried Rice: 8.49
+                </p>
+              </div>
+              <div class="menu-item-image">
+                <img src="images/FriedScallops.jpg" alt="Fried Scallops" />
+                <button class="add-to-cart">+</button>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Combination Plates Section -->
-        <div id="combination-plates" class="menu-category">
-          <h2>Combination Plates</h2>
-          <p>Served with Pork Fried Rice & Egg Roll</p>
+        <h2>Combination Plates (w. Pork Fried Rice & Pork Egg Roll)</h2>
 
+        <div id="combination-plates" class="menu-category">
           <div class="menu-item" onclick="openModal('chickenChowMeinCombo')">
             <div class="menu-item-details">
-              <h3>Chicken Chow Mein</h3>
+              <h3>Chicken Chow Mein (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/ChickenChowMein.jpg" alt="Chicken Chow Mein" />
@@ -2104,9 +2406,9 @@
 
           <div class="menu-item" onclick="openModal('shrimpChowMeinCombo')">
             <div class="menu-item-details">
-              <h3>Shrimp Chow Mein</h3>
+              <h3>Shrimp Chow Mein (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/ShrimpChowMein.jpg" alt="Shrimp Chow Mein" />
@@ -2119,9 +2421,9 @@
             onclick="openModal('roastPorkEggFooYoungCombo')"
           >
             <div class="menu-item-details">
-              <h3>Roast Pork Egg Foo Young</h3>
+              <h3>Roast Pork Egg Foo Young (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2137,9 +2439,9 @@
             onclick="openModal('shrimpWithLobsterSauceCombo')"
           >
             <div class="menu-item-details">
-              <h3>Shrimp with Lobster Sauce</h3>
+              <h3>Shrimp with Lobster Sauce (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2155,9 +2457,9 @@
             onclick="openModal('roastPorkWithChineseVegetablesCombo')"
           >
             <div class="menu-item-details">
-              <h3>Roast Pork with Chinese Vegetables</h3>
+              <h3>Roast Pork with Chinese Vegetables (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2170,9 +2472,9 @@
 
           <div class="menu-item" onclick="openModal('roastPorkLoMeinCombo')">
             <div class="menu-item-details">
-              <h3>Roast Pork Lo Mein</h3>
+              <h3>Roast Pork Lo Mein (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/RoastPorkLoMein.jpg" alt="Roast Pork Lo Mein" />
@@ -2182,27 +2484,39 @@
 
           <div
             class="menu-item"
-            onclick="openModal('sweetAndSourPorkOrChickenCombo')"
+            onclick="openModal('sweetAndSourChickenCombo')"
           >
             <div class="menu-item-details">
-              <h3>Sweet & Sour Pork or Chicken</h3>
+              <h3>Sweet & Sour Chicken (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
-                src="images/SweetAndSourPorkOrChicken.jpg"
-                alt="Sweet & Sour Pork or Chicken"
+                src="images/SweetAndSourChicken.jpg"
+                alt="Sweet & Sour Chicken"
               />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('sweetAndSourPorkCombo')">
+            <div class="menu-item-details">
+              <h3>Sweet & Sour Pork (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SweetAndSourPork.jpg" alt="Sweet & Sour Pork" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
 
           <div class="menu-item" onclick="openModal('bbqSpareRibsCombo')">
             <div class="menu-item-details">
-              <h3>B-B-Q Spare Ribs</h3>
+              <h3>B-B-Q Spare Ribs (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/BBQSpareRibs.jpg" alt="B-B-Q Spare Ribs" />
@@ -2212,9 +2526,9 @@
 
           <div class="menu-item" onclick="openModal('pepperSteakCombo')">
             <div class="menu-item-details">
-              <h3>Pepper Steak</h3>
+              <h3>Pepper Steak (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/PepperSteak.jpg" alt="Pepper Steak" />
@@ -2227,9 +2541,9 @@
             onclick="openModal('beefWithChineseVegetablesCombo')"
           >
             <div class="menu-item-details">
-              <h3>Beef with Chinese Vegetables</h3>
+              <h3>Beef with Chinese Vegetables (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2242,9 +2556,9 @@
 
           <div class="menu-item" onclick="openModal('mooGooGaiPanCombo')">
             <div class="menu-item-details">
-              <h3>Moo Goo Gai Pan</h3>
+              <h3>Moo Goo Gai Pan (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/MooGooGaiPan.jpg" alt="Moo Goo Gai Pan" />
@@ -2257,9 +2571,9 @@
             onclick="openModal('chickenWithBroccoliCombo')"
           >
             <div class="menu-item-details">
-              <h3>Chicken with Broccoli</h3>
+              <h3>Chicken with Broccoli (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2274,9 +2588,9 @@
             onclick="openModal('chickenWithCashewNutsCombo')"
           >
             <div class="menu-item-details">
-              <h3>Chicken with Cashew Nuts</h3>
+              <h3>Chicken with Cashew Nuts (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2292,9 +2606,9 @@
             onclick="openModal('shrimpWithChineseVegetablesCombo')"
           >
             <div class="menu-item-details">
-              <h3>Shrimp with Chinese Vegetables</h3>
+              <h3>Shrimp with Chinese Vegetables (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2307,9 +2621,9 @@
 
           <div class="menu-item" onclick="openModal('shrimpWithBroccoliCombo')">
             <div class="menu-item-details">
-              <h3>Shrimp with Broccoli</h3>
+              <h3>Shrimp with Broccoli (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2320,19 +2634,55 @@
             </div>
           </div>
 
+          <div class="menu-item" onclick="openModal('szechuanChickenCombo')">
+            <div class="menu-item-details">
+              <h3>Szechuan Chicken (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SzechuanChicken.jpg" alt="Szechuan Chicken" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('szechuanBeefCombo')">
+            <div class="menu-item-details">
+              <h3>Szechuan Beef (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SzechuanBeef.jpg" alt="Szechuan Beef" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('szechuanShrimpCombo')">
+            <div class="menu-item-details">
+              <h3>Szechuan Shrimp (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SzechuanShrimp.jpg" alt="Szechuan Shrimp" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
           <div
             class="menu-item"
-            onclick="openModal('szechuanChickenBeefOrShrimpCombo')"
+            onclick="openModal('chickenWithGarlicSauceCombo')"
           >
             <div class="menu-item-details">
-              <h3>Szechuan Chicken, Beef, or Shrimp</h3>
+              <h3>Chicken with Garlic Sauce (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
-                src="images/SzechuanChickenBeefOrShrimp.jpg"
-                alt="Szechuan Chicken, Beef, or Shrimp"
+                src="images/ChickenWithGarlicSauce.jpg"
+                alt="Chicken with Garlic Sauce"
               />
               <button class="add-to-cart">+</button>
             </div>
@@ -2340,17 +2690,35 @@
 
           <div
             class="menu-item"
-            onclick="openModal('chickenBeefOrShrimpWithGarlicSauceCombo')"
+            onclick="openModal('beefWithGarlicSauceCombo')"
           >
             <div class="menu-item-details">
-              <h3>Chicken, Beef, or Shrimp with Garlic Sauce</h3>
+              <h3>Beef with Garlic Sauce (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
-                src="images/ChickenBeefOrShrimpWithGarlicSauce.jpg"
-                alt="Chicken, Beef, or Shrimp with Garlic Sauce"
+                src="images/BeefWithGarlicSauce.jpg"
+                alt="Beef with Garlic Sauce"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('ShrimpWithGarlicSauceCombo')"
+          >
+            <div class="menu-item-details">
+              <h3>Shrimp with Garlic Sauce (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ShrimpWithGarlicSauce.jpg"
+                alt="Shrimp with Garlic Sauce"
               />
               <button class="add-to-cart">+</button>
             </div>
@@ -2358,9 +2726,9 @@
 
           <div class="menu-item" onclick="openModal('generalTsosChickenCombo')">
             <div class="menu-item-details">
-              <h3>General Tso’s Chicken</h3>
+              <h3>General Tso’s Chicken (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2373,9 +2741,9 @@
 
           <div class="menu-item" onclick="openModal('sesameChickenCombo')">
             <div class="menu-item-details">
-              <h3>Sesame Chicken</h3>
+              <h3>Sesame Chicken (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/SesameChicken.jpg" alt="Sesame Chicken" />
@@ -2385,9 +2753,9 @@
 
           <div class="menu-item" onclick="openModal('bbqBonelessRibsCombo')">
             <div class="menu-item-details">
-              <h3>Bar-B-Q Boneless Ribs</h3>
+              <h3>Bar-B-Q Boneless Ribs (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2400,9 +2768,9 @@
 
           <div class="menu-item" onclick="openModal('orangeChickenCombo')">
             <div class="menu-item-details">
-              <h3>Orange Chicken</h3>
+              <h3>Orange Chicken (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/OrangeChicken.jpg" alt="Orange Chicken" />
@@ -2412,9 +2780,9 @@
 
           <div class="menu-item" onclick="openModal('hunanChickenCombo')">
             <div class="menu-item-details">
-              <h3>Hunan Chicken</h3>
+              <h3>Hunan Chicken (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/HunanChicken.jpg" alt="Hunan Chicken" />
@@ -2424,9 +2792,9 @@
 
           <div class="menu-item" onclick="openModal('teriyakiChickenCombo')">
             <div class="menu-item-details">
-              <h3>Teriyaki Chicken</h3>
+              <h3>Teriyaki Chicken (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/TeriyakiChicken.jpg" alt="Teriyaki Chicken" />
@@ -2436,17 +2804,34 @@
 
           <div
             class="menu-item"
-            onclick="openModal('curryChickenBeefOrShrimpWithOnionsCombo')"
+            onclick="openModal('curryChickenWithOnionsCombo')"
           >
             <div class="menu-item-details">
-              <h3>Curry Chicken, Beef, or Shrimp with Onions</h3>
+              <h3>Curry Chicken with Onions (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
-                src="images/CurryChickenBeefOrShrimpWithOnions.jpg"
-                alt="Curry Chicken, Beef, or Shrimp with Onions"
+                src="images/CurryChickenWithOnions.jpg"
+                alt="Curry Chicken with Onions"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div
+            class="menu-item"
+            onclick="openModal('curryBeefWithOnionsCombo')"
+          >
+            <div class="menu-item-details">
+              <h3>Curry Beef with Onions (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CurryBeefWithOnions.jpg"
+                alt="Curry Beef with Onions"
               />
               <button class="add-to-cart">+</button>
             </div>
@@ -2454,45 +2839,90 @@
 
           <div
             class="menu-item"
-            onclick="openModal('roastPorkBeefOrShrimpWithOnionCombo')"
+            onclick="openModal('curryShrimpWithOnionsCombo')"
           >
             <div class="menu-item-details">
-              <h3>Roast Pork, Beef, or Shrimp with Onion</h3>
+              <h3>Curry Shrimp with Onions (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
-                src="images/RoastPorkBeefOrShrimpWithOnion.jpg"
-                alt="Roast Pork, Beef, or Shrimp with Onion"
+                src="images/CurryShrimpWithOnions.jpg"
+                alt="Curry Shrimp with Onions"
               />
               <button class="add-to-cart">+</button>
             </div>
           </div>
 
-          <div
-            class="menu-item"
-            onclick="openModal('kungPaoChickenOrShrimpCombo')"
-          >
+          <div class="menu-item" onclick="openModal('roastPorkWithOnionCombo')">
             <div class="menu-item-details">
-              <h3>Kung Pao Chicken or Shrimp</h3>
+              <h3>Roast Pork with Onion (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img
-                src="images/KungPaoChickenOrShrimp.jpg"
-                alt="Kung Pao Chicken or Shrimp"
+                src="images/RoastPorkWithOnion.jpg"
+                alt="Roast Pork with Onion"
               />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('beefWithOnionCombo')">
+            <div class="menu-item-details">
+              <h3>Beefwith Onion (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BeefWithOnion.jpg" alt="Beef with Onion" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('shrimpWithOnionCombo')">
+            <div class="menu-item-details">
+              <h3>Shrimp with Onion (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ShrimpWithOnion.jpg" alt="Shrimp with Onion" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kungPaoChickenCombo')">
+            <div class="menu-item-details">
+              <h3>Kung Pao Chicken (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/KungPaoChicken.jpg" alt="Kung Pao Chicken" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kungPaoShrimpCombo')">
+            <div class="menu-item-details">
+              <h3>Kung Pao Shrimp (Combo)</h3>
+              <p>Served with pork fried rice and egg roll.</p>
+              <p>9.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/KungPaoShrimp.jpg" alt="Kung Pao Shrimp" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
 
           <div class="menu-item" onclick="openModal('bourbonChickenCombo')">
             <div class="menu-item-details">
-              <h3>Bourbon Chicken</h3>
+              <h3>Bourbon Chicken (Combo)</h3>
               <p>Served with pork fried rice and egg roll.</p>
-              <p>$9.95</p>
+              <p>9.95</p>
             </div>
             <div class="menu-item-image">
               <img src="images/BourbonChicken.jpg" alt="Bourbon Chicken" />
@@ -2501,14 +2931,14 @@
           </div>
         </div>
         <!-- All Day Special Section -->
-        <div id="all-day-special" class="menu-category">
-          <h2>All Day Special</h2>
+        <h2>All Day Special (w. Fried Rice)</h2>
 
+        <div id="all-day-special" class="menu-category">
           <div class="menu-item" onclick="openModal('friedShrimpAds')">
             <div class="menu-item-details">
-              <h3>Fried Shrimp</h3>
+              <h3>Fried Shrimp (All Day Special)</h3>
               <p>Golden, crispy fried shrimp.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FriedShrimp.jpg" alt="Fried Shrimp" />
@@ -2518,9 +2948,9 @@
 
           <div class="menu-item" onclick="openModal('generalTsosChickenAds')">
             <div class="menu-item-details">
-              <h3>General Tso's Chicken</h3>
+              <h3>General Tso's Chicken (All Day Special)</h3>
               <p>Spicy, tangy General Tso's chicken.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2533,9 +2963,9 @@
 
           <div class="menu-item" onclick="openModal('sesameChickenAds')">
             <div class="menu-item-details">
-              <h3>Sesame Chicken</h3>
+              <h3>Sesame Chicken (All Day Special)</h3>
               <p>Sweet sesame chicken.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/SesameChicken.jpg" alt="Sesame Chicken" />
@@ -2545,9 +2975,9 @@
 
           <div class="menu-item" onclick="openModal('bonelessSpareRibsAds')">
             <div class="menu-item-details">
-              <h3>Boneless Spare Ribs</h3>
+              <h3>Boneless Spare Ribs (All Day Special)</h3>
               <p>Juicy boneless spare ribs.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2560,9 +2990,9 @@
 
           <div class="menu-item" onclick="openModal('chickenWingsFriesAds')">
             <div class="menu-item-details">
-              <h3>Chicken Wings with Fries</h3>
+              <h3>Chicken Wings with Fries (All Day Special)</h3>
               <p>Crispy chicken wings served with fries.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2575,9 +3005,9 @@
 
           <div class="menu-item" onclick="openModal('chickenMixedVegAds')">
             <div class="menu-item-details">
-              <h3>Chicken with Mixed Vegetables</h3>
+              <h3>Chicken with Mixed Vegetables (All Day Special)</h3>
               <p>Chicken stir-fried with mixed vegetables.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2587,12 +3017,26 @@
               <button class="add-to-cart">+</button>
             </div>
           </div>
+          <div class="menu-item" onclick="openModal('beefMixedVegAds')">
+            <div class="menu-item-details">
+              <h3>Beef with Mixed Vegetables (All Day Special)</h3>
+              <p>Beef stir-fried with mixed vegetables.</p>
+              <p>8.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BeefMixedVeg.jpg"
+                alt="Beef with Mixed Vegetables"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
 
           <div class="menu-item" onclick="openModal('teriyakiChickenStickAds')">
             <div class="menu-item-details">
-              <h3>Teriyaki Chicken on Stick</h3>
+              <h3>Teriyaki Chicken on Stick (All Day Special)</h3>
               <p>Skewered chicken marinated in teriyaki sauce.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2605,9 +3049,9 @@
 
           <div class="menu-item" onclick="openModal('houseSpecialLoMeinAds')">
             <div class="menu-item-details">
-              <h3>House Special Lo Mein</h3>
+              <h3>House Special Lo Mein (All Day Special)</h3>
               <p>Special blend of meats and vegetables with soft noodles.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2620,21 +3064,35 @@
 
           <div class="menu-item" onclick="openModal('beefBroccoliAds')">
             <div class="menu-item-details">
-              <h3>Beef with Broccoli</h3>
+              <h3>Beef with Broccoli (All Day Special)</h3>
               <p>Tender beef stir-fried with fresh broccoli.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/BeefBroccoli.jpg" alt="Beef with Broccoli" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
+          <div class="menu-item" onclick="openModal('chickenBroccoliAds')">
+            <div class="menu-item-details">
+              <h3>Chicken with Broccoli (All Day Special)</h3>
+              <p>Tender chicken stir-fried with fresh broccoli.</p>
+              <p>8.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChickenBroccoli.jpg"
+                alt="Chicken with Broccoli"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
 
           <div class="menu-item" onclick="openModal('curryChickenAds')">
             <div class="menu-item-details">
-              <h3>Curry Chicken</h3>
+              <h3>Curry Chicken (All Day Special)</h3>
               <p>Chicken in a spicy curry sauce.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/CurryChicken.jpg" alt="Curry Chicken" />
@@ -2647,9 +3105,9 @@
             onclick="openModal('shrimpMixedVegetablesAds')"
           >
             <div class="menu-item-details">
-              <h3>Shrimp with Mixed Vegetables</h3>
+              <h3>Shrimp with Mixed Vegetables (All Day Special)</h3>
               <p>Shrimp stir-fried with a variety of vegetables.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2662,9 +3120,9 @@
 
           <div class="menu-item" onclick="openModal('friedScallopsAds')">
             <div class="menu-item-details">
-              <h3>Fried Scallops</h3>
+              <h3>Fried Scallops (All Day Special)</h3>
               <p>Golden fried scallops.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FriedScallops.jpg" alt="Fried Scallops" />
@@ -2674,9 +3132,9 @@
 
           <div class="menu-item" onclick="openModal('bourbonChickenAds')">
             <div class="menu-item-details">
-              <h3>Bourbon Chicken</h3>
+              <h3>Bourbon Chicken (All Day Special)</h3>
               <p>Chicken marinated in a flavorful bourbon sauce.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/BourbonChicken.jpg" alt="Bourbon Chicken" />
@@ -2686,9 +3144,9 @@
 
           <div class="menu-item" onclick="openModal('sweetSourChickenAds')">
             <div class="menu-item-details">
-              <h3>Sweet & Sour Chicken</h3>
+              <h3>Sweet & Sour Chicken (All Day Special)</h3>
               <p>Crispy chicken in sweet and sour sauce.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2701,9 +3159,9 @@
 
           <div class="menu-item" onclick="openModal('orangeChickenAds')">
             <div class="menu-item-details">
-              <h3>Orange Chicken</h3>
+              <h3>Orange Chicken (All Day Special)</h3>
               <p>Chicken in a tangy orange sauce.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/OrangeChicken.jpg" alt="Orange Chicken" />
@@ -2713,9 +3171,9 @@
 
           <div class="menu-item" onclick="openModal('shrimpBroccoliAds')">
             <div class="menu-item-details">
-              <h3>Shrimp with Broccoli</h3>
+              <h3>Shrimp with Broccoli (All Day Special)</h3>
               <p>Shrimp stir-fried with fresh broccoli.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2726,33 +3184,51 @@
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('hunanChickenOrShrimpAds')">
+          <div class="menu-item" onclick="openModal('hunanChickenAds')">
             <div class="menu-item-details">
-              <h3>Hunan Chicken or Shrimp</h3>
-              <p>Spicy Hunan-style chicken or shrimp with vegetables.</p>
-              <p>$8.25</p>
+              <h3>Hunan Chicken (All Day Special)</h3>
+              <p>Spicy Hunan-style chicken with vegetables.</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
-              <img
-                src="images/HunanChickenOrShrimp.jpg"
-                alt="Hunan Chicken or Shrimp"
-              />
+              <img src="images/HunanChicken.jpg" alt="Hunan Chicken" />
               <button class="add-to-cart">+</button>
             </div>
           </div>
 
-          <div
-            class="menu-item"
-            onclick="openModal('szechuanChickenOrShrimpAds')"
-          >
+          <div class="menu-item" onclick="openModal('hunanShrimpAds')">
             <div class="menu-item-details">
-              <h3>Szechuan Chicken or Shrimp</h3>
+              <h3>Hunan Shrimp (All Day Special)</h3>
+              <p>Spicy Hunan-style shrimp with vegetables.</p>
+              <p>8.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/HunanShrimp.jpg" alt="Hunan Shrimp" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('szechuanChickenAds')">
+            <div class="menu-item-details">
+              <h3>Szechuan Chicken (All Day Special)</h3>
               <p>Chicken or shrimp in a spicy Szechuan sauce.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SzechuanChicken.jpg" alt="Szechuan Chicken" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('szechuanShrimpAds')">
+            <div class="menu-item-details">
+              <h3>Szechuan Shrimp (All Day Special)</h3>
+              <p>Chicken or shrimp in a spicy Szechuan sauce.</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
-                src="images/SzechuanChickenOrShrimp.jpg"
+                src="images/SzechuanShrimp.jpg"
                 alt="Szechuan Chicken or Shrimp"
               />
               <button class="add-to-cart">+</button>
@@ -2761,9 +3237,9 @@
 
           <div class="menu-item" onclick="openModal('chickenCashewNutsAds')">
             <div class="menu-item-details">
-              <h3>Chicken with Cashew Nuts</h3>
+              <h3>Chicken with Cashew Nuts (All Day Special)</h3>
               <p>Chicken stir-fried with cashew nuts and vegetables.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2774,26 +3250,11 @@
             </div>
           </div>
 
-          <div class="menu-item" onclick="openModal('honeyWingsFriesAds')">
-            <div class="menu-item-details">
-              <h3>Honey Wings with Fries</h3>
-              <p>Sweet honey-glazed wings served with fries.</p>
-              <p>$8.25</p>
-            </div>
-            <div class="menu-item-image">
-              <img
-                src="images/HoneyWingsFries.jpg"
-                alt="Honey Wings with Fries"
-              />
-              <button class="add-to-cart">+</button>
-            </div>
-          </div>
-
           <div class="menu-item" onclick="openModal('chickenEggFooYoungAds')">
             <div class="menu-item-details">
-              <h3>Chicken Egg Foo Young</h3>
+              <h3>Chicken Egg Foo Young (All Day Special)</h3>
               <p>Chinese omelet with chicken and vegetables.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2806,9 +3267,9 @@
 
           <div class="menu-item" onclick="openModal('shrimpEggFooYoungAds')">
             <div class="menu-item-details">
-              <h3>Shrimp Egg Foo Young</h3>
+              <h3>Shrimp Egg Foo Young (All Day Special)</h3>
               <p>Chinese omelet with shrimp and vegetables.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img
@@ -2821,9 +3282,9 @@
 
           <div class="menu-item" onclick="openModal('chickenChowMeinAds')">
             <div class="menu-item-details">
-              <h3>Chicken Chow Mein</h3>
+              <h3>Chicken Chow Mein (All Day Special)</h3>
               <p>Stir-fried chicken with noodles and vegetables.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/ChickenChowMein.jpg" alt="Chicken Chow Mein" />
@@ -2833,9 +3294,9 @@
 
           <div class="menu-item" onclick="openModal('shrimpChowMeinAds')">
             <div class="menu-item-details">
-              <h3>Shrimp Chow Mein</h3>
+              <h3>Shrimp Chow Mein (All Day Special)</h3>
               <p>Stir-fried shrimp with noodles and vegetables.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/ShrimpChowMein.jpg" alt="Shrimp Chow Mein" />
@@ -2845,9 +3306,9 @@
 
           <div class="menu-item" onclick="openModal('friedCrabSticksAds')">
             <div class="menu-item-details">
-              <h3>Fried Crab Sticks</h3>
+              <h3>Fried Crab Sticks (All Day Special)</h3>
               <p>Golden fried crab sticks.</p>
-              <p>$8.25</p>
+              <p>8.25</p>
             </div>
             <div class="menu-item-image">
               <img src="images/FriedCrabSticks.jpg" alt="Fried Crab Sticks" />
@@ -2867,32 +3328,35 @@
         <!-- Options Container for Dynamic Options -->
         <div id="options-container"></div>
 
-        <p>Total Price: $<span id="total-price">0.00</span></p>
+        <p>Total Price: <span id="total-price">0.00</span></p>
         <button onclick="addToCart()">Add to Cart</button>
       </div>
     </div>
 
     <!-- Cart Button at Bottom -->
-    <aside class="cart" onclick="toggleCartDetails()">
+    <!-- Cart Button (Initially Hidden) -->
+    <aside
+      id="cart"
+      class="cart"
+      style="display: none"
+      onclick="toggleCartDetails()"
+    >
       <span id="cart-count"
         >Cart: <span id="cart-count-number">0 items</span></span
       >
     </aside>
 
-    <!-- Full-Screen Cart Details Overlay (Hidden by default, shown on click) -->
-    <div id="cart-details" class="cart-details">
+    <div id="cart-details" class="cart-details" style="display: none">
       <button class="cart-close-btn" onclick="toggleCartDetails()">
         Close Cart
       </button>
       <div class="cart-content">
         <h2>Cart Details</h2>
-        <ul id="cart-items">
-          <!-- Items will be dynamically added here -->
-        </ul>
+        <ul id="cart-items"></ul>
         <div class="cart-summary">
-          <p id="subtotal">Subtotal: $0.00</p>
-          <p id="tax">Tax: $0.00</p>
-          <p id="total">Total: $0.00</p>
+          <p id="subtotal">Subtotal: 0.00</p>
+          <p id="tax">Tax: 0.00</p>
+          <p id="total">Total: 0.00</p>
         </div>
       </div>
     </div>
