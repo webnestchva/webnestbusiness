@@ -12,7 +12,7 @@ const itemOptions = {
       { label: "Single", price: 1.80 }
     ]
   },
-  shrimpRoll: {
+  shrimpEggRoll: {
     name: "Shrimp Roll",
     options: [
       { label: "Single", price: 1.90 }
@@ -94,220 +94,495 @@ const itemOptions = {
     ]
     
   },
-  // Fried Rice
-  vegetablesFriedRice: {
-    name: "Vegetables Fried Rice",
-    options: [
-      { label: "Pt", price: 5.00 },
-      { label: "Qt", price: 7.00 }
-    ]
-  },
-  roastPorkOrChickenFriedRice: {
-    name: "Roast Pork or Chicken Fried Rice",
-    options: [
-      { label: "Pt", price: 6.00 },
-      { label: "Qt", price: 8.50 }
-    ]
-  },
-  beefFriedRice: {
-    name: "Beef Fried Rice",
-    options: [
-      { label: "Pt", price: 6.75 },
-      { label: "Qt", price: 9.75 }
-    ]
-  },
-  shrimpFriedRice: {
-    name: "Shrimp Fried Rice",
-    options: [
-      { label: "Pt", price: 6.75 },
-      { label: "Qt", price: 9.75 }
-    ]
-  },
-  houseSpecialFriedRice: {
-    name: "House Special Fried Rice",
-    options: [
-      { label: "Pt", price: 6.99 },
-      { label: "Qt", price: 9.75 }
-    ]
-  },
-  crabMeatFriedRice: {
-    name: "Crab Meat Fried Rice",
-    options: [
-      { label: "Pt", price: 6.99 },
-      { label: "Qt", price: 9.75 }
-    ]
-  },
 
-  // Lo Mein (Soft Noodles)
-  vegetablesLoMein: {
-    name: "Vegetables Lo Mein",
-    options: [
-      { label: "Pt", price: 6.00 },
-      { label: "Qt", price: 7.95 }
-    ]
-  },
-  roastPorkOrChickenLoMein: {
-    name: "Roast Pork or Chicken Lo Mein",
-    options: [
-      { label: "Pt", price: 6.50 },
-      { label: "Qt", price: 8.95 }
-    ]
-  },
-  beefOrShrimpLoMein: {
-    name: "Beef or Shrimp Lo Mein",
-    options: [
-      { label: "Pt", price: 6.99 },
-      { label: "Qt", price: 9.75 }
-    ]
-  },
-  houseSpecialLoMein: {
-    name: "House Special Lo Mein",
+
+    // Soup (with Crispy Noodles)
+    hotAndSourSoup: {
+      name: "Hot and Sour Soup",
+      options: [
+        { label: "Pt", price: 3.99 },
+        { label: "Qt", price: 5.25 }
+      ]
+    },
+    wontonSoup: {
+      name: "Wonton Soup",
+      options: [
+        { label: "Pt", price: 2.95 },
+        { label: "Qt", price: 4.95 }
+      ]
+    },
+    eggDropSoup: {
+      name: "Egg Drop Soup",
+      options: [
+        { label: "Pt", price: 2.95 },
+        { label: "Qt", price: 4.95 }
+      ]
+    },
+    eggDropWithWontonSoup: {
+      name: "Egg Drop with Wonton Soup",
+      options: [
+        { label: "Single", price: 4.95 }
+      ]
+    },
+    chickenNoodleSoup: {
+      name: "Chicken Noodle Soup",
+      options: [
+        { label: "Single", price: 4.95 }
+      ]
+    },
+    chickenRiceSoup: {
+      name: "Chicken Rice Soup",
+      options: [
+        { label: "Single", price: 4.95 }
+      ]
+    },
+    houseSpecialSoup: {
+      name: "House Special Soup",
+      options: [
+        { label: "Single", price: 6.75 }
+      ]
+    },
+    roastPorkYatGawMein: {
+      name: "Roast Pork Yat Gaw Mein",
+      options: [
+        { label: "Single", price: 4.95 }
+      ]
+    },
+    mixedVegetableSoup: {
+      name: "Mixed Vegetable Soup",
+      options: [
+        { label: "Single", price: 4.95 }
+      ]
+    },
+ // Fried Rice
+ vegetablesFriedRice: {
+  name: "Vegetables Fried Rice",
+  options: [
+    { label: "Pt", price: 5.00 },
+    { label: "Qt", price: 7.00 }
+  ]
+},
+roastPorkFriedRice: {
+  name: "Roast Pork Fried Rice",
+  options: [
+    { label: "Pt", price: 6.00 },
+    { label: "Qt", price: 8.50 }
+  ]
+},
+chickenFriedRice: {
+  name: "Chicken Fried Rice",
+  options: [
+    { label: "Pt", price: 6.00 },
+    { label: "Qt", price: 8.50 }
+  ]
+},
+beefFriedRice: {
+  name: "Beef Fried Rice",
+  options: [
+    { label: "Pt", price: 6.75 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+shrimpFriedRice: {
+  name: "Shrimp Fried Rice",
+  options: [
+    { label: "Pt", price: 6.75 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+houseSpecialFriedRice: {
+  name: "House Special Fried Rice",
+  options: [
+    { label: "Pt", price: 6.99 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+crabMeatFriedRice: {
+  name: "Crab Meat Fried Rice",
+  options: [
+    { label: "Pt", price: 6.99 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+
+// Lo Mein (Soft Noodles)
+vegetablesLoMein: {
+  name: "Vegetables Lo Mein",
+  options: [
+    { label: "Pt", price: 6.00 },
+    { label: "Qt", price: 7.95 }
+  ]
+},
+roastPorkLoMein: {
+  name: "Roast Pork Lo Mein",
+  options: [
+    { label: "Pt", price: 6.50 },
+    { label: "Qt", price: 8.95 }
+  ]
+},
+chickenLoMein: {
+  name: "Chicken Lo Mein",
+  options: [
+    { label: "Pt", price: 6.50 },
+    { label: "Qt", price: 8.95 }
+  ]
+},
+beefLoMein: {
+  name: "Beef Lo Mein",
+  options: [
+    { label: "Pt", price: 6.99 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+shrimpLoMein: {
+  name: "Shrimp Lo Mein",
+  options: [
+    { label: "Pt", price: 6.99 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+houseSpecialLoMein: {
+  name: "House Special Lo Mein",
+  options: [
+    { label: "Pt", price: 7.25 },
+    { label: "Qt", price: 9.95 }
+  ]
+},
+// Chow Mei Fun
+// Roast Pork Chow Mei Fun
+roastPorkChowMeiFun: {
+  name: "Roast Pork Chow Mei Fun",
+  options: [{ label: "Order", price: 9.75 }]
+},
+
+// Chicken Chow Mei Fun
+chickenChowMeiFun: {
+  name: "Chicken Chow Mei Fun",
+  options: [{ label: "Order", price: 9.75 }]
+},
+
+// Beef Chow Mei Fun
+beefChowMeiFun: {
+  name: "Beef Chow Mei Fun",
+  options: [{ label: "Order", price: 10.25 }]
+},
+
+// Shrimp Chow Mei Fun
+shrimpChowMeiFun: {
+  name: "Shrimp Chow Mei Fun",
+  options: [{ label: "Order", price: 10.25 }]
+},
+
+// House Special Chow Mei Fun
+houseSpecialChowMeiFun: {
+  name: "House Special Chow Mei Fun",
+  options: [{ label: "Order", price: 10.25 }]
+},
+
+// Singapore Chow Mei Fun
+singaporeChowMeiFun: {
+  name: "Singapore Chow Mei Fun",
+  options: [{ label: "Order", price: 10.25 }]
+},
+
+  // Chicken Section
+  mooGooGaiPan: {
+    name: "Moo Goo Gai Pan",
     options: [
       { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 9.95 }
+      { label: "Qt", price: 12.50 }
     ]
   },
-
-  // Soup (with Crispy Noodles)
-  hotAndSourSoup: {
-    name: "Hot and Sour Soup",
-    options: [
-      { label: "Pt", price: 3.99 },
-      { label: "Qt", price: 5.25 }
-    ]
-  },
-  wontonSoup: {
-    name: "Wonton Soup",
-    options: [
-      { label: "Pt", price: 2.95 },
-      { label: "Qt", price: 4.95 }
-    ]
-  },
-  eggDropSoup: {
-    name: "Egg Drop Soup",
-    options: [
-      { label: "Pt", price: 2.95 },
-      { label: "Qt", price: 4.95 }
-    ]
-  },
-  eggDropWithWontonSoup: {
-    name: "Egg Drop with Wonton Soup",
-    options: [
-      { label: "Single", price: 4.95 }
-    ]
-  },
-  chickenNoodleOrRiceSoup: {
-    name: "Chicken Noodle or Rice Soup",
-    options: [
-      { label: "Single", price: 4.95 }
-    ]
-  },
-  houseSpecialSoup: {
-    name: "House Special Soup",
-    options: [
-      { label: "Single", price: 6.75 }
-    ]
-  },
-  roastPorkYatGawMein: {
-    name: "Roast Pork Yat Gaw Mein",
-    options: [
-      { label: "Single", price: 4.95 }
-    ]
-  },
-  mixedVegetableSoup: {
-    name: "Mixed Vegetable Soup",
-    options: [
-      { label: "Single", price: 4.95 }
-    ]
-  },
-
-  // Chow Mein (with Rice and Crispy Noodles)
-  vegetableChowMein: {
-    name: "Vegetable Chow Mein",
-    options: [
-      { label: "Pt", price: 6.00 },
-      { label: "Qt", price: 8.50 }
-    ]
-  },
-  chickenOrRoastPorkChowMein: {
-    name: "Chicken or Roast Pork Chow Mein",
-    options: [
-      { label: "Pt", price: 6.50 },
-      { label: "Qt", price: 10.50 }
-    ]
-  },
-  beefOrShrimpChowMein: {
-    name: "Beef or Shrimp Chow Mein",
+  
+  chickenWithCashewNuts: {
+    name: "Chicken with Cashew Nuts",
     options: [
       { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 10.99 }
+      { label: "Qt", price: 12.50 }
     ]
   },
-  houseSpecialChowMein: {
-    name: "House Special Chow Mein",
+  chickenWithBroccoli: {
+    name: "Chicken with Broccoli",
     options: [
-      { label: "Pt", price: 7.99 },
-      { label: "Qt", price: 10.99 }
+      { label: "Pt", price: 7.25 },
+      { label: "Qt", price: 12.50 }
     ]
   },
+  chickenWithOysterSauce: {
+    name: "Chicken with Oyster Sauce",
+    options: [
+      { label: "Pt", price: 7.25 },
+      { label: "Qt", price: 12.50 }
+    ]
+  },
+  chickenWithSnowPeas: {
+    name: "Chicken with Snow Peas",
+    options: [
+      { label: "Pt", price: 7.25 },
+      { label: "Qt", price: 12.50 }
+    ]
+  },
+  chickenWithBlackBeanSauce: {
+    name: "Chicken with Black Bean Sauce",
+    options: [
+      { label: "Pt", price: 7.25 },
+      { label: "Qt", price: 12.50 }
+    ]
+  },
+  kungPaoChicken: {
+    name: "Kung Pao Chicken",
+    options: [
+      { label: "Pt", price: 7.25 },
+      { label: "Qt", price: 12.50 }
+    ]
+  },
+  curryChickenWithOnion: {
+    name: "Curry Chicken with Onion",
+    options: [
+      { label: "Pt", price: 7.25 },
+      { label: "Qt", price: 12.50 }
+    ]
+  },
+  chickenWithGarlicSauce: {
+    name: "Chicken with Garlic Sauce ()",
+    options: [
+      { label: "Pt", price: 7.25 },
+      { label: "Qt", price: 12.50 }
+    ]
+  },
+    // Pork (with White Rice)
+    roastPorkWithMixedVegetables: {
+      name: "Roast Pork with Mixed Vegetables",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+    roastPorkWithMushroom: {
+      name: "Roast Pork with Mushroom",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+    roastPorkWithSnowPeas: {
+      name: "Roast Pork with Snow Peas",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+    roastPorkWithPepperAndTomato: {
+      name: "Roast Pork with Pepper & Tomato",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+    roastPorkWithBeanCurd: {
+      name: "Roast Pork with Bean Curd",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+    roastPorkWithCashewNuts: {
+      name: "Roast Pork with Cashew Nuts",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+    roastPorkWithBroccoli: {
+      name: "Roast Pork with Broccoli",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+    porkWithScallions: {
+      name: "Pork with Scallions",
+      options: [
+        { label: "Pt", price: 7.25 },
+        { label: "Qt", price: 12.50 }
+      ]
+    },
+  
+    // Beef (with White Rice)
+    pepperSteakWithOnions: {
+      name: "Pepper Steak with Onions",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    beefWithMixedVegetables: {
+      name: "Beef with Mixed Vegetables",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    beefWithSnowPeas: {
+      name: "Beef with Snow Peas",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    beefWithBroccoli: {
+      name: "Beef with Broccoli",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    curryBeefWithOnion: {
+      name: "Curry Beef with Onion",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    mongolianBeef: {
+      name: "Mongolian Beef",
+      options: [
+        { label: "Single", price: 14.95 }
+      ]
+    },
+    // Seafood (with White Rice)
+    shrimpWithLobsterSauce: {
+      name: "Shrimp with Lobster Sauce",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithMushroom: {
+      name: "Shrimp with Mushroom",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithMixedVegetables: {
+      name: "Shrimp with Mixed Vegetables",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithCashewNuts: {
+      name: "Shrimp with Cashew Nuts",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithBroccoli: {
+      name: "Shrimp with Broccoli",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithSnowPeas: {
+      name: "Shrimp with Snow Peas",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithBlackBeanSauce: {
+      name: "Shrimp with Black Bean Sauce",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithChiliSauce: {
+      name: "Shrimp with Chili Sauce",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    kungPaoShrimp: {
+      name: "Kung Pao Shrimp",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    shrimpWithGarlicSauce: {
+      name: "Shrimp with Garlic Sauce",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    curryShrimpWithOnion: {
+      name: "Curry Shrimp with Onion",
+      options: [
+        { label: "Pt", price: 7.49 },
+        { label: "Qt", price: 12.99 }
+      ]
+    },
+    // Vegetables (with White Rice)
+    sauteedBroccoliWithGarlicSauce: {
+      name: "Sauteed Broccoli with Garlic Sauce",
+      options: [
+        { label: "Single", price: 8.99 }
+      ]
+    },
+    mixedVegetables: {
+      name: "Mixed Vegetables",
+      options: [
+        { label: "Single", price: 8.99 }
+      ]
+    },
+    beanCurdSzechuanStyle: {
+      name: "Bean Curd Szechuan Style",
+      options: [
+        { label: "Single", price: 9.45 }
+      ]
+    },
+    beanCurdHomeStyle: {
+      name: "Bean Curd Home Style",
+      options: [
+        { label: "Single", price: 9.45 }
+      ]
+    },
+  
+  
+  
+    // Sweet and Sour (with White Rice)
+    sweetAndSourChicken: {
+      name: "Sweet and Sour Chicken",
+      options: [
+        { label: "Order", price: 11.25 }
+      ]
+    },
+    sweetAndSourPork: {
+      name: "Sweet and Sour Pork",
+      options: [
+        { label: "Order", price: 11.25 }
+      ]
+    },
+    sweetAndSourShrimp: {
+      name: "Sweet and Sour Shrimp",
+      options: [
+        { label: "Order", price: 12.50 }
+      ]
+    },
+    sweetAndSourTriple: {
+      name: "Sweet and Sour Triple",
+      options: [
+        { label: "Order", price: 13.50 }
+      ]
+    },
 
-  // Chop Suey (with White Rice)
-  vegetableChopSuey: {
-    name: "Vegetable Chop Suey",
-    options: [
-      { label: "Pt", price: 6.50 },
-      { label: "Qt", price: 7.50 }
-    ]
-  },
-  roastPorkOrChickenChopSuey: {
-    name: "Roast Pork or Chicken Chop Suey",
-    options: [
-      { label: "Pt", price: 6.99 },
-      { label: "Qt", price: 9.75 }
-    ]
-  },
-  beefOrShrimpChopSuey: {
-    name: "Beef or Shrimp Chop Suey",
-    options: [
-      { label: "Pt", price: 7.99 },
-      { label: "Qt", price: 10.50 }
-    ]
-  },
-  houseSpecialChopSuey: {
-    name: "House Special Chop Suey",
-    options: [
-      { label: "Pt", price: 8.25 },
-      { label: "Qt", price: 10.50 }
-    ]
-  },
-
-  // Chow Mei Fun
-  roastPorkOrChickenChowMeiFun: {
-    name: "Roast Pork or Chicken Chow Mei Fun",
-    options: [
-      { label: "Order", price: 9.75 }
-    ]
-  },
-  beefOrShrimpChowMeiFun: {
-    name: "Beef or Shrimp Chow Mei Fun",
-    options: [
-      { label: "Order", price: 10.25 }
-    ]
-  },
-  houseSpecialChowMeiFun: {
-    name: "House Special Chow Mei Fun",
-    options: [
-      { label: "Order", price: 10.25 }
-    ]
-  },
-  singaporeChowMeiFun: {
-    name: "Singapore Chow Mei Fun",
-    options: [
-      { label: "Order", price: 10.25 }
-    ]
-  },
-
-  // Egg Foo Young (with White Rice)
+      // Egg Foo Young (with White Rice)
   chickenEggFooYoung: {
     name: "Chicken Egg Foo Young",
     options: [
@@ -332,8 +607,8 @@ const itemOptions = {
       { label: "Order", price: 9.25 }
     ]
   },
-  lobsterEggFooYoung: {
-    name: "Lobster Egg Foo Young",
+  crabMeatEggFooYoung: {
+    name: "Crab Meat Egg Foo Young",
     options: [
       { label: "Order", price: 9.75 }
     ]
@@ -344,231 +619,112 @@ const itemOptions = {
       { label: "Order", price: 9.75 }
     ]
   },
-  // Pork (with White Rice)
-  roastPorkWithMixedVegetables: {
-    name: "Roast Pork with Mixed Vegetables",
+
+    // Chop Suey (with White Rice)
+    vegetableChopSuey: {
+      name: "Vegetable Chop Suey",
+      options: [
+        { label: "Pt", price: 6.50 },
+        { label: "Qt", price: 7.50 }
+      ]
+    },
+// Roast Pork Chop Suey
+roastPorkChopSuey: {
+  name: "Roast Pork Chop Suey",
+  options: [
+    { label: "Pt", price: 6.99 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+
+// Chicken Chop Suey
+chickenChopSuey: {
+  name: "Chicken Chop Suey",
+  options: [
+    { label: "Pt", price: 6.99 },
+    { label: "Qt", price: 9.75 }
+  ]
+},
+
+// Beef Chop Suey
+beefChopSuey: {
+  name: "Beef Chop Suey",
+  options: [
+    { label: "Pt", price: 7.99 },
+    { label: "Qt", price: 10.50 }
+  ]
+},
+
+// Shrimp Chop Suey
+shrimpChopSuey: {
+  name: "Shrimp Chop Suey",
+  options: [
+    { label: "Pt", price: 7.99 },
+    { label: "Qt", price: 10.50 }
+  ]
+},
+    houseSpecialChopSuey: {
+      name: "House Special Chop Suey",
+      options: [
+        { label: "Pt", price: 8.25 },
+        { label: "Qt", price: 10.50 }
+      ]
+    },
+ 
+
+
+
+  // Chow Mein (with Rice and Crispy Noodles)
+  vegetableChowMein: {
+    name: "Vegetable Chow Mein",
     options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
+      { label: "Pt", price: 6.00 },
+      { label: "Qt", price: 8.50 }
     ]
   },
-  roastPorkWithMushroom: {
-    name: "Roast Pork with Mushroom",
+// Chicken Chow Mein
+chickenChowMein: {
+  name: "Chicken Chow Mein",
+  options: [
+    { label: "Pt", price: 6.50 },
+    { label: "Qt", price: 10.50 }
+  ]
+},
+
+// Roast Pork Chow Mein
+roastPorkChowMein: {
+  name: "Roast Pork Chow Mein",
+  options: [
+    { label: "Pt", price: 6.50 },
+    { label: "Qt", price: 10.50 }
+  ]
+},
+
+// Beef Chow Mein
+beefChowMein: {
+  name: "Beef Chow Mein",
+  options: [
+    { label: "Pt", price: 7.25 },
+    { label: "Qt", price: 10.99 }
+  ]
+},
+
+// Shrimp Chow Mein
+shrimpChowMein: {
+  name: "Shrimp Chow Mein",
+  options: [
+    { label: "Pt", price: 7.25 },
+    { label: "Qt", price: 10.99 }
+  ]
+},
+  houseSpecialChowMein: {
+    name: "House Special Chow Mein",
     options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
-    ]
-  },
-  roastPorkWithSnowPeas: {
-    name: "Roast Pork with Snow Peas",
-    options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
-    ]
-  },
-  roastPorkWithPepperAndTomato: {
-    name: "Roast Pork with Pepper & Tomato",
-    options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
-    ]
-  },
-  roastPorkWithBeanCurd: {
-    name: "Roast Pork with Bean Curd",
-    options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
-    ]
-  },
-  roastPorkWithCashewNuts: {
-    name: "Roast Pork with Cashew Nuts",
-    options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
-    ]
-  },
-  roastPorkWithBroccoli: {
-    name: "Roast Pork with Broccoli",
-    options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
-    ]
-  },
-  porkWithScallions: {
-    name: "Pork with Scallions",
-    options: [
-      { label: "Pt", price: 7.25 },
-      { label: "Qt", price: 12.50 }
+      { label: "Pt", price: 7.99 },
+      { label: "Qt", price: 10.99 }
     ]
   },
 
-  // Beef (with White Rice)
-  pepperSteakWithOnions: {
-    name: "Pepper Steak with Onions",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  beefWithMixedVegetables: {
-    name: "Beef with Mixed Vegetables",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  beefWithSnowPeas: {
-    name: "Beef with Snow Peas",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  beefWithBroccoli: {
-    name: "Beef with Broccoli",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  curryBeefWithOnion: {
-    name: "Curry Beef with Onion",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  mongolianBeef: {
-    name: "Mongolian Beef",
-    options: [
-      { label: "Single", price: 14.95 }
-    ]
-  },
-
-  // Vegetables (with White Rice)
-  sauteedBroccoliWithGarlicSauce: {
-    name: "Sauteed Broccoli with Garlic Sauce",
-    options: [
-      { label: "Single", price: 8.99 }
-    ]
-  },
-  mixedVegetables: {
-    name: "Mixed Vegetables",
-    options: [
-      { label: "Single", price: 8.99 }
-    ]
-  },
-  beanCurdSzechuanStyle: {
-    name: "Bean Curd Szechuan Style",
-    options: [
-      { label: "Single", price: 9.45 }
-    ]
-  },
-  beanCurdHomeStyle: {
-    name: "Bean Curd Home Style",
-    options: [
-      { label: "Single", price: 9.45 }
-    ]
-  },
-
-  // Seafood (with White Rice)
-  shrimpWithLobsterSauce: {
-    name: "Shrimp with Lobster Sauce",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithMushroom: {
-    name: "Shrimp with Mushroom",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithMixedVegetables: {
-    name: "Shrimp with Mixed Vegetables",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithCashewNuts: {
-    name: "Shrimp with Cashew Nuts",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithBroccoli: {
-    name: "Shrimp with Broccoli",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithSnowPeas: {
-    name: "Shrimp with Snow Peas",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithBlackBeanSauce: {
-    name: "Shrimp with Black Bean Sauce",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithChiliSauce: {
-    name: "Shrimp with Chili Sauce",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  kungPaoShrimp: {
-    name: "Kung Pao Shrimp",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  shrimpWithGarlicSauce: {
-    name: "Shrimp with Garlic Sauce",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-  curryShrimpWithOnion: {
-    name: "Curry Shrimp with Onion",
-    options: [
-      { label: "Pt", price: 7.49 },
-      { label: "Qt", price: 12.99 }
-    ]
-  },
-
-  // Sweet and Sour (with White Rice)
-  sweetAndSourPorkOrChicken: {
-    name: "Sweet and Sour Pork or Chicken",
-    options: [
-      { label: "Order", price: 11.25 }
-    ]
-  },
-  sweetAndSourShrimp: {
-    name: "Sweet and Sour Shrimp",
-    options: [
-      { label: "Order", price: 12.50 }
-    ]
-  },
-  sweetAndSourTriple: {
-    name: "Sweet and Sour Triple",
-    options: [
-      { label: "Order", price: 13.50 }
-    ]
-  },
 // Moo Shu (with 4 Pancakes)
 mooShuChicken: {
   name: "Moo Shu Chicken",
@@ -582,8 +738,17 @@ mooShuPork: {
     { label: "Order", price: 11.99 }
   ]
 },
-mooShuShrimpOrBeef: {
-  name: "Moo Shu Shrimp or Beef",
+// Moo Shu Shrimp
+mooShuShrimp: {
+  name: "Moo Shu Shrimp",
+  options: [
+    { label: "Order", price: 12.99 }
+  ]
+},
+
+// Moo Shu Beef
+mooShuBeef: {
+  name: "Moo Shu Beef",
   options: [
     { label: "Order", price: 12.99 }
   ]
@@ -785,7 +950,70 @@ bourbonChicken: {
     { label: "Single", price: 12.50 }
   ]
 },
+// Fried Chicken Wings (4)
+friedChickenWings: {
+  name: "Fried Chicken Wings (4)",
+  options: [
+    { label: "Plain", price: 7.25 },
+    { label: "w. Fried Rice or French Fries", price: 8.25 },
+    { label: "w. Pork Fried Rice", price: 8.99 },
+    { label: "w. Chicken Fried Rice", price: 8.99 },
+    { label: "w. Shrimp Fried Rice", price: 9.25 },
+    { label: "w. Beef Fried Rice", price: 9.25 }
+  ]
+},
 
+// Honey Wings (4)
+honeyWings: {
+  name: "Honey Wings (4)",
+  options: [
+    { label: "Plain", price: 7.50 },
+    { label: "w. Fried Rice or French Fries", price: 8.99 },
+    { label: "w. Pork Fried Rice", price: 9.49 },
+    { label: "w. Chicken Fried Rice", price: 9.49 },
+    { label: "w. Shrimp Fried Rice", price: 9.99 },
+    { label: "w. Beef Fried Rice", price: 9.99 }
+  ]
+},
+
+// Fried Chicken Wings with Garlic Sauce
+friedChickenWingsGarlic: {
+  name: "Fried Chicken Wings with Garlic Sauce",
+  options: [
+    { label: "Plain", price: 7.50 },
+    { label: "w. Fried Rice or French Fries", price: 8.99 },
+    { label: "w. Pork Fried Rice", price: 9.49 },
+    { label: "w. Chicken Fried Rice", price: 9.49 },
+    { label: "w. Shrimp Fried Rice", price: 9.99 },
+    { label: "w. Beef Fried Rice", price: 9.99 }
+  ]
+},
+
+// Fried Crab Sticks (5)
+friedCrabSticks: {
+  name: "Fried Crab Sticks (5)",
+  options: [
+    { label: "Plain", price: 6.50 },
+    { label: "w. Fried Rice or French Fries", price: 7.49 },
+    { label: "w. Pork Fried Rice", price: 7.99 },
+    { label: "w. Chicken Fried Rice", price: 7.99 },
+    { label: "w. Shrimp Fried Rice", price: 8.49 },
+    { label: "w. Beef Fried Rice", price: 8.49 }
+  ]
+},
+
+// Fried Scallops (10)
+friedScallops: {
+  name: "Fried Scallops (10)",
+  options: [
+    { label: "Plain", price: 6.50 },
+    { label: "w. Fried Rice or French Fries", price: 7.49 },
+    { label: "w. Pork Fried Rice", price: 7.99 },
+    { label: "w. Chicken Fried Rice", price: 7.99 },
+    { label: "w. Shrimp Fried Rice", price: 8.49 },
+    { label: "w. Beef Fried Rice", price: 8.49 }
+  ]
+},
 // Combination Plates (Served with Pork Fried Rice & Egg Roll)
 chickenChowMeinCombo: {
   name: "Chicken Chow Mein",
@@ -823,12 +1051,21 @@ roastPorkLoMeinCombo: {
     { label: "Combo", price: 9.95 }
   ]
 },
-sweetAndSourPorkOrChickenCombo: {
-  name: "Sweet & Sour Pork or Chicken",
-  options: [
-    { label: "Combo", price: 9.95 }
-  ]
-},
+  // Sweet & Sour Pork Combo
+  sweetAndSourPorkCombo: {
+    name: "Sweet & Sour Pork Combo",
+    options: [
+      { label: "Combo", price: 9.95 }
+    ]
+  },
+
+  // Sweet & Sour Chicken Combo
+  sweetAndSourChickenCombo: {
+    name: "Sweet & Sour Chicken Combo",
+    options: [
+      { label: "Combo", price: 9.95 }
+    ]
+  },
 bbqSpareRibsCombo: {
   name: "B-B-Q Spare Ribs",
   options: [
@@ -883,14 +1120,49 @@ shrimpWithBroccoliCombo: {
     { label: "Combo", price: 9.95 }
   ]
 },
-szechuanChickenBeefShrimpCombo: {
-  name: "Szechuan Chicken or Beef or Shrimp",
+// Szechuan Chicken Combo
+szechuanChickenCombo: {
+  name: "Szechuan Chicken Combo",
   options: [
     { label: "Combo", price: 9.95 }
   ]
 },
-chickenBeefShrimpWithGarlicSauceCombo: {
-  name: "Chicken or Beef or Shrimp with Garlic Sauce",
+
+// Szechuan Beef Combo
+szechuanBeefCombo: {
+  name: "Szechuan Beef Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Szechuan Shrimp Combo
+szechuanShrimpCombo: {
+  name: "Szechuan Shrimp Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Chicken with Garlic Sauce Combo
+chickenWithGarlicSauceCombo: {
+  name: "Chicken with Garlic Sauce Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Beef with Garlic Sauce Combo
+beefWithGarlicSauceCombo: {
+  name: "Beef with Garlic Sauce Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Shrimp with Garlic Sauce Combo
+shrimpWithGarlicSauceCombo: {
+  name: "Shrimp with Garlic Sauce Combo",
   options: [
     { label: "Combo", price: 9.95 }
   ]
@@ -931,20 +1203,65 @@ teriyakiChickenCombo: {
     { label: "Combo", price: 9.95 }
   ]
 },
-curryChickenBeefShrimpWithOnionsCombo: {
-  name: "Curry Chicken or Beef or Shrimp with Onions",
+// Curry Chicken with Onions Combo
+curryChickenWithOnionsCombo: {
+  name: "Curry Chicken with Onions Combo",
   options: [
     { label: "Combo", price: 9.95 }
   ]
 },
-roastPorkBeefShrimpWithOnionCombo: {
-  name: "Roast Pork or Beef or Shrimp with Onion",
+
+// Curry Beef with Onions Combo
+curryBeefWithOnionsCombo: {
+  name: "Curry Beef with Onions Combo",
   options: [
     { label: "Combo", price: 9.95 }
   ]
 },
-kungPaoChickenOrShrimpCombo: {
-  name: "Kung Pao Chicken or Shrimp",
+
+// Curry Shrimp with Onions Combo
+curryShrimpWithOnionsCombo: {
+  name: "Curry Shrimp with Onions Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Roast Pork with Onion Combo
+roastPorkWithOnionCombo: {
+  name: "Roast Pork with Onion Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Beef with Onion Combo
+beefWithOnionCombo: {
+  name: "Beef with Onion Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Shrimp with Onion Combo
+shrimpWithOnionCombo: {
+  name: "Shrimp with Onion Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Kung Pao Chicken Combo
+kungPaoChickenCombo: {
+  name: "Kung Pao Chicken Combo",
+  options: [
+    { label: "Combo", price: 9.95 }
+  ]
+},
+
+// Kung Pao Shrimp Combo
+kungPaoShrimpCombo: {
+  name: "Kung Pao Shrimp Combo",
   options: [
     { label: "Combo", price: 9.95 }
   ]
@@ -955,270 +1272,189 @@ bourbonChickenCombo: {
     { label: "Combo", price: 9.95 }
   ]
 },
-// Chop Suey Section
-vegetablesChopSuey: {
-  name: "Vegetables Chop Suey",
-  options: [
-    { label: "Pt", price: 6.50 },
-    { label: "Qt", price: 7.50 }
-  ]
-},
-roastPorkOrChickenChopSuey: {
-  name: "Roast Pork or Chicken Chop Suey",
-  options: [
-    { label: "Pt", price: 6.99 },
-    { label: "Qt", price: 9.75 }
-  ]
-},
-beefOrShrimpChopSuey: {
-  name: "Beef or Shrimp Chop Suey",
-  options: [
-    { label: "Pt", price: 7.99 },
-    { label: "Qt", price: 10.50 }
-  ]
-},
-houseSpecialChopSuey: {
-  name: "House Special Chop Suey",
-  options: [
-    { label: "Pt", price: 8.25 },
-    { label: "Qt", price: 10.50 }
-  ]
-},
 
-// Chow Mei Fun Section
-roastPorkOrChickenChowMeiFun: {
-  name: "Roast Pork or Chicken Chow Mei Fun",
-  options: [{ label: "Order", price: 9.75 }]
-},
-beefOrShrimpChowMeiFun: {
-  name: "Beef or Shrimp Chow Mei Fun",
-  options: [{ label: "Order", price: 10.25 }]
-},
-houseSpecialChowMeiFun: {
-  name: "House Special Chow Mei Fun",
-  options: [{ label: "Order", price: 10.25 }]
-},
-singaporeChowMeiFun: {
-  name: "Singapore Chow Mei Fun",
-  options: [{ label: "Order", price: 10.25 }]
-},
 
-// Chicken Section
-mooGooGaiPan: {
-  name: "Moo Goo Gai Pan",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-chickenWithCashewNuts: {
-  name: "Chicken with Cashew Nuts",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-chickenWithBroccoli: {
-  name: "Chicken with Broccoli",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-chickenWithOysterSauce: {
-  name: "Chicken with Oyster Sauce",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-chickenWithSnowPeas: {
-  name: "Chicken with Snow Peas",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-chickenWithBlackBeanSauce: {
-  name: "Chicken with Black Bean Sauce",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-kungPaoChicken: {
-  name: "Kung Pao Chicken",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-curryChickenWithOnion: {
-  name: "Curry Chicken with Onion",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
-chickenWithGarlicSauce: {
-  name: "Chicken with Garlic Sauce",
-  options: [
-    { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 12.50 }
-  ]
-},
+
+
 friedShrimpAds: {
-  name: "Fried Shrimp",
+  name: "Fried Shrimp (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 generalTsosChickenAds: {
-  name: "General Tso's Chicken",
+  name: "General Tso's Chicken (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 sesameChickenAds: {
-  name: "Sesame Chicken",
+  name: "Sesame Chicken (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 bonelessSpareRibsAds: {
-  name: "Boneless Spare Ribs",
+  name: "Boneless Spare Ribs (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
-chickenWingsWithFriesAds: {
-  name: "Chicken Wings with Fries",
+
+// Beef with Mixed Vegetables (All Day Special)
+beefMixedVegAds: {
+  name: "Beef with Mixed Vegetables (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
-beefOrChickenMixedVegAds: {
-  name: "Beef or Chicken Mixed Vegetables",
+
+// Chicken with Mixed Vegetables (All Day Special)
+chickenMixedVegAds: {
+  name: "Chicken with Mixed Vegetables (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 teriyakiChickenOnStickAds: {
-  name: "Teriyaki Chicken on Stick",
+  name: "Teriyaki Chicken on Stick (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 houseSpecialLoMeinAds: {
-  name: "House Special Lo Mein",
+  name: "House Special Lo Mein (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
-beefOrChickenWithBroccoliAds: {
-  name: "Beef or Chicken with Broccoli",
-  options: [
-    { label: "Regular", price: 8.25 }
-  ]
-},
+  // Beef with Broccoli (All Day Special)
+  beefWithBroccoliAds: {
+    name: "Beef with Broccoli (All Day Special)",
+    options: [
+      { label: "Regular", price: 8.25 }
+    ]
+  },
+
+  // Chicken with Broccoli (All Day Special)
+  chickenWithBroccoliAds: {
+    name: "Chicken with Broccoli (All Day Special)",
+    options: [
+      { label: "Regular", price: 8.25 }
+    ]
+  },
 friedScallopsAds: {
-  name: "Fried Scallops",
+  name: "Fried Scallops (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 curryChickenAds: {
-  name: "Curry Chicken",
+  name: "Curry Chicken (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 shrimpWithMixedVegetablesAds: {
-  name: "Shrimp with Mixed Vegetables",
+  name: "Shrimp with Mixed Vegetables (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 friedCrabSticksAds: {
-  name: "Fried Crab Sticks",
+  name: "Fried Crab Sticks (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 pepperSteakWithOnionsAds: {
-  name: "Pepper Steak with Onions",
+  name: "Pepper Steak with Onions (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 bourbonChickenAds: {
-  name: "Bourbon Chicken",
+  name: "Bourbon Chicken (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 sweetSourChickenAds: {
-  name: "Sweet & Sour Chicken",
+  name: "Sweet & Sour Chicken (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 orangeChickenAds: {
-  name: "Orange Chicken",
+  name: "Orange Chicken (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 shrimpWithBroccoliAds: {
-  name: "Shrimp with Broccoli",
+  name: "Shrimp with Broccoli (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
-hunanChickenOrShrimpAds: {
-  name: "Hunan Chicken or Shrimp",
+hunanChickenAds: {
+  name: "Hunan Chicken (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
-szechuanChickenOrShrimpAds: {
-  name: "Szechuan Chicken or Shrimp",
+
+// Hunan Shrimp (All Day Special)
+hunanShrimpAds: {
+  name: "Hunan Shrimp (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
+
+// Szechuan Chicken (All Day Special)
+szechuanChickenAds: {
+  name: "Szechuan Chicken (All Day Special)",
+  options: [
+    { label: "Regular", price: 8.25 }
+  ]
+},
+
+// Szechuan Shrimp (All Day Special)
+szechuanShrimpAds: {
+  name: "Szechuan Shrimp (All Day Special)",
+  options: [
+    { label: "Regular", price: 8.25 }
+  ]
+}
+,
 chickenWithCashewNutsAds: {
-  name: "Chicken with Cashew Nuts",
+  name: "Chicken with Cashew Nuts (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
-honeyWingsWithFriesAds: {
-  name: "Honey Wings with Fries",
-  options: [
-    { label: "Regular", price: 8.25 }
-  ]
-},
+
 chickenEggFooYoungAds: {
-  name: "Chicken Egg Foo Young",
+  name: "Chicken Egg Foo Young (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 shrimpEggFooYoungAds: {
-  name: "Shrimp Egg Foo Young",
+  name: "Shrimp Egg Foo Young (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 chickenChowMeinAds: {
-  name: "Chicken Chow Mein",
+  name: "Chicken Chow Mein (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
 },
 shrimpChowMeinAds: {
-  name: "Shrimp Chow Mein",
+  name: "Shrimp Chow Mein (All Day Special)",
   options: [
     { label: "Regular", price: 8.25 }
   ]
@@ -1227,11 +1463,12 @@ shrimpChowMeinAds: {
 };
 
 
-
 let selectedItem = null; // Track the current item
 
 // Function to open the modal with item details
 function openModal(itemId) {
+  // The openModal function you already have should work as expected
+  // Set selectedItem and display the modal with options and price
   selectedItem = itemOptions[itemId];
   document.getElementById('item-name').textContent = selectedItem.name;
 
@@ -1266,6 +1503,7 @@ function openModal(itemId) {
   document.getElementById('itemModal').style.display = 'block';
 }
 
+
 // Function to update total price based on selected option
 function updateTotalPrice(price) {
   document.getElementById('total-price').textContent = price.toFixed(2);
@@ -1298,6 +1536,11 @@ function addToCart() {
     // If it doesn't exist, add it as a new entry with quantity 1 and the selected option
     cart.push({ name: itemName, price: totalPrice, quantity: 1, option: selectedOption });
   }
+    // Show the cart if it's the first item being added
+    if (!cartVisible) {
+      document.getElementById("cart").style.display = "flex";
+      cartVisible = true; // Mark the cart as visible
+    }
 
   // Update the cart display
   updateCartDisplay();
@@ -1313,7 +1556,8 @@ function addToCart() {
 
 // Cart data
 let cart = [];
-const TAX_RATE = 0.07; // Example tax rate
+const TAX_RATE = 0.1; // Example tax rate
+let cartVisible = false; // Track cart visibility
 
 
 
@@ -1390,3 +1634,92 @@ window.onload = function() {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".menu-category");
+  const navLinks = document.querySelectorAll(".menu-categories ul li a");
+
+  function setActiveLink() {
+      let index = sections.length;
+
+      // Loop through each section to find the one in the viewport
+      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+      // Remove the "active" class from all links
+      navLinks.forEach((link) => link.classList.remove("active"));
+
+      // Add the "active" class to the current section's link
+      navLinks[index].classList.add("active");
+
+      // Scroll the active link into view if it's not fully visible
+      navLinks[index].scrollIntoView({
+          behavior: "smooth",
+          inline: "center", // Center the active link horizontally
+          block: "nearest", // Adjusts the vertical scroll minimally
+      });
+  }
+
+  // Run setActiveLink on page load and scroll
+  setActiveLink();
+  window.addEventListener("scroll", setActiveLink);
+});
+
+
+function openSearchOverlay() {
+  document.getElementById("search-overlay").style.display = "flex";
+  document.getElementById("search-input").focus(); // Focus on input when opening
+}
+
+function closeSearchOverlay() {
+  document.getElementById("search-overlay").style.display = "none";
+  document.getElementById("search-input").value = ""; // Clear search input
+  document.getElementById("search-results").innerHTML = ""; // Clear search results
+}
+
+
+
+
+
+function filterItems() {
+  const query = document.getElementById("search-input").value.toLowerCase();
+  const searchResults = document.getElementById("search-results");
+  searchResults.innerHTML = ""; // Clear previous results
+
+  if (!query) {
+    searchResults.style.display = "none"; // Hide results if there's no query
+    return;
+  }
+
+  // Show dropdown if there's a query
+  searchResults.style.display = "block";
+
+  // Loop through each item and find matches by name
+  Object.keys(itemOptions).forEach((itemId) => {
+    const item = itemOptions[itemId];
+    if (item.name.toLowerCase().includes(query)) {
+      // Create a search result list item with the item name
+      const listItem = document.createElement("li");
+      listItem.textContent = item.name;
+
+      // Set onclick to navigate to the item and open the modal
+      listItem.onclick = () => {
+        navigateToItem(itemId); // Scroll to the item section
+        openModal(itemId);      // Open the add-to-cart modal
+        closeSearchOverlay();    // Close the search overlay
+      };
+
+      searchResults.appendChild(listItem); // Add to search results
+    }
+  });
+}
+
+
+function navigateToItem(itemId) {
+  // Scroll to the item on the page
+  const targetItem = document.getElementById(itemId);
+  if (targetItem) {
+    targetItem.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }
+}
