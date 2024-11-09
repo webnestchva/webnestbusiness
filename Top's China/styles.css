@@ -9,6 +9,7 @@ body {
   font-family: 'Helvetica Neue', Arial, sans-serif; /* Elegant font choice */
   color: #333;
   line-height: 1.8;
+  background-color: white;
 }
 
 
@@ -98,104 +99,6 @@ body {
     border-radius: 5px;
   }
   
-  @media (max-width: 768px) {
-    /* Stack the main container vertically */
-    .container {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-    }
-    .content {
-      flex-direction: column;
-  } 
-
-
-  .cart {
-      position: static;
-      width: 100%;
-      margin-top: 20px;
-  }
-
-
-    /* Display menu categories as a horizontal list above items */
-    .menu-categories {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      overflow-x: auto; /* Enables horizontal scrolling */
-      white-space: nowrap; /* Prevents items from wrapping */
-      padding: 5px 0; /* Reduce padding to make it more compact */
-      background-color: #f8f8f8; /* Background to ensure visibility */
-      border-bottom: 1px solid #ddd;
-      height: 50px; /* Set a fixed height to reduce screen coverage */
-      width: 100%;
-  }
-    /* Style the categories as a horizontal list */
-    .menu-categories ul {
-      display: flex;
-      gap: 10px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-  }
-  .menu-categories ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 5px 15px;
-    white-space: nowrap; /* Keeps text on one line */
-    border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s;
-}
-.menu-categories ul li a.active {
-  background-color: #ff6347; /* Highlight color */
-  color: white;
-  font-weight: bold;
-}
-.menu-categories ul li a:hover {
-  background-color: #ddd;
-}
-
-    .menu-categories ul li {
-        margin: 5px;
-    }
-
-    /* Display each menu category section with two items per row */
-    .menu-category {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Two items per row */
-        gap: 15px;
-        width: 100%;
-        margin-bottom: 20px; /* Space between sections */
-    }
-
-
-    /* Style for individual menu items */
-    .menu-item {
-      display: flex;
-      flex-direction: row; /* Ensures image and text are side-by-side */
-      align-items: flex-start; /* Aligns items to the top */
-      padding: 15px;
-      margin-bottom: 15px;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      transition: transform 0.3s ease;
-  }
-
-    /* Image styling */
-    .menu-item img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
-}
-
-
 
 
 
@@ -235,15 +138,17 @@ body {
 
 
 .menu-item {
-    display: flex;
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    position: relative;
-  }
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+  position: relative;
+  align-items: flex-start;
+}
+
   
   /* Details on the Left */
   .menu-item-details {
@@ -271,15 +176,7 @@ body {
     font-size: 1rem;
     color: #333;
   }
-  
 
-.menu-item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    margin-right: 15px;
-    object-fit: cover;
-}
 
 .menu-item h3 {
     font-size: 1.2rem;
@@ -302,39 +199,61 @@ body {
     transform: scale(1.02);
 }
 
+  
+
+.menu-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 15px;
+    object-fit: cover;
+}
 /* Image on the Right */
 .menu-item-image {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-left: 15px;
-  }
+  flex-shrink: 0; /* Prevents the image container from shrinking */
+  width: 100px; /* Adjust width to fit your layout */
+  height: 100px; /* Ensure the height matches width for square images */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
   
-  .menu-item-image img {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the container without distortion */
+  border-radius: inherit; /* Matches the border-radius of the container */
+  display: block;
+}
+
+
 /* Add to Cart Button */
 /* Small Add to Cart Button */
 .add-to-cart {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
   background-color: #ff6347;
   color: white;
   border: none;
-  border-radius: 50%; /* Makes it circular */
-  width: 30px;
-  height: 30px;
-  font-size: 1.2rem;
+  border-radius: 50%; /* Ensures circular shape */
+  width: 25px; /* Width and height should be equal */
+  height: 25px;
+  font-size: 0.8rem;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 0; /* Remove padding to ensure no extra space */
+  line-height: 1; /* Centers text */
+  transition: background-color 0.3s;
+  overflow: hidden; /* Prevents any overflow within the button */
+  box-sizing: border-box; /* Ensures width and height calculation includes borders */
 }
+
+
 
   
   .add-to-cart:hover {
@@ -396,17 +315,7 @@ footer p {
   color: #ff6347;
 }
 
-button.add-to-cart {
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+
 
 button.add-to-cart:hover {
   background-color: #ff4500;
@@ -627,4 +536,158 @@ button.add-to-cart:hover {
 
 .search-results li:hover {
   background-color: #f4f4f4;
+}
+
+
+
+@media (max-width: 768px) {
+  /* Stack the main container vertically */
+  .container {
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      margin: 0; /* Removes any external margin */
+  }
+
+  /* Ensure the content section also takes full width */
+  .content {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .cart {
+      position: static;
+      width: 100%;
+      margin-top: 20px;
+  }
+
+  /* Display menu categories as a horizontal list above items */
+  .menu-categories {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      overflow-x: auto; /* Enables horizontal scrolling */
+      white-space: nowrap; /* Prevents items from wrapping */
+      padding: 5px 0; /* Reduce padding to make it more compact */
+      background-color: #f8f8f8; /* Background to ensure visibility */
+      border-bottom: 1px solid #ddd;
+      height: 50px; /* Set a fixed height to reduce screen coverage */
+      width: 100%;
+      margin: 0; /* Aligns width with container */
+  }
+
+  /* Style the categories as a horizontal list */
+  .menu-categories ul {
+      display: flex;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      width: 100%;
+  }
+
+  .menu-categories ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 5px 15px;
+      white-space: nowrap; /* Keeps text on one line */
+      border-radius: 5px;
+      background-color: #fff;
+      transition: background-color 0.3s;
+      width: 100%;
+  }
+
+  .menu-categories ul li a.active {
+      background-color: #ff6347; /* Highlight color */
+      color: white;
+      font-weight: bold;
+  }
+
+  .menu-categories ul li a:hover {
+      background-color: #ddd;
+  }
+
+  .menu-categories ul li {
+      margin: 5px;
+  }
+
+  /* Ensure the store info section takes full width */
+  .store-info {
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+  }
+
+  /* Ensure menu items section also takes full width */
+  .menu-items {
+      width: 100%;
+  }
+
+
+    
+  .menu-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+/* Image on the Right */
+.menu-item-image {
+  flex-shrink: 0; /* Prevents the image container from shrinking */
+  width: 100px; /* Adjust width to fit your layout */
+  height: 100px; /* Ensure the height matches width for square images */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+  
+.menu-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the container without distortion */
+  border-radius: inherit; /* Matches the border-radius of the container */
+  display: block;
+}
+
+
+/* Add to Cart Button */
+/* Small Add to Cart Button */
+.add-to-cart {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 50%; /* Ensures circular shape */
+  width: 25px; /* Width and height should be equal */
+  height: 25px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Remove padding to ensure no extra space */
+  line-height: 1; /* Centers text */
+  transition: background-color 0.3s;
+  overflow: hidden; /* Prevents any overflow within the button */
+  box-sizing: border-box; /* Ensures width and height calculation includes borders */
+}
+    /* Style for item names */
+    .menu-item h3 {
+      font-size: 18px; /* Smaller font size */
+      margin: 5px 0;
+  }
+
+  /* Style for the add-to-cart button */
+  .menu-item .add-to-cart {
+      margin-top: 10px;
+      padding: 5px 10px;
+      font-size: 16px;
+  }
 }
