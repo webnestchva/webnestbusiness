@@ -107,7 +107,7 @@ body {
     }
     .content {
       flex-direction: column;
-  }
+  } 
 
 
   .cart {
@@ -171,17 +171,19 @@ body {
         margin-bottom: 20px; /* Space between sections */
     }
 
+
     /* Style for individual menu items */
     .menu-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        transition: transform 0.3s ease;
-    }
+      display: flex;
+      flex-direction: row; /* Ensures image and text are side-by-side */
+      align-items: flex-start; /* Aligns items to the top */
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+  }
 
     /* Image styling */
     .menu-item img {
@@ -230,19 +232,10 @@ body {
   font-weight: bold;
 }
 
-.menu-category h2 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #ff6347; /* Distinctive color to match brand or theme */
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #ff6347; /* Adds a subtle underline */
-  width: fit-content;
-}
+
 
 .menu-item {
     display: flex;
-    align-items: center;
     padding: 15px;
     margin-bottom: 15px;
     background-color: #f9f9f9;
@@ -255,6 +248,8 @@ body {
   /* Details on the Left */
   .menu-item-details {
     flex: 1;
+    text-align: left; /* Align text to the left */
+
   }
   
   /* Item Title */
@@ -289,10 +284,14 @@ body {
 .menu-item h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    text-align: left; /* Ensures title text is aligned to the left */
+
 }
 
 .menu-item p {
     margin: 5px 0;
+    text-align: left; /* Ensures title text is aligned to the left */
+
 }
 
 .menu-item select, .menu-item button {
