@@ -3,31 +3,31 @@ const itemOptions = {
   friedShrimp: {
     name: "Fried Shrimp",
     options: [
-      { label: "Regular (21 pcs)", price: 7.25 }
+      { label: "Regular (21 pcs)", price: 7.99 }
     ]
   },
   porkEggRoll: {
     name: "Pork Egg Roll",
     options: [
-      { label: "Single", price: 1.80 }
+      { label: "Single", price: 1.90 }
     ]
   },
   shrimpEggRoll: {
     name: "Shrimp Roll",
     options: [
-      { label: "Single", price: 1.90 }
+      { label: "Single", price: 1.99 }
     ]
   },
   vegetableSpringRoll: {
     name: "Vegetable Spring Roll",
     options: [
-      { label: "Regular (2 pcs)", price: 2.99 }
+      { label: "Regular (2 pcs)", price: 3.50 }
     ]
   },
   friedWonton: {
     name: "Fried Wonton",
     options: [
-      { label: "Regular (10 pcs)", price: 5.50 }
+      { label: "Regular (10 pcs)", price: 6.25 }
     ]
   },
   bonelessSpareRibs: {
@@ -245,7 +245,7 @@ houseSpecialLoMein: {
   name: "House Special Lo Mein",
   options: [
     { label: "Pt", price: 7.25 },
-    { label: "Qt", price: 9.95 }
+    { label: "Qt", price: 10.25 }
   ]
 },
 // Chow Mei Fun
@@ -1018,44 +1018,44 @@ friedScallops: {
 chickenChowMeinCombo: {
   name: "Chicken Chow Mein",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 shrimpChowMeinCombo: {
   name: "Shrimp Chow Mein",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 roastPorkEggFooYoungCombo: {
   name: "Roast Pork Egg Foo Young",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 shrimpWithLobsterSauceCombo: {
   name: "Shrimp with Lobster Sauce",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 roastPorkWithChineseVegetablesCombo: {
   name: "Roast Pork with Chinese Vegetables",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 roastPorkLoMeinCombo: {
   name: "Roast Pork Lo Mein",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
   // Sweet & Sour Pork Combo
   sweetAndSourPorkCombo: {
     name: "Sweet & Sour Pork Combo",
     options: [
-      { label: "Combo", price: 9.95 }
+      { label: "Combo", price: 10.25 }
     ]
   },
 
@@ -1063,68 +1063,68 @@ roastPorkLoMeinCombo: {
   sweetAndSourChickenCombo: {
     name: "Sweet & Sour Chicken Combo",
     options: [
-      { label: "Combo", price: 9.95 }
+      { label: "Combo", price: 10.25 }
     ]
   },
 bbqSpareRibsCombo: {
   name: "B-B-Q Spare Ribs",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 pepperSteakCombo: {
   name: "Pepper Steak",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 beefWithChineseVegetablesCombo: {
   name: "Beef with Chinese Vegetables",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 beefWithBroccoliCombo: {
   name: "Beef with Broccoli",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 mooGooGaiPanCombo: {
   name: "Moo Goo Gai Pan",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 chickenWithBroccoliCombo: {
   name: "Chicken with Broccoli",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 chickenWithCashewNutsCombo: {
   name: "Chicken with Cashew Nuts",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 shrimpWithChineseVegetablesCombo: {
   name: "Shrimp with Chinese Vegetables",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 shrimpWithBroccoliCombo: {
   name: "Shrimp with Broccoli",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 // Szechuan Chicken Combo
 szechuanChickenCombo: {
   name: "Szechuan Chicken Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1132,7 +1132,7 @@ szechuanChickenCombo: {
 szechuanBeefCombo: {
   name: "Szechuan Beef Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1140,7 +1140,7 @@ szechuanBeefCombo: {
 szechuanShrimpCombo: {
   name: "Szechuan Shrimp Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1148,7 +1148,7 @@ szechuanShrimpCombo: {
 chickenWithGarlicSauceCombo: {
   name: "Chicken with Garlic Sauce Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1156,7 +1156,7 @@ chickenWithGarlicSauceCombo: {
 beefWithGarlicSauceCombo: {
   name: "Beef with Garlic Sauce Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1164,50 +1164,50 @@ beefWithGarlicSauceCombo: {
 shrimpWithGarlicSauceCombo: {
   name: "Shrimp with Garlic Sauce Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 generalTsosChickenCombo: {
   name: "General Tso’s Chicken",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 sesameChickenCombo: {
   name: "Sesame Chicken",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 bbqBonelessRibsCombo: {
   name: "Bar-B-Q Boneless Ribs",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 orangeChickenCombo: {
   name: "Orange Chicken",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 hunanChickenCombo: {
   name: "Hunan Chicken",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 teriyakiChickenCombo: {
   name: "Teriyaki Chicken",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 // Curry Chicken with Onions Combo
 curryChickenWithOnionsCombo: {
   name: "Curry Chicken with Onions Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1215,7 +1215,7 @@ curryChickenWithOnionsCombo: {
 curryBeefWithOnionsCombo: {
   name: "Curry Beef with Onions Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1223,7 +1223,7 @@ curryBeefWithOnionsCombo: {
 curryShrimpWithOnionsCombo: {
   name: "Curry Shrimp with Onions Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1231,7 +1231,7 @@ curryShrimpWithOnionsCombo: {
 roastPorkWithOnionCombo: {
   name: "Roast Pork with Onion Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1239,7 +1239,7 @@ roastPorkWithOnionCombo: {
 beefWithOnionCombo: {
   name: "Beef with Onion Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1247,7 +1247,7 @@ beefWithOnionCombo: {
 shrimpWithOnionCombo: {
   name: "Shrimp with Onion Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1255,7 +1255,7 @@ shrimpWithOnionCombo: {
 kungPaoChickenCombo: {
   name: "Kung Pao Chicken Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1263,13 +1263,13 @@ kungPaoChickenCombo: {
 kungPaoShrimpCombo: {
   name: "Kung Pao Shrimp Combo",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 bourbonChickenCombo: {
   name: "Bourbon Chicken",
   options: [
-    { label: "Combo", price: 9.95 }
+    { label: "Combo", price: 10.25 }
   ]
 },
 
@@ -1459,7 +1459,6 @@ shrimpChowMeinAds: {
     { label: "Regular", price: 8.25 }
   ]
 }
-
 };
 
 
@@ -1552,14 +1551,10 @@ function addToCart() {
 
 
 
-
-
 // Cart data
 let cart = [];
 const TAX_RATE = 0.1; // Example tax rate
 let cartVisible = false; // Track cart visibility
-
-
 
 function updateCartDisplay() {
   // Calculate total item count for the cart display
@@ -1616,9 +1611,6 @@ function removeFromCart(index) {
   updateCartDisplay(); // Update cart display after deletion
 }
 
-
-
-
 // Toggle cart details visibility
 function toggleCartDetails() {
   const cartDetails = document.getElementById("cart-details");
@@ -1629,10 +1621,6 @@ function toggleCartDetails() {
 window.onload = function() {
   document.getElementById("cart-details").style.display = "none";
 }
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".menu-category");
@@ -1675,10 +1663,6 @@ function closeSearchOverlay() {
   document.getElementById("search-results").innerHTML = ""; // Clear search results
 }
 
-
-
-
-
 function filterItems() {
   const query = document.getElementById("search-input").value.toLowerCase();
   const searchResults = document.getElementById("search-results");
@@ -1711,7 +1695,6 @@ function filterItems() {
     }
   });
 }
-
 
 function navigateToItem(itemId) {
   // Scroll to the item on the page
