@@ -1434,17 +1434,38 @@ shrimpChowMeinAds: {
 
 
 let selectedItem = null; // Track the current item
+let itemQuantity = 1; // Track the item quantity
+
+function increaseQuantity() {
+  itemQuantity += 1;
+  updateQuantityDisplay();
+  updateTotalPrice(selectedItem.options[0].price * itemQuantity);
+}
+
+function decreaseQuantity() {
+  if (itemQuantity > 1) {
+    itemQuantity -= 1;
+    updateQuantityDisplay();
+    updateTotalPrice(selectedItem.options[0].price * itemQuantity);
+  }
+}
+function updateQuantityDisplay() {
+  document.getElementById("item-quantity").textContent = itemQuantity;
+}
+
 
 // Function to open the modal with item details
 function openModal(itemId) {
-  // The openModal function you already have should work as expected
-  // Set selectedItem and display the modal with options and price
   selectedItem = itemOptions[itemId];
   document.getElementById('item-name').textContent = selectedItem.name;
+  
+  // Reset quantity to 1 on modal open
+  itemQuantity = 1;
+  updateQuantityDisplay();
 
   // Generate options for this item
   const optionsContainer = document.getElementById('options-container');
-  optionsContainer.innerHTML = ""; // Clear previous options
+  optionsContainer.innerHTML = "";
 
   selectedItem.options.forEach((option, index) => {
     const optionLabel = document.createElement("label");
@@ -1454,27 +1475,21 @@ function openModal(itemId) {
     optionInput.type = "radio";
     optionInput.name = "option";
     optionInput.value = option.price;
-    optionInput.checked = index === 0; // Check the first option by default
+    optionInput.checked = index === 0;
 
-    // Bind the price update to the radio change event
     optionInput.addEventListener("change", function() {
-      updateTotalPrice(parseFloat(option.price));
+      updateTotalPrice(parseFloat(option.price) * itemQuantity);
     });
 
     optionLabel.appendChild(optionInput);
-    optionLabel.appendChild(document.createTextNode(` ${option.label} (+$${option.price.toFixed(2)})`));
+    optionLabel.appendChild(document.createTextNode(` ${option.label} + $${option.price.toFixed(2)}`));
     optionsContainer.appendChild(optionLabel);
   });
 
-  // Set initial total price to the price of the first option
   updateTotalPrice(selectedItem.options[0].price);
-
-  // Display the modal
   document.getElementById('itemModal').style.display = 'block';
 }
 
-
-// Function to update total price based on selected option
 function updateTotalPrice(price) {
   document.getElementById('total-price').textContent = price.toFixed(2);
 }
@@ -1484,40 +1499,30 @@ function closeModal() {
   document.getElementById('itemModal').style.display = 'none';
 }
 
-// Function to add the item to the cart
-// Add item to cart and trigger display update
-// Add item to cart with quantity grouping
+// Function to add the item to the cart with selected quantity
 function addToCart() {
   if (!selectedItem) return;
 
   const itemName = selectedItem.name;
   const totalPrice = parseFloat(document.getElementById('total-price').textContent);
-
-  // Get the selected option (e.g., size)
   const selectedOption = document.querySelector('input[name="option"]:checked').nextSibling.textContent.trim();
 
-  // Check if an identical item with the same name and option already exists in the cart
   const existingItem = cart.find(item => item.name === itemName && item.option === selectedOption);
-
   if (existingItem) {
-    // If the same item with the same option exists, increment its quantity
-    existingItem.quantity += 1;
+    existingItem.quantity += itemQuantity;
   } else {
-    // If it doesn't exist, add it as a new entry with quantity 1 and the selected option
-    cart.push({ name: itemName, price: totalPrice, quantity: 1, option: selectedOption });
+    cart.push({ name: itemName, price: totalPrice / itemQuantity, quantity: itemQuantity, option: selectedOption });
   }
-    // Show the cart if it's the first item being added
-    if (!cartVisible) {
-      document.getElementById("cart").style.display = "flex";
-      cartVisible = true; // Mark the cart as visible
-    }
 
-  // Update the cart display
+  if (!cartVisible) {
+    document.getElementById("cart").style.display = "flex";
+    cartVisible = true;
+  }
+
   updateCartDisplay();
-
-  // Close the modal
   closeModal();
 }
+
 
 
 
