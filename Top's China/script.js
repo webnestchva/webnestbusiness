@@ -1435,37 +1435,36 @@ shrimpChowMeinAds: {
 
 let selectedItem = null; // Track the current item
 let itemQuantity = 1; // Track the item quantity
+let currentPrice = 0; // Track the current price of the selected option
 
+// Function to increase quantity
 function increaseQuantity() {
   itemQuantity += 1;
   updateQuantityDisplay();
-  updateTotalPrice(selectedItem.options[0].price * itemQuantity);
+  updateTotalPrice(currentPrice); // Update total with the current price and quantity
 }
 
+// Function to decrease quantity
 function decreaseQuantity() {
   if (itemQuantity > 1) {
     itemQuantity -= 1;
     updateQuantityDisplay();
-    updateTotalPrice(selectedItem.options[0].price * itemQuantity);
+    updateTotalPrice(currentPrice); // Update total with the current price and quantity
   }
 }
-function updateQuantityDisplay() {
-  document.getElementById("item-quantity").textContent = itemQuantity;
-}
-
 
 // Function to open the modal with item details
 function openModal(itemId) {
   selectedItem = itemOptions[itemId];
   document.getElementById('item-name').textContent = selectedItem.name;
-  
-  // Reset quantity to 1 on modal open
+
+  // Reset quantity for new item selection
   itemQuantity = 1;
   updateQuantityDisplay();
 
   // Generate options for this item
   const optionsContainer = document.getElementById('options-container');
-  optionsContainer.innerHTML = "";
+  optionsContainer.innerHTML = ""; // Clear previous options
 
   selectedItem.options.forEach((option, index) => {
     const optionLabel = document.createElement("label");
@@ -1475,23 +1474,35 @@ function openModal(itemId) {
     optionInput.type = "radio";
     optionInput.name = "option";
     optionInput.value = option.price;
-    optionInput.checked = index === 0;
+    optionInput.checked = index === 0; // Check the first option by default
 
+    // Bind the price update to the radio change event
     optionInput.addEventListener("change", function() {
-      updateTotalPrice(parseFloat(option.price) * itemQuantity);
+      currentPrice = parseFloat(option.price); // Update current price to selected option
+      updateTotalPrice(currentPrice);
     });
 
     optionLabel.appendChild(optionInput);
-    optionLabel.appendChild(document.createTextNode(` ${option.label} + $${option.price.toFixed(2)}`));
+    optionLabel.appendChild(document.createTextNode(` ${option.label} - $${option.price.toFixed(2)}`));
     optionsContainer.appendChild(optionLabel);
   });
 
-  updateTotalPrice(selectedItem.options[0].price);
+  // Set initial total price to the price of the first option
+  currentPrice = selectedItem.options[0].price;
+  updateTotalPrice(currentPrice);
+
+  // Display the modal
   document.getElementById('itemModal').style.display = 'block';
 }
 
+// Function to update total price based on selected option and quantity
 function updateTotalPrice(price) {
-  document.getElementById('total-price').textContent = price.toFixed(2);
+  document.getElementById('total-price').textContent = `$${(price * itemQuantity).toFixed(2)}`;
+}
+
+// Function to update quantity display
+function updateQuantityDisplay() {
+  document.getElementById('item-quantity').textContent = itemQuantity;
 }
 
 // Function to close the modal
@@ -1499,32 +1510,33 @@ function closeModal() {
   document.getElementById('itemModal').style.display = 'none';
 }
 
-// Function to add the item to the cart with selected quantity
+// Function to add the item to the cart with the selected option and quantity
 function addToCart() {
   if (!selectedItem) return;
 
   const itemName = selectedItem.name;
-  const totalPrice = parseFloat(document.getElementById('total-price').textContent);
+  const quantity = itemQuantity;
   const selectedOption = document.querySelector('input[name="option"]:checked').nextSibling.textContent.trim();
+  
+  const totalPrice = currentPrice * quantity;
 
+  // Check if an identical item with the same name and option already exists in the cart
   const existingItem = cart.find(item => item.name === itemName && item.option === selectedOption);
+
   if (existingItem) {
-    existingItem.quantity += itemQuantity;
+    existingItem.quantity += quantity; // Increment quantity
   } else {
-    cart.push({ name: itemName, price: totalPrice / itemQuantity, quantity: itemQuantity, option: selectedOption });
+    cart.push({ name: itemName, price: currentPrice, quantity, option: selectedOption });
   }
 
   if (!cartVisible) {
     document.getElementById("cart").style.display = "flex";
-    cartVisible = true;
+    cartVisible = true; 
   }
 
   updateCartDisplay();
   closeModal();
 }
-
-
-
 
 
 // Cart data
