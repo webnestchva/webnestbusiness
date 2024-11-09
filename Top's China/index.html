@@ -3266,22 +3266,25 @@
       </section>
     </div>
 
-    <!-- Modal for Item Options -->
+    <!-- Enhanced Modal for Item Options -->
     <div id="itemModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <h2 id="item-name">Item Name</h2>
 
-        <!-- Options Container for Dynamic Options -->
-        <div id="options-container"></div>
+        <!-- Options Container for Dynamic Options with Circular Options -->
+        <div id="options-container" class="options-container"></div>
 
-        <p>Total Price: <span id="total-price">0.00</span></p>
-        <button onclick="addToCart()">Add to Cart</button>
+        <p class="total-price-label">
+          Total Price: <span id="total-price">$0.00</span>
+        </p>
+        <button id="add-to-cart" class="add-to-cart-btn" onclick="addToCart()">
+          Add to Cart
+        </button>
       </div>
     </div>
 
     <!-- Cart Button at Bottom -->
-    <!-- Cart Button (Initially Hidden) -->
     <aside
       id="cart"
       class="cart"
@@ -3312,7 +3315,6 @@
     <footer>
       <p>© Top's China | Follow us on Social Media</p>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
