@@ -395,6 +395,46 @@ footer p {
   background-color: #ff4500;
   transform: scale(1.02);
 }
+/* Quantity Control Buttons */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.quantity-btn {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.quantity-btn:hover {
+  background-color: #ff4500;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quantity-btn:active {
+  transform: scale(0.95);
+}
+
+#item-quantity {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
 
   
  /* Centered and Styled Cart Button */
