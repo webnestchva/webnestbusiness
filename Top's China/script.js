@@ -984,47 +984,47 @@ bourbonChicken: {
     ]
   },
 
-  
+
 // Combination Plates (Served with Pork Fried Rice & Egg Roll)
 chickenChowMeinCombo: {
-  name: "Chicken Chow Mein",
+  name: "Chicken Chow Mein (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 shrimpChowMeinCombo: {
-  name: "Shrimp Chow Mein",
+  name: "Shrimp Chow Mein (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 roastPorkEggFooYoungCombo: {
-  name: "Roast Pork Egg Foo Young",
+  name: "Roast Pork Egg Foo Young (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 shrimpWithLobsterSauceCombo: {
-  name: "Shrimp with Lobster Sauce",
+  name: "Shrimp with Lobster Sauce (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 roastPorkWithChineseVegetablesCombo: {
-  name: "Roast Pork with Chinese Vegetables",
+  name: "Roast Pork with Chinese Vegetables (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 roastPorkLoMeinCombo: {
-  name: "Roast Pork Lo Mein",
+  name: "Roast Pork Lo Mein (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
   // Sweet & Sour Pork Combo
   sweetAndSourPorkCombo: {
-    name: "Sweet & Sour Pork Combo",
+    name: "Sweet & Sour Pork (Combo)",
     options: [
       { label: "Combo", price: 10.25 }
     ]
@@ -1032,68 +1032,68 @@ roastPorkLoMeinCombo: {
 
   // Sweet & Sour Chicken Combo
   sweetAndSourChickenCombo: {
-    name: "Sweet & Sour Chicken Combo",
+    name: "Sweet & Sour Chicken  (Combo)",
     options: [
       { label: "Combo", price: 10.25 }
     ]
   },
 bbqSpareRibsCombo: {
-  name: "B-B-Q Spare Ribs",
+  name: "B-B-Q Spare Ribs (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 pepperSteakCombo: {
-  name: "Pepper Steak",
+  name: "Pepper Steak (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 beefWithChineseVegetablesCombo: {
-  name: "Beef with Chinese Vegetables",
+  name: "Beef with Chinese Vegetables (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 beefWithBroccoliCombo: {
-  name: "Beef with Broccoli",
+  name: "Beef with Broccoli (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 mooGooGaiPanCombo: {
-  name: "Moo Goo Gai Pan",
+  name: "Moo Goo Gai Pan (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 chickenWithBroccoliCombo: {
-  name: "Chicken with Broccoli",
+  name: "Chicken with Broccoli (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 chickenWithCashewNutsCombo: {
-  name: "Chicken with Cashew Nuts",
+  name: "Chicken with Cashew Nuts (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 shrimpWithChineseVegetablesCombo: {
-  name: "Shrimp with Chinese Vegetables",
+  name: "Shrimp with Chinese Vegetables (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 shrimpWithBroccoliCombo: {
-  name: "Shrimp with Broccoli",
+  name: "Shrimp with Broccoli (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 // Szechuan Chicken Combo
 szechuanChickenCombo: {
-  name: "Szechuan Chicken Combo",
+  name: "Szechuan Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1101,7 +1101,7 @@ szechuanChickenCombo: {
 
 // Szechuan Beef Combo
 szechuanBeefCombo: {
-  name: "Szechuan Beef Combo",
+  name: "Szechuan Beef (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1109,7 +1109,7 @@ szechuanBeefCombo: {
 
 // Szechuan Shrimp Combo
 szechuanShrimpCombo: {
-  name: "Szechuan Shrimp Combo",
+  name: "Szechuan Shrimp (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1117,7 +1117,7 @@ szechuanShrimpCombo: {
 
 // Chicken with Garlic Sauce Combo
 chickenWithGarlicSauceCombo: {
-  name: "Chicken with Garlic Sauce Combo",
+  name: "Chicken with Garlic Sauce (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1125,7 +1125,7 @@ chickenWithGarlicSauceCombo: {
 
 // Beef with Garlic Sauce Combo
 beefWithGarlicSauceCombo: {
-  name: "Beef with Garlic Sauce Combo",
+  name: "Beef with Garlic Sauce (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1133,50 +1133,50 @@ beefWithGarlicSauceCombo: {
 
 // Shrimp with Garlic Sauce Combo
 shrimpWithGarlicSauceCombo: {
-  name: "Shrimp with Garlic Sauce Combo",
+  name: "Shrimp with Garlic Sauce (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 generalTsosChickenCombo: {
-  name: "General Tso’s Chicken",
+  name: "General Tso’s Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 sesameChickenCombo: {
-  name: "Sesame Chicken",
+  name: "Sesame Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 bbqBonelessRibsCombo: {
-  name: "Bar-B-Q Boneless Ribs",
+  name: "Bar-B-Q Boneless Ribs (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 orangeChickenCombo: {
-  name: "Orange Chicken",
+  name: "Orange Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 hunanChickenCombo: {
-  name: "Hunan Chicken",
+  name: "Hunan Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 teriyakiChickenCombo: {
-  name: "Teriyaki Chicken",
+  name: "Teriyaki Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 // Curry Chicken with Onions Combo
 curryChickenWithOnionsCombo: {
-  name: "Curry Chicken with Onions Combo",
+  name: "Curry Chicken with Onions (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1184,7 +1184,7 @@ curryChickenWithOnionsCombo: {
 
 // Curry Beef with Onions Combo
 curryBeefWithOnionsCombo: {
-  name: "Curry Beef with Onions Combo",
+  name: "Curry Beef with Onions (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1192,7 +1192,7 @@ curryBeefWithOnionsCombo: {
 
 // Curry Shrimp with Onions Combo
 curryShrimpWithOnionsCombo: {
-  name: "Curry Shrimp with Onions Combo",
+  name: "Curry Shrimp with Onions (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1200,7 +1200,7 @@ curryShrimpWithOnionsCombo: {
 
 // Roast Pork with Onion Combo
 roastPorkWithOnionCombo: {
-  name: "Roast Pork with Onion Combo",
+  name: "Roast Pork with Onion (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1208,7 +1208,7 @@ roastPorkWithOnionCombo: {
 
 // Beef with Onion Combo
 beefWithOnionCombo: {
-  name: "Beef with Onion Combo",
+  name: "Beef with Onion (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1216,7 +1216,7 @@ beefWithOnionCombo: {
 
 // Shrimp with Onion Combo
 shrimpWithOnionCombo: {
-  name: "Shrimp with Onion Combo",
+  name: "Shrimp with Onion (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1224,7 +1224,7 @@ shrimpWithOnionCombo: {
 
 // Kung Pao Chicken Combo
 kungPaoChickenCombo: {
-  name: "Kung Pao Chicken Combo",
+  name: "Kung Pao Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1232,13 +1232,13 @@ kungPaoChickenCombo: {
 
 // Kung Pao Shrimp Combo
 kungPaoShrimpCombo: {
-  name: "Kung Pao Shrimp Combo",
+  name: "Kung Pao Shrimp (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
 },
 bourbonChickenCombo: {
-  name: "Bourbon Chicken",
+  name: "Bourbon Chicken (Combo)",
   options: [
     { label: "Combo", price: 10.25 }
   ]
@@ -1596,31 +1596,47 @@ window.onload = function() {
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".menu-category");
   const navLinks = document.querySelectorAll(".menu-categories ul li a");
+  const menuCategoriesContainer = document.querySelector(".menu-categories");
 
   function setActiveLink() {
-      let index = sections.length;
+    let index = sections.length;
 
-      // Loop through each section to find the one in the viewport
-      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+    // Loop through each section to find the one in the viewport
+    while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
 
-      // Remove the "active" class from all links
-      navLinks.forEach((link) => link.classList.remove("active"));
+    // Remove the "active" class from all links
+    navLinks.forEach((link) => link.classList.remove("active"));
 
-      // Add the "active" class to the current section's link
-      navLinks[index].classList.add("active");
+    // Add the "active" class to the current section's link
+    navLinks[index].classList.add("active");
 
-      // Scroll the active link into view if it's not fully visible
-      navLinks[index].scrollIntoView({
-          behavior: "smooth",
-          inline: "center", // Center the active link horizontally
-          block: "nearest", // Adjusts the vertical scroll minimally
-      });
+    // Scroll the active link to the start of the visible area
+    adjustScrollToActiveLink(index);
+  }
+
+  function adjustScrollToActiveLink(activeIndex) {
+    const activeLink = navLinks[activeIndex];
+    const linkWidth = activeLink.getBoundingClientRect().width;
+    const containerWidth = menuCategoriesContainer.getBoundingClientRect().width;
+    const scrollAmount = activeLink.offsetLeft - menuCategoriesContainer.scrollLeft;
+
+    // Adjust the scroll position if the active link is not at the start
+    if (scrollAmount > containerWidth - linkWidth || scrollAmount < 0) {
+      menuCategoriesContainer.scrollLeft = activeLink.offsetLeft;
+    }
+
+    // Stop further scrolling if near the end
+    const totalContentWidth = navLinks[navLinks.length - 1].offsetLeft + linkWidth;
+    if (menuCategoriesContainer.scrollLeft + containerWidth >= totalContentWidth) {
+      menuCategoriesContainer.scrollLeft = totalContentWidth - containerWidth;
+    }
   }
 
   // Run setActiveLink on page load and scroll
   setActiveLink();
   window.addEventListener("scroll", setActiveLink);
 });
+
 
 
 function openSearchOverlay() {
@@ -1676,4 +1692,30 @@ function navigateToItem(itemId) {
       block: "center",
     });
   }
+}
+
+
+// Sample function to populate options based on optionsData format
+function populateOptions(options) {
+  const optionsContainer = document.getElementById('options-container');
+  optionsContainer.innerHTML = ''; // Clear previous options if any
+
+  options.forEach(option => {
+    const optionDiv = document.createElement('div');
+    optionDiv.className = 'option';
+
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = 'option';
+    input.id = option.label;
+    input.value = option.price;
+
+    const label = document.createElement('label');
+    label.htmlFor = option.label;
+    label.textContent = `${option.label} - $${option.price.toFixed(2)}`;
+
+    optionDiv.appendChild(input);
+    optionDiv.appendChild(label);
+    optionsContainer.appendChild(optionDiv);
+  });
 }
