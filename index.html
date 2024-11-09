@@ -5,34 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebNest Business</title>
     <link rel="stylesheet" href="styles.css" />
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VNEVXGNED0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VNEVXGNED0');
-</script>
   </head>
   <body>
     <header>
-      <h1>Welcome to Our Restaurant Platform</h1>
-    </header>
-    <div class="container">
-      <div class="restaurant">
-        <h2><a href="Top's China/index.html">Top's China</a></h2>
-        <p>Authentic Chinese cuisine with a wide range of dishes.</p>
+      <div class="header-content">
+        <img
+          src="Top's China/images/webnest-logo.png"
+          alt="WebNest Business Logo"
+          class="header-logo"
+        />
+
+        <h1>WebNest Business</h1>
       </div>
-      <!-- Add more restaurants here in a similar structure -->
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search for restaurants..."
+        oninput="filterItems()"
+      />
+      <ul id="search-results" class="search-results"></ul>
     </div>
-    <p>
-      We are still in our early development stage. If you want your restaurant
-      website to be on here, email webnestchva@gmail.com or visit webnestva.com
-    </p>
+
+    <!-- Cuisine Categories -->
+    <div class="categories">
+      <!-- Asian Cuisine -->
+      <section class="category">
+        <h2>Asian Cuisine</h2>
+        <div class="restaurant-list" id="asian-cuisine">
+          <div
+            class="restaurant"
+            onclick="window.location.href='Top\'s China/index.html'"
+          >
+            <img
+              src="Top's China/images/topschina-logo.png"
+              alt="Top's China"
+            />
+            <h3>Top's China</h3>
+            <p class="description">
+              Authentic Chinese cuisine with a wide range of dishes.
+            </p>
+            <p>Phone: (804) 520-0380</p>
+            <p>Address: 20849 Woodpecker Rd, Petersburg, VA 23803</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Placeholder Categories -->
+      <section class="category">
+        <h2>Mexican Cuisine</h2>
+        <div class="restaurant-list" id="mexican-cuisine">
+          <div class="restaurant">
+            <img
+              src="images/placeholder-mexican.jpg"
+              alt="Mexican Restaurant"
+            />
+            <h3>La Fiesta</h3>
+            <p class="description">Vibrant and flavorful Mexican dishes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="category">
+        <h2>Italian Cuisine</h2>
+        <div class="restaurant-list" id="italian-cuisine">
+          <div class="restaurant">
+            <img
+              src="images/placeholder-italian.jpg"
+              alt="Italian Restaurant"
+            />
+            <h3>Pasta Amore</h3>
+            <p class="description">Classic Italian pastas and pizzas.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
