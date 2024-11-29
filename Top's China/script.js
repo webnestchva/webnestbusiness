@@ -1736,3 +1736,62 @@ function populateOptions(options) {
     optionsContainer.appendChild(optionDiv);
   });
 }
+
+let secretNumber;
+let numberChangeInterval;
+
+// Function to show the guessing game modal
+function showGuessGame() {
+  document.getElementById("guess-game-modal").style.display = "block";
+}
+
+// Function to close the guessing game modal
+function closeGuessGame() {
+  document.getElementById("guess-game-modal").style.display = "none";
+  document.getElementById("guess-input").value = ""; // Clear input
+  document.getElementById("guess-message").textContent = ""; // Clear message
+}
+
+// Function to close the congratulations popup
+function closeCongratsPopup() {
+  document.getElementById("congrats-popup").style.display = "none";
+}
+
+// Function to set a new random number every 5 minutes
+// Function to set a new random number every 5 minutes
+function setRandomNumber() {
+  secretNumber = Math.floor(Math.random() * 40) + 1; // Random number between 1 and 50
+  document.getElementById("secret-number").textContent = secretNumber; // Update debug section
+  document.getElementById("debug-answer").style.display = "block"; // Show secret number for testing
+}
+
+
+// Function to start the number change interval
+function startNumberChangeInterval() {
+  setRandomNumber(); // Set the initial number
+  setInterval(setRandomNumber, 5000); // Update number every 5 seconds
+}
+
+// Function to handle the guess submission
+function submitGuess() {
+  const userGuess = parseInt(document.getElementById("guess-input").value);
+  const messageElement = document.getElementById("guess-message");
+
+  if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+    messageElement.textContent = "Please enter a valid number between 1 and 100.";
+    return;
+  }
+
+  if (userGuess === secretNumber) {
+    closeGuessGame(); // Close the guessing game modal
+    document.getElementById("congrats-popup").style.display = "block"; // Show the congratulations popup
+  } else {
+    messageElement.textContent = "Try again! The number has not been guessed yet.";
+  }
+}
+
+// Start the number change interval when the page loads
+window.onload = function () {
+  startNumberChangeInterval();
+};
+
