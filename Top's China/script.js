@@ -1778,7 +1778,7 @@ function submitGuess() {
   const messageElement = document.getElementById("guess-message");
 
   if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
-    messageElement.textContent = "Please enter a valid number between 1 and 100.";
+    messageElement.textContent = "Please enter a valid number between 1 and 40.";
     return;
   }
 
