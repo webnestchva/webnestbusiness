@@ -15,6 +15,8 @@
     />
 
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -43,9 +45,49 @@
       <p>20849 Woodpecker Rd Petersburg, Virginia, 23803</p>
       <p>Phone: <a href="tel:+18045200380">(804) 520-0380</a></p>
       <p>Hours: Monday Close | Tuesday-Sunday 10:30 am - 11:00 pm</p>
-
       <p>Cuisine: Chinese Takeout</p>
     </section>
+    <!-- Guess the Number Button -->
+    <div id="guess-game-container">
+      <button id="guess-game-button" onclick="showGuessGame()">
+        Guess the Number to Win!
+      </button>
+    </div>
+
+    <!-- Guess the Number Modal -->
+    <div id="guess-game-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeGuessGame()">&times;</span>
+        <h2>Guess the Number!</h2>
+        <p>Enter a number between 1 and 40 to win a free drink or eggroll!</p>
+        <input
+          type="number"
+          id="guess-input"
+          placeholder="Your guess"
+          min="1"
+          max="100"
+        />
+        <button onclick="submitGuess()">Submit</button>
+        <p id="guess-message"></p>
+      </div>
+    </div>
+
+    <!-- Congratulations Popup -->
+    <div id="congrats-popup" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCongratsPopup()">&times;</span>
+        <img
+          src="images/dragon.jpg"
+          alt="Congratulations"
+          id="congrats-image"
+        />
+        <p>🎉 Congratulations!</p>
+        <p>
+          Show this message to a Top's China worker to claim your free eggroll
+          or drink! DO NOT REFRESH!
+        </p>
+      </div>
+    </div>
 
     <!-- Sidebar and Menu Section -->
     <div class="container">
@@ -3321,6 +3363,18 @@
     <!-- Footer -->
     <footer>
       <p>© Top's China</p>
+      <a
+        href="https://www.doordash.com/store/top%E2%80%99s-china-petersburg-921341/?cursor=eyJzdG9yZV92ZXJ0aWNhbF9pZCI6MSwic3RvcmVfcHJpbWFyeV92ZXJ0aWNhbF9pZHMiOlsxLDQsMTc3XX0=&pickup=false"
+        target="_blank"
+        class="delivery-link"
+      >
+        Click here for delivery
+        <img
+          src="images/doordashlogo.png"
+          alt="Order on DoorDash"
+          class="footer-image"
+        />
+      </a>
     </footer>
     <script src="script.js"></script>
   </body>
