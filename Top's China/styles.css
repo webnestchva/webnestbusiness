@@ -264,16 +264,39 @@ body {
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    font-size: 0.9rem;
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #333;
+  color: white;
+  font-size: 0.9rem;
+  position: relative;
 }
 
 footer p {
-    margin: 0;
+  margin: 0;
+  margin-bottom: 10px;
 }
+
+footer a.delivery-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+footer a.delivery-link:hover {
+  color: #ffcc00; /* Optional: Add a hover effect */
+}
+
+.footer-image {
+  display: block;
+  margin: 10px auto;
+  width: 200px; /* Adjust size as needed */
+  height: auto;
+  border: none;
+}
+
 
 
 
@@ -852,4 +875,178 @@ footer p {
   font-size: 1.2rem;
   color: white;
 }
+}
+
+
+
+.checkout-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.checkout-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.back-to-cart-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.back-to-cart-btn:hover {
+  background-color: #ff4500;
+}
+
+.checkout-content h2 {
+  margin-top: 0;
+}
+
+.checkout-content label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.checkout-content input[type="text"],
+.checkout-content input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.checkout-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.checkout-content button:hover {
+  background-color: #218838;
+}
+
+#confirmationMessage {
+  text-align: center;
+  font-weight: bold;
+  color: green;
+  margin-top: 20px;
+}
+
+/* Guess Game Modal and Congratulations Popup */
+#guess-game-modal, #congrats-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #f39c12;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 300px;
+  height: auto; /* Allow height to adjust for content */
+  max-height: 90%; /* Prevent it from exceeding the viewport */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Modal Content Styling */
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  word-wrap: break-word;
+  padding: 10px;
+  gap: 10px; /* Add space between elements */
+}
+
+/* Fix for Long Paragraphs */
+.modal-content p {
+  margin: 5px 0;
+  font-size: 14px;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+
+
+
+/* Close Button Styling */
+.modal-content .close {
+  position: absolute; /* Position relative to modal */
+  top: 10px; /* Space from top */
+  right: 10px; /* Space from right */
+  cursor: pointer; /* Pointer cursor for interaction */
+  font-size: 18px; /* Readable font size */
+  background: none; /* No background */
+  border: none; /* No border */
+  color: #333; /* Subtle dark color */
+}
+
+/* Congratulations Popup Image */
+#congrats-image {
+  width: 100px; /* Fixed image width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px auto; /* Center and add spacing */
+}
+
+/* Text Styling in Congratulations Popup */
+#congrats-popup p {
+  font-size: 16px; /* Readable font size */
+  color: #2c3e50; /* Dark text color */
+  margin: 5px 0; /* Spacing between lines */
+}
+
+/* Guess Game Button Styling */
+#guess-game-container {
+  text-align: center; /* Center the button */
+  margin: 20px 0; /* Add spacing above and below */
+}
+
+#guess-game-button {
+  background-color: #f39c12; /* Vibrant button color */
+  color: white; /* Contrast text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Comfortable click area */
+  font-size: 16px; /* Readable font size */
+  cursor: pointer; /* Pointer cursor for interaction */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+#guess-game-button:hover {
+  background-color: #e67e22; /* Slightly darker shade on hover */
 }
