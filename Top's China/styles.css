@@ -971,7 +971,7 @@ footer a.delivery-link:hover {
   padding: 20px;
   border: 2px solid #f39c12;
   border-radius: 10px;
-  z-index: 1000;
+  z-index: 9999;
   width: 300px;
   height: auto; /* Allow height to adjust for content */
   max-height: 90%; /* Prevent it from exceeding the viewport */
