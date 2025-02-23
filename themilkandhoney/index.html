@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Milk & Honey Southern Kitchen - Colonial Heights, VA</title>
+    <meta
+      name="description"
+      content="Milk & Honey Colonial Heights is a Southern brunch restaurant offering delicious comfort food like Chicken & Waffles, stuffed potatoes with lobster, and refreshing brunch cocktails. Visit us at Southgate Square Mall for a full-service dining experience."
+    />
+
+    <meta
+      name="keywords"
+      content="Milk & Honey Colonial Heights, Southern brunch, Chicken & Waffles, best brunch in Colonial Heights, comfort food, brunch cocktails, Southgate Square Mall dining"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VNEVXGNED0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VNEVXGNED0");
+    </script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8001778131370708"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header-image">
+      <img
+        src="images/milkandhoney-banner.png"
+        alt="Milk & Honey Colonial Heights"
+      />
+    </header>
+
+    <!-- Store Info Section -->
+    <section class="store-info">
+      <h1>Milk & Honey Southern Kitchen</h1>
+      <img src="images/milkandhoney-logo.png" alt="Milk & Honey Logo" />
+      <p>168 Southgate Sq, Colonial Heights, VA 23834</p>
+      <p>Phone: <a href="tel:+18047661055">(804) 766-1055</a></p>
+      <p>Hours: Monday - Sunday: 8:00 AM - 8:00 PM</p>
+      <p>Cuisine: Southern Brunch & Comfort Food</p>
+      <p>
+        Indulge in classic Southern favorites like Chicken & Waffles, stuffed
+        potatoes with lobster, and refreshing brunch cocktails.
+      </p>
+    </section>
+
+    <!-- Sidebar and Menu Section -->
+    <div class="container">
+      <nav class="menu-categories">
+        <ul>
+          <!-- Search bar in the sidebar with icon -->
+          <li class="search-icon-container">
+            <button id="search-icon" onclick="openSearchOverlay()">🔍</button>
+          </li>
+          <!-- Brunch Menu -->
+          <li><strong>Brunch</strong></li>
+          <li><a href="#appetizers">Appetizers</a></li>
+          <li><a href="#lighter">Lighter</a></li>
+          <li><a href="#salads">Salads</a></li>
+          <li><a href="#mains">Mains</a></li>
+          <li><a href="#sandwiches">Sandwiches</a></li>
+          <li><a href="#sides">Sides</a></li>
+          <li><a href="#desserts">Desserts</a></li>
+
+          <!-- Dinner Menu -->
+          <li><strong>Dinner</strong></li>
+          <li><a href="#appetizers-dinner">Appetizers</a></li>
+          <li><a href="#soup-salads">Soup & Salads</a></li>
+          <li><a href="#lighter-dinner">Lighter</a></li>
+          <li><a href="#mains-dinner">Mains</a></li>
+          <li><a href="#sides-dinner">Sides</a></li>
+          <li><a href="#sandwiches-dinner">Sandwiches</a></li>
+          <li><a href="#desserts-dinner">Desserts</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search Overlay (Hidden initially) -->
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-overlay-content">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for items..."
+            oninput="filterItems()"
+          />
+          <button onclick="closeSearchOverlay()" class="close-search">
+            Close
+          </button>
+          <ul id="search-results" class="search-results"></ul>
+        </div>
+      </div>
+
+      <!-- Menu Items Section -->
+      <!-- Brunch Menu -->
+      <section class="menu-items">
+        <h2>Brunch</h2>
+
+        <!-- Appetizers Section -->
+        <h2>Appetizers</h2>
+        <div id="appetizers" class="menu-category">
+          <div class="menu-item" onclick="openModal('butterGlazedBiscuits')">
+            <div class="menu-item-details">
+              <h3>Butter Glazed Biscuits</h3>
+              <p>Home-style biscuits served with seasonal condiments.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ButterGlazedBiscuits.jpg"
+                alt="Butter Glazed Biscuits"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('soupOfTheDay')">
+            <div class="menu-item-details">
+              <h3>Soup of the Day</h3>
+              <p>Chef’s selection of daily soup.</p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SoupOfTheDay.jpg" alt="Soup of the Day" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crispyBrussels')">
+            <div class="menu-item-details">
+              <h3>Crispy Brussels</h3>
+              <p>Tossed in shallots & hot honey.</p>
+              <p>$12.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CrispyBrussels.jpg" alt="Crispy Brussels" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('seafoodGumboCup')">
+            <div class="menu-item-details">
+              <h3>Seafood Gumbo Cup</h3>
+              <p>Crab meat, shrimp, okra, and rice.</p>
+              <p>$15.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SeafoodGumboCup.jpg" alt="Seafood Gumbo Cup" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('deviledEggs')">
+            <div class="menu-item-details">
+              <h3>Deviled Eggs</h3>
+              <p>Breaded deviled eggs garnished with bacon & scallions.</p>
+              <p>$15.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/DeviledEggs.jpg" alt="Deviled Eggs" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('honeyOldBayWings')">
+            <div class="menu-item-details">
+              <h3>Honey Old Bay Wings</h3>
+              <p>Crispy wings served with green goddess sauce.</p>
+              <p>$16.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/HoneyOldBayWings.jpg"
+                alt="Honey Old Bay Wings"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('miniSalmonCakes')">
+            <div class="menu-item-details">
+              <h3>Mini Salmon Cakes</h3>
+              <p>Drizzled with our house-made lemon caper sauce.</p>
+              <p>$17.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/MiniSalmonCakes.jpg" alt="Mini Salmon Cakes" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lighter Section -->
+        <h2>Lighter</h2>
+        <div id="lighter" class="menu-category">
+          <div class="menu-item" onclick="openModal('seasonalFruitGranola')">
+            <div class="menu-item-details">
+              <h3>Seasonal Fruit, Yogurt, & Granola</h3>
+              <p>Fresh seasonal fruit with yogurt and crunchy granola.</p>
+              <p>$12.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/SeasonalFruitGranola.jpg"
+                alt="Seasonal Fruit, Yogurt, & Granola"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('avocadoToast')">
+            <div class="menu-item-details">
+              <h3>Avocado Toast</h3>
+              <p>
+                Served on pumpernickel with a fried egg. Add smoked salmon +$5.
+              </p>
+              <p>$14.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/AvocadoToast.jpg" alt="Avocado Toast" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('powerBowl')">
+            <div class="menu-item-details">
+              <h3>Power Bowl</h3>
+              <p>
+                Avocado, spinach & kale, mushrooms, cauliflower florets with
+                multi-grain toast, & pesto sauce.
+              </p>
+              <p>$18.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PowerBowl.jpg" alt="Power Bowl" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('eggWhiteOmelette')">
+            <div class="menu-item-details">
+              <h3>Egg White Omelette</h3>
+              <p>
+                Tomatoes, bell peppers, spinach & onions, & turkey bacon, with
+                multi-grain toast.
+              </p>
+              <p>$20.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/EggWhiteOmelette.jpg" alt="Egg White Omelette" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Salads Section -->
+        <h2>Salads</h2>
+        <div id="salads" class="menu-category">
+          <div class="menu-item" onclick="openModal('cajunCaesarSalad')">
+            <div class="menu-item-details">
+              <h3>Cajun Caesar Salad</h3>
+              <p>Kale tossed with our house Caesar dressing.</p>
+              <p>$12.00</p>
+              <p>
+                <strong>Add:</strong> Chicken +$10 | Shrimp +$12 | Salmon +$15 |
+                Lobster +$22
+              </p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CajunCaesarSalad.jpg" alt="Cajun Caesar Salad" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kaleWatermelonSalad')">
+            <div class="menu-item-details">
+              <h3>Kale Watermelon Salad</h3>
+              <p>
+                Kale, strawberries, watermelon, & blueberry goat cheese dressed
+                in balsamic honey truffle dressing.
+              </p>
+              <p>$15.00</p>
+              <p>
+                <strong>Add:</strong> Chicken +$10 | Shrimp +$12 | Salmon +$15 |
+                Lobster +$22
+              </p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/KaleWatermelonSalad.jpg"
+                alt="Kale Watermelon Salad"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mains Section -->
+        <h2>Mains</h2>
+        <div id="mains" class="menu-category">
+          <div class="menu-item" onclick="openModal('berryFrenchToast')">
+            <div class="menu-item-details">
+              <h3>Berry French Toast</h3>
+              <p>
+                Vanilla-infused crusted challah French toast topped with fresh
+                berries.
+              </p>
+              <p>$17.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BerryFrenchToast.jpg" alt="Berry French Toast" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cheesecakePancakes')">
+            <div class="menu-item-details">
+              <h3>Cheesecake Pancakes</h3>
+              <p>
+                Fluffy homemade buttermilk pancakes with peaches, blueberries &
+                strawberries.
+              </p>
+              <p>$20.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CheesecakePancakes.jpg"
+                alt="Cheesecake Pancakes"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('theTraditional')">
+            <div class="menu-item-details">
+              <h3>The Traditional</h3>
+              <p>
+                Two eggs, breakfast potatoes, choice of meat (bacon, turkey
+                bacon, half-smoke, or turkey sausage), choice of bread
+                (pumpernickel, challah, multigrain, or biscuit).
+              </p>
+              <p>$22.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TheTraditional.jpg" alt="The Traditional" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chickenBiscoffWaffles')">
+            <div class="menu-item-details">
+              <h3>Chicken & Biscoff Waffles</h3>
+              <p>
+                Biscoff cookie butter infused waffle served with crispy chicken.
+                Wings +$4
+              </p>
+              <p>$23.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChickenBiscoffWaffles.jpg"
+                alt="Chicken & Biscoff Waffles"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crispySalmonHash')">
+            <div class="menu-item-details">
+              <h3>Crispy Salmon Hash</h3>
+              <p>
+                Served on a bed of cheesy hash with spinach, cajun cream sauce.
+              </p>
+              <p>$24.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CrispySalmonHash.jpg" alt="Crispy Salmon Hash" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('jumboSmotheredChickenBiscuits')"
+          >
+            <div class="menu-item-details">
+              <h3>Jumbo Smothered Chicken & Biscuits</h3>
+              <p>
+                Honey butter biscuits topped with cheesy eggs, fried chicken &
+                cajun cream sauce.
+              </p>
+              <p>$21.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/JumboSmotheredChickenBiscuits.jpg"
+                alt="Jumbo Smothered Chicken & Biscuits"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('theWharfScramble')">
+            <div class="menu-item-details">
+              <h3>The Wharf Scramble</h3>
+              <p>
+                Jumbo shrimp, kale, spinach, avocado, tomatoes & scrambled egg.
+              </p>
+              <p>$25.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TheWharfScramble.jpg" alt="The Wharf Scramble" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('carolinaLowCountryGumbo')">
+            <div class="menu-item-details">
+              <h3>Carolina Low Country Gumbo</h3>
+              <p>
+                Turkey sausage, hand-picked crab meat, shrimp, fried okra &
+                Charleston slow-cooked rice.
+              </p>
+              <p>$28.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CarolinaLowCountryGumbo.jpg"
+                alt="Carolina Low Country Gumbo"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('panSearedSalmonGrits')">
+            <div class="menu-item-details">
+              <h3>Pan Seared Salmon & Grits</h3>
+              <p>
+                Blackened salmon on a bed of cheese grits with cajun cream
+                sauce, tomatoes & scallions.
+              </p>
+              <p>$24.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/PanSearedSalmonGrits.jpg"
+                alt="Pan Seared Salmon & Grits"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tailOfTwoFish')">
+            <div class="menu-item-details">
+              <h3>Tail of Two Fish</h3>
+              <p>Crispy battered catfish & whiting served with cheese grits.</p>
+              <p>$24.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TailOfTwoFish.jpg" alt="Tail of Two Fish" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chefSammysShrimpGrits')">
+            <div class="menu-item-details">
+              <h3>Chef Sammy’s Award-Winning Shrimp & Grits</h3>
+              <p>
+                Jumbo shrimp, turkey sausage, tomatoes & scallions served over
+                cheese grits with cajun cream sauce.
+              </p>
+              <p>$25.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChefSammysShrimpGrits.jpg"
+                alt="Chef Sammy’s Shrimp & Grits"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('houseRubbedSteakEggs')">
+            <div class="menu-item-details">
+              <h3>House Rubbed Steak with Eggs</h3>
+              <p>
+                Rubbed with our signature rub, cooked to perfection & served
+                with eggs & crispy potatoes.
+              </p>
+              <p>$35.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/HouseRubbedSteakEggs.jpg"
+                alt="House Rubbed Steak with Eggs"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cajunSeafoodPasta')">
+            <div class="menu-item-details">
+              <h3>Cajun Seafood Pasta</h3>
+              <p>
+                Jumbo shrimp & lobster tossed in a cajun butter sauce with leeks
+                & tomatoes.
+              </p>
+              <p>$35.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CajunSeafoodPasta.jpg"
+                alt="Cajun Seafood Pasta"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crabcakeBenedict')">
+            <div class="menu-item-details">
+              <h3>Crabcake Benedict</h3>
+              <p>
+                Cajun cream sauce & lump crab meat served on a buttery biscuit.
+              </p>
+              <p>$35.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CrabcakeBenedict.jpg" alt="Crabcake Benedict" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sandwiches Section -->
+        <h2>Sandwiches</h2>
+        <div id="sandwiches" class="menu-category">
+          <div class="menu-item" onclick="openModal('crispyChickenSandwich')">
+            <div class="menu-item-details">
+              <h3>Crispy Chicken Sandwich</h3>
+              <p>
+                Crispy chicken, truffle honey mustard, & homemade pickles served
+                on a brioche bun.
+              </p>
+              <p>$17.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CrispyChickenSandwich.jpg"
+                alt="Crispy Chicken Sandwich"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('portobelloMushroomSandwich')"
+          >
+            <div class="menu-item-details">
+              <h3>Portobello Mushroom Sandwich</h3>
+              <p>
+                Grilled portobello, spinach & havarti served on a brioche bun.
+              </p>
+              <p>$17.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/PortobelloMushroomSandwich.jpg"
+                alt="Portobello Mushroom Sandwich"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crispyFishSandwich')">
+            <div class="menu-item-details">
+              <h3>Crispy Fish Sandwich</h3>
+              <p>Crispy catfish with spinach & DC tartar on a brioche bun.</p>
+              <p>$16.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CrispyFishSandwich.jpg"
+                alt="Crispy Fish Sandwich"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('blackenedSalmonBLT')">
+            <div class="menu-item-details">
+              <h3>Blackened Salmon BLT</h3>
+              <p>
+                Pan-seared salmon, bacon, spinach, tomato, & DC tartar on a
+                brioche bun.
+              </p>
+              <p>$20.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BlackenedSalmonBLT.jpg"
+                alt="Blackened Salmon BLT"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crabCakeSandwich')">
+            <div class="menu-item-details">
+              <h3>Crab Cake Sandwich</h3>
+              <p>Served on a brioche bun with homemade lemon caper.</p>
+              <p>MKT</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CrabCakeSandwich.jpg" alt="Crab Cake Sandwich" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Sides Section -->
+        <h2>Sides</h2>
+        <div id="sides" class="menu-category">
+          <div class="menu-item" onclick="openModal('cheeseEggs')">
+            <div class="menu-item-details">
+              <h3>Cheese Eggs</h3>
+              <p>
+                Fluffy scrambled eggs mixed with melted cheese for a rich,
+                creamy taste.
+              </p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CheeseEggs.jpg" alt="Cheese Eggs" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cheesyHash')">
+            <div class="menu-item-details">
+              <h3>Cheesy Hash</h3>
+              <p>Crispy, golden hash browns loaded with melted cheese.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CheesyHash.jpg" alt="Cheesy Hash" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cheeseGrits')">
+            <div class="menu-item-details">
+              <h3>Cheese Grits</h3>
+              <p>Southern-style creamy grits blended with cheddar cheese.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CheeseGrits.jpg" alt="Cheese Grits" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('taterTots')">
+            <div class="menu-item-details">
+              <h3>Tater Tots</h3>
+              <p>
+                Golden and crispy bite-sized potato tots, perfect for dipping.
+              </p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TaterTots.jpg" alt="Tater Tots" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crispySmashedPotatoes')">
+            <div class="menu-item-details">
+              <h3>Crispy Smashed Potatoes</h3>
+              <p>
+                Smash-fried potatoes with a crispy outside and fluffy inside.
+              </p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CrispySmashedPotatoes.jpg"
+                alt="Crispy Smashed Potatoes"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('bacon')">
+            <div class="menu-item-details">
+              <h3>Bacon</h3>
+              <p>Crispy, thick-cut bacon cooked to perfection.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Bacon.jpg" alt="Bacon" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('turkeyBacon')">
+            <div class="menu-item-details">
+              <h3>Turkey Bacon</h3>
+              <p>
+                Smoky, crispy turkey bacon, a lean alternative to traditional
+                bacon.
+              </p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TurkeyBacon.jpg" alt="Turkey Bacon" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('turkeySausage')">
+            <div class="menu-item-details">
+              <h3>Turkey Sausage</h3>
+              <p>Seasoned turkey sausage links, packed with flavor.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TurkeySausage.jpg" alt="Turkey Sausage" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('halfSmoke')">
+            <div class="menu-item-details">
+              <h3>Half-Smoke</h3>
+              <p>A juicy, smoked sausage with a bold, slightly spicy flavor.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/HalfSmoke.jpg" alt="Half-Smoke" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('biscoffWaffles')">
+            <div class="menu-item-details">
+              <h3>Biscoff Waffles</h3>
+              <p>
+                Fluffy waffles infused with Biscoff cookie butter for a sweet,
+                spiced flavor.
+              </p>
+              <p>$15.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BiscoffWaffles.jpg" alt="Biscoff Waffles" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <h2>Desserts</h2>
+        <div id="desserts" class="menu-category">
+          <div class="menu-item" onclick="openModal('sweetPotatoBreadPudding')">
+            <div class="menu-item-details">
+              <h3>Sweet Potato Bread Pudding</h3>
+              <p>
+                Warm and comforting bread pudding made with sweet potatoes and
+                spices.
+              </p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/SweetPotatoBreadPudding.jpg"
+                alt="Sweet Potato Bread Pudding"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('peachCobblerHandPie')">
+            <div class="menu-item-details">
+              <h3>Peach Cobbler Hand Pie</h3>
+              <p>
+                A handheld flaky pastry filled with sweet, cinnamon-spiced
+                peaches.
+              </p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/PeachCobblerHandPie.jpg"
+                alt="Peach Cobbler Hand Pie"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('bananaCheesecakePudding')">
+            <div class="menu-item-details">
+              <h3>Banana Cheesecake Pudding</h3>
+              <p>Creamy banana pudding layered with rich cheesecake filling.</p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BananaCheesecakePudding.jpg"
+                alt="Banana Cheesecake Pudding"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fiveLayerChocolateCake')">
+            <div class="menu-item-details">
+              <h3>5 Layer Chocolate Cake</h3>
+              <p>
+                Decadent chocolate cake stacked in five layers for ultimate
+                richness.
+              </p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/FiveLayerChocolateCake.jpg"
+                alt="5 Layer Chocolate Cake"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <h2>Dinner</h2>
+        <!-- Appetizers Section -->
+        <h2>Appetizers</h2>
+        <div id="appetizers-dinner" class="menu-category">
+          <div class="menu-item" onclick="openModal('butterGlazedBiscuits')">
+            <div class="menu-item-details">
+              <h3>Butter Glazed Biscuits</h3>
+              <p>Home-style biscuits served with seasonal condiments.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ButterGlazedBiscuits.jpg"
+                alt="Butter Glazed Biscuits"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crispyBrussels')">
+            <div class="menu-item-details">
+              <h3>Crispy Brussels</h3>
+              <p>
+                Brussels sprouts tossed in shallots and drizzled with hot honey.
+              </p>
+              <p>$12.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CrispyBrussels.jpg" alt="Crispy Brussels" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('deviledEggs')">
+            <div class="menu-item-details">
+              <h3>Deviled Eggs</h3>
+              <p>Breaded deviled eggs garnished with bacon and scallions.</p>
+              <p>$15.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/DeviledEggs.jpg" alt="Deviled Eggs" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('honeyOldBayWings')">
+            <div class="menu-item-details">
+              <h3>Honey Old Bay Wings</h3>
+              <p>Crispy wings served with green goddess sauce.</p>
+              <p>$16.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/HoneyOldBayWings.jpg"
+                alt="Honey Old Bay Wings"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('miniSalmonCakes')">
+            <div class="menu-item-details">
+              <h3>Mini Salmon Cakes</h3>
+              <p>Drizzled with our house-made lemon caper sauce.</p>
+              <p>$17.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/MiniSalmonCakes.jpg" alt="Mini Salmon Cakes" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <h2>Soup & Salads</h2>
+        <div id="soup-salads" class="menu-category">
+          <!-- Meat Additions -->
+          <p>
+            <strong>Add protein:</strong> Chicken +$10 | Shrimp +$12 | Salmon
+            +$15 | Crispy Lobster +$22
+          </p>
+
+          <div class="menu-item" onclick="openModal('soupOfTheDay')">
+            <div class="menu-item-details">
+              <h3>Soup of the Day</h3>
+              <p>
+                Chef's choice of fresh, seasonal soup made with the finest
+                ingredients.
+              </p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SoupOfTheDay.jpg" alt="Soup of the Day" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kaleWatermelonSalad')">
+            <div class="menu-item-details">
+              <h3>Kale Watermelon Salad</h3>
+              <p>
+                Kale, strawberries, watermelon, and blueberry goat cheese,
+                dressed in balsamic honey truffle dressing.
+              </p>
+              <p>$15.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/KaleWatermelonSalad.jpg"
+                alt="Kale Watermelon Salad"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cajunCaesarSalad')">
+            <div class="menu-item-details">
+              <h3>Cajun Caesar Salad</h3>
+              <p>Kale tossed with our house-made creamy Caesar dressing.</p>
+              <p>$12.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CajunCaesarSalad.jpg" alt="Cajun Caesar Salad" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('seafoodGumboCup')">
+            <div class="menu-item-details">
+              <h3>Seafood Gumbo Cup</h3>
+              <p>
+                A hearty gumbo with crab meat, shrimp, okra, and rice in a rich,
+                flavorful Cajun broth.
+              </p>
+              <p>$15.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SeafoodGumboCup.jpg" alt="Seafood Gumbo Cup" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <h2>Lighter</h2>
+        <div id="lighter-dinner" class="menu-category">
+          <div class="menu-item" onclick="openModal('veggieBowl')">
+            <div class="menu-item-details">
+              <h3>Veggie Bowl</h3>
+              <p>
+                Brussels sprouts, sweet potatoes, spinach, rice, and harissa
+                sauce.
+              </p>
+              <p>$21.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/VeggieBowl.jpg" alt="Veggie Bowl" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('panSearedSalmon')">
+            <div class="menu-item-details">
+              <h3>Pan Seared Salmon</h3>
+              <p>Salmon filet served with spicy kale and rice.</p>
+              <p>$23.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PanSearedSalmon.jpg" alt="Pan Seared Salmon" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('grilledShrimpBowl')">
+            <div class="menu-item-details">
+              <h3>Grilled Shrimp Bowl</h3>
+              <p>Cauliflower florets, mushrooms, tomatoes, and pesto sauce.</p>
+              <p>$23.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/GrilledShrimpBowl.jpg"
+                alt="Grilled Shrimp Bowl"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <h2>Mains</h2>
+        <div id="mains-dinner" class="menu-category">
+          <div class="menu-item" onclick="openModal('shrimpAndGrits')">
+            <div class="menu-item-details">
+              <h3>Chef Sammy’s Award-Winning Shrimp & Grits</h3>
+              <p>
+                Jumbo shrimp, turkey sausage, tomatoes & scallions served over
+                cheese grits with Cajun cream sauce.
+              </p>
+              <p>$25.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ShrimpAndGrits.jpg" alt="Shrimp & Grits" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chickenBiscoffWaffle')">
+            <div class="menu-item-details">
+              <h3>Chicken & Biscoff Waffle</h3>
+              <p>
+                Biscoff cookie butter-infused waffle served with crispy chicken
+                thighs.
+              </p>
+              <p>$23.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChickenBiscoffWaffle.jpg"
+                alt="Chicken & Biscoff Waffle"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('lowCountryGumbo')">
+            <div class="menu-item-details">
+              <h3>Carolina Low Country Gumbo</h3>
+              <p>
+                Turkey sausage, hand-picked crab meat, and shrimp with fried
+                okra & Charleston slow-cooked rice.
+              </p>
+              <p>$26.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/LowCountryGumbo.jpg"
+                alt="Carolina Low Country Gumbo"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tailOfTwoFish')">
+            <div class="menu-item-details">
+              <h3>Tail of Two Fish</h3>
+              <p>Crispy battered catfish & whiting served with creamy grits.</p>
+              <p>$24.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TailOfTwoFish.jpg" alt="Tail of Two Fish" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('signatureSteak')">
+            <div class="menu-item-details">
+              <h3>M&H Signature Steak</h3>
+              <p>
+                Succulent steak with our signature rub cooked to perfection
+                paired with asparagus.
+              </p>
+              <p>$35.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SignatureSteak.jpg" alt="Signature Steak" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cajunSeafoodPasta')">
+            <div class="menu-item-details">
+              <h3>Cajun Seafood Pasta</h3>
+              <p>
+                Jumbo shrimp & lobster tossed in a Cajun butter sauce with leeks
+                & tomatoes.
+              </p>
+              <p>$35.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CajunSeafoodPasta.jpg"
+                alt="Cajun Seafood Pasta"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('jerkLambChops')">
+            <div class="menu-item-details">
+              <h3>Caribbean Jerk Lamb Chops</h3>
+              <p>Served with crispy herb potatoes & asparagus.</p>
+              <p>$42.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/JerkLambChops.jpg"
+                alt="Caribbean Jerk Lamb Chops"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <h2>Sides</h2>
+        <div id="sides-dinner" class="menu-category">
+          <div class="menu-item" onclick="openModal('frenchFries')">
+            <div class="menu-item-details">
+              <h3>French Fries</h3>
+              <p>Classic crispy golden fries, perfectly seasoned.</p>
+              <p>$6.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FrenchFries.jpg" alt="French Fries" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('broccolini')">
+            <div class="menu-item-details">
+              <h3>Broccolini</h3>
+              <p>Sautéed broccolini with garlic and light seasoning.</p>
+              <p>$8.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Broccolini.jpg" alt="Broccolini" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crispySmashedPotatoes')">
+            <div class="menu-item-details">
+              <h3>Crispy Smashed Potatoes</h3>
+              <p>
+                Perfectly crisped, seasoned, and smashed potatoes with a golden
+                crunch.
+              </p>
+              <p>$8.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CrispySmashedPotatoes.jpg"
+                alt="Crispy Smashed Potatoes"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('braisedSpicyKale')">
+            <div class="menu-item-details">
+              <h3>Braised Spicy Kale</h3>
+              <p>Tender braised kale with a touch of spice.</p>
+              <p>$8.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BraisedSpicyKale.jpg" alt="Braised Spicy Kale" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('asparagus')">
+            <div class="menu-item-details">
+              <h3>Asparagus</h3>
+              <p>Fresh asparagus grilled to perfection.</p>
+              <p>$8.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Asparagus.jpg" alt="Asparagus" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('redBeansAndRice')">
+            <div class="menu-item-details">
+              <h3>Red Beans & Rice</h3>
+              <p>Classic Southern-style red beans with fluffy rice.</p>
+              <p>$8.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/RedBeansRice.jpg" alt="Red Beans & Rice" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <h2>Sandwiches</h2>
+        <div id="sandwiches-dinner" class="menu-category">
+          <p><strong>Choice of tater tots or fries.</strong></p>
+
+          <div class="menu-item" onclick="openModal('crispyFishSandwich')">
+            <div class="menu-item-details">
+              <h3>Crispy Fish Sandwich</h3>
+              <p>Crispy catfish with spinach & DC tartar on a brioche bun.</p>
+              <p>$16.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CrispyFishSandwich.jpg"
+                alt="Crispy Fish Sandwich"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('portobelloMushroomSandwich')"
+          >
+            <div class="menu-item-details">
+              <h3>Portobello Mushroom Sandwich</h3>
+              <p>
+                Grilled portobello, spinach & havarti served on a brioche bun.
+              </p>
+              <p>$17.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/PortobelloMushroomSandwich.jpg"
+                alt="Portobello Mushroom Sandwich"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crispyChickenSandwich')">
+            <div class="menu-item-details">
+              <h3>Crispy Chicken Sandwich</h3>
+              <p>
+                Crispy chicken, truffle honey mustard, and homemade pickles
+                served on a brioche bun.
+              </p>
+              <p>$17.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CrispyChickenSandwich.jpg"
+                alt="Crispy Chicken Sandwich"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('blackenedSalmonBLT')">
+            <div class="menu-item-details">
+              <h3>Blackened Salmon BLT</h3>
+              <p>
+                Pan-seared salmon, bacon, spinach, tomato, & DC tartar on a
+                brioche bun.
+              </p>
+              <p>$20.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BlackenedSalmonBLT.jpg"
+                alt="Blackened Salmon BLT"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('crabCakeSandwich')">
+            <div class="menu-item-details">
+              <h3>Crab Cake Sandwich</h3>
+              <p>Served on a brioche bun with homemade lemon caper.</p>
+              <p>MKT</p>
+            </div>
+          </div>
+        </div>
+        <h2>Desserts</h2>
+        <div id="desserts-dinner" class="menu-category">
+          <div class="menu-item" onclick="openModal('bananaCheesecakePudding')">
+            <div class="menu-item-details">
+              <h3>Banana Cheesecake Pudding</h3>
+              <p>A creamy blend of banana pudding and cheesecake flavors.</p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BananaCheesecakePudding.jpg"
+                alt="Banana Cheesecake Pudding"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fiveLayerChocolateCake')">
+            <div class="menu-item-details">
+              <h3>5 Layer Chocolate Cake</h3>
+              <p>
+                Rich, decadent chocolate cake with five layers of chocolatey
+                goodness.
+              </p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/FiveLayerChocolateCake.jpg"
+                alt="5 Layer Chocolate Cake"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('peachCobblerHandPie')">
+            <div class="menu-item-details">
+              <h3>Peach Cobbler Hand Pie</h3>
+              <p>
+                Sweet and flaky hand pie filled with warm, spiced peach cobbler.
+              </p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/PeachCobblerHandPie.jpg"
+                alt="Peach Cobbler Hand Pie"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('sweetPotatoBreadPudding')">
+            <div class="menu-item-details">
+              <h3>Sweet Potato Bread Pudding</h3>
+              <p>
+                A Southern-style dessert featuring rich, spiced sweet potato
+                bread pudding.
+              </p>
+              <p>$10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/SweetPotatoBreadPudding.jpg"
+                alt="Sweet Potato Bread Pudding"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Enhanced Modal for Item Options -->
+    <div id="itemModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="item-name">Item Name</h2>
+
+        <!-- Options Container for Dynamic Options with Circular Options -->
+        <div id="options-container" class="options-container"></div>
+
+        <!-- Quantity Control -->
+        <div class="quantity-control">
+          <button onclick="decreaseQuantity()" class="quantity-btn">-</button>
+          <span id="item-quantity">1</span>
+          <button onclick="increaseQuantity()" class="quantity-btn">+</button>
+        </div>
+
+        <p class="total-price-label">
+          Total Price: <span id="total-price">$0.00</span>
+        </p>
+        <button id="add-to-cart" class="add-to-cart-btn" onclick="addToCart()">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Button at Bottom -->
+    <aside
+      id="cart"
+      class="cart"
+      style="display: none"
+      onclick="toggleCartDetails()"
+    >
+      <span id="cart-count"
+        >Cart: <span id="cart-count-number">0 items</span></span
+      >
+    </aside>
+
+    <div id="cart-details" class="cart-details" style="display: none">
+      <button class="cart-close-btn" onclick="toggleCartDetails()">
+        Close Cart
+      </button>
+      <div class="cart-content">
+        <h2>Cart Details</h2>
+        <ul id="cart-items"></ul>
+        <div class="cart-summary">
+          <p id="subtotal">Subtotal: 0.00</p>
+          <p id="tax">Tax: 0.00</p>
+          <p id="total">Total: 0.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© Milk and Honey Southern Inspired Kitchen</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
