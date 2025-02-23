@@ -1,0 +1,3549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Rodeo Mexican Grill Colonial Heights VA</title>
+    <meta
+      name="description"
+      content="Order from Mi Rodeo Mexican Grill for delicious Mexican cuisine in Colonial Heights, VA. Explore our menu of fresh tacos, burritos, fajitas, and more. Open daily. Dine-in and takeout available."
+    />
+
+    <meta
+      name="keywords"
+      content="Mi Rodeo, Mexican food Colonial Heights VA, tacos, burritos, fajitas, best Mexican food Colonial Heights"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VNEVXGNED0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-VNEVXGNED0");
+    </script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8001778131370708"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header-image">
+      <img src="images/restaurant-banner.png" alt="Restaurant Banner" />
+    </header>
+
+    <!-- Store Info Section -->
+    <section class="store-info">
+      <h1>Mi Rodeo Mexican Grill</h1>
+      <img src="images/mirodeo-logo.png" alt="Logo" />
+      <p>2208 Boulevard, Colonial Heights, Virginia, 23834</p>
+      <p>Phone: <a href="tel:+18045208346">(804) 520-8346</a></p>
+      <p>Hours: Monday - Sunday: 11:00 AM - 10:00 PM</p>
+      <p>Cuisine: Mexican</p>
+      <p><strong>No Delivery Available</strong></p>
+    </section>
+    <!-- Guess the Number Button -->
+    <div id="guess-game-container">
+      <button id="guess-game-button" onclick="showGuessGame()">
+        Guess the Number to Win Free Drink/Egg Roll!
+      </button>
+    </div>
+
+    <!-- Guess the Number Modal -->
+    <div id="guess-game-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeGuessGame()">&times;</span>
+        <h2>Guess the Number!</h2>
+        <p>Enter a number between 1 and 40 to win a free drink or eggroll!</p>
+        <input
+          type="number"
+          id="guess-input"
+          placeholder="Your guess"
+          min="1"
+          max="100"
+        />
+        <button onclick="submitGuess()">Submit</button>
+        <p id="guess-message"></p>
+      </div>
+    </div>
+
+    <!-- Congratulations Popup -->
+    <div id="congrats-popup" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCongratsPopup()">&times;</span>
+        <img
+          src="images/dragon.jpg"
+          alt="Congratulations"
+          id="congrats-image"
+        />
+        <p>🎉 Congratulations!</p>
+        <p>
+          Show this message to a Top's China worker to claim your free eggroll
+          or drink! DO NOT REFRESH!
+        </p>
+      </div>
+    </div>
+
+    <!-- Sidebar and Menu Section -->
+    <div class="container">
+      <nav class="menu-categories">
+        <ul>
+          <!-- Search bar in the sidebar with icon -->
+          <li class="search-icon-container">
+            <button id="search-icon" onclick="openSearchOverlay()">🔍</button>
+          </li>
+          <li><a href="#beer">Beer</a></li>
+          <li><a href="#wine">Wine</a></li>
+          <li><a href="#margaritas-daiquiris">Margaritas & Daiquiris</a></li>
+          <li><a href="#appetizers">Appetizers</a></li>
+          <li><a href="#drinks">Drinks</a></li>
+          <li><a href="#mixed-drinks">Mixed Drinks</a></li>
+          <li><a href="#salads">Salads</a></li>
+          <li><a href="#vegetarian">Vegetarian</a></li>
+          <li><a href="#side-items">Side Items</a></li>
+          <li><a href="#quick-dinners">Quick Dinners</a></li>
+          <li><a href="#quick-lunch">Quick Lunch</a></li>
+          <li><a href="#favorites">Our Favorites</a></li>
+          <li><a href="#fajitas">Fajitas</a></li>
+          <li><a href="#steak">Steak</a></li>
+          <li><a href="#chicken">Chicken</a></li>
+          <li><a href="#seafood">Seafood</a></li>
+          <li><a href="#kids-menu">Children's Menu</a></li>
+          <li><a href="#desserts">Desserts</a></li>
+          <li><a href="#chips-salsa">Chips & Salsa</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search Overlay (Hidden initially) -->
+      <div id="search-overlay" class="search-overlay">
+        <div class="search-overlay-content">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search for items..."
+            oninput="filterItems()"
+          />
+          <button onclick="closeSearchOverlay()" class="close-search">
+            Close
+          </button>
+          <ul id="search-results" class="search-results"></ul>
+        </div>
+      </div>
+
+      <!-- Menu Items Section -->
+      <section class="menu-items">
+        <!-- Beer Section -->
+        <h2>Beer</h2>
+
+        <div id="beer" class="menu-category">
+          <!-- Imported Bottled Beer -->
+          <div class="menu-item" onclick="openModal('negraModelo')">
+            <div class="menu-item-details">
+              <h3>Negra Modelo</h3>
+              <p>Rich, smooth, and full-flavored dark Mexican lager.</p>
+              <p>$5.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NegraModelo.jpg" alt="Negra Modelo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('modeloEspecial')">
+            <div class="menu-item-details">
+              <h3>Modelo Especial</h3>
+              <p>Crisp, refreshing pilsner-style lager with a rich flavor.</p>
+              <p>$5.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ModeloEspecial.jpg" alt="Modelo Especial" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tecate')">
+            <div class="menu-item-details">
+              <h3>Tecate</h3>
+              <p>Bold, refreshing Mexican lager with a light finish.</p>
+              <p>$5.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Tecate.jpg" alt="Tecate" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('dosEquisAmber')">
+            <div class="menu-item-details">
+              <h3>Dos Equis (XX) Amber</h3>
+              <p>Mexican-style amber lager with smooth caramel malt.</p>
+              <p>$5.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/DosEquisAmber.jpg" alt="Dos Equis Amber" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('corona')">
+            <div class="menu-item-details">
+              <h3>Corona</h3>
+              <p>Light and crisp Mexican beer with a smooth taste.</p>
+              <p>$5.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Corona.jpg" alt="Corona" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('modeloDraft')">
+            <div class="menu-item-details">
+              <h3>Modelo Especial Draft</h3>
+              <p>Premium Mexican draft beer served fresh.</p>
+              <p>(12oz) $4.25 | (32oz) $10.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ModeloDraft.jpg" alt="Modelo Especial Draft" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('budLight')">
+            <div class="menu-item-details">
+              <h3>Bud Light</h3>
+              <p>Classic American light lager with a smooth taste.</p>
+              <p>$4.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BudLight.jpg" alt="Bud Light" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('millerLite')">
+            <div class="menu-item-details">
+              <h3>Miller Lite</h3>
+              <p>Light and refreshing American pilsner.</p>
+              <p>$4.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/MillerLite.jpg" alt="Miller Lite" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('michelobUltraDraft')">
+            <div class="menu-item-details">
+              <h3>Michelob Ultra Draft</h3>
+              <p>Low-calorie, crisp, and smooth American draft beer.</p>
+              <p>(12oz) $3.95 | (32oz) $9.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/MichelobUltraDraft.jpg"
+                alt="Michelob Ultra Draft"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wine Section -->
+        <h2>Wine</h2>
+
+        <div id="wine" class="menu-category">
+          <div class="menu-item" onclick="openModal('glassWine')">
+            <div class="menu-item-details">
+              <h3>Wine by the Glass</h3>
+              <p>Choose from a variety of wines served by the glass.</p>
+              <p>$4.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/WineGlass.jpg" alt="Wine by the Glass" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('halfLiterWine')">
+            <div class="menu-item-details">
+              <h3>Wine (Half Liter)</h3>
+              <p>A half-liter serving of your favorite wine selection.</p>
+              <p>$7.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/HalfLiterWine.jpg" alt="Half Liter Wine" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('oneLiterWine')">
+            <div class="menu-item-details">
+              <h3>Wine (One Liter)</h3>
+              <p>A full liter of your preferred wine selection.</p>
+              <p>$14.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/OneLiterWine.jpg" alt="One Liter Wine" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Margaritas & Daiquiris Section -->
+        <h2>Margaritas & Daiquiris</h2>
+
+        <div id="margaritas-daiquiris" class="menu-category">
+          <div class="menu-item" onclick="openModal('limeMargarita')">
+            <div class="menu-item-details">
+              <h3>Lime Margarita</h3>
+              <p>Classic lime margarita served frozen or on the rocks.</p>
+              <p>(9oz) $5.50 | (12oz) $6.95 | (21oz) $9.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/LimeMargarita.jpg" alt="Lime Margarita" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('flavoredMargarita')">
+            <div class="menu-item-details">
+              <h3>Flavored Margarita</h3>
+              <p>Mango, Peach, Strawberry, or Raspberry flavors.</p>
+              <p>(9oz) $6.50 | (12oz) $7.95 | (21oz) $10.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/FlavoredMargarita.jpg"
+                alt="Flavored Margarita"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cantarito')">
+            <div class="menu-item-details">
+              <h3>Cantarito</h3>
+              <p>A refreshing citrus cocktail served in a 16oz glass.</p>
+              <p>$6.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Cantarito.jpg" alt="Cantarito" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('texasMargarita')">
+            <div class="menu-item-details">
+              <h3>Texas Margarita</h3>
+              <p>Extra-strong margarita with a bold citrus kick.</p>
+              <p>(12oz) $7.95 | (21oz) $11.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TexasMargarita.jpg" alt="Texas Margarita" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('margolona')">
+            <div class="menu-item-details">
+              <h3>Margolona</h3>
+              <p>A large 20oz premium margarita for the ultimate experience.</p>
+              <p>$11.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Margolona.jpg" alt="Margolona" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Appetizers Section -->
+        <h2>Appetizers</h2>
+
+        <div id="appetizers" class="menu-category">
+          <div class="menu-item" onclick="openModal('nachosCheese')">
+            <div class="menu-item-details">
+              <h3>Nachos with Cheese</h3>
+              <p>Crispy tortilla chips topped with melted cheese.</p>
+              <p>$7.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NachosCheese.jpg" alt="Nachos with Cheese" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosBeans')">
+            <div class="menu-item-details">
+              <h3>Nachos with Beans</h3>
+              <p>Crunchy nachos topped with seasoned beans and cheese.</p>
+              <p>$8.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NachosBeans.jpg" alt="Nachos with Beans" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosChicken')">
+            <div class="menu-item-details">
+              <h3>Nachos with Chicken</h3>
+              <p>Loaded nachos topped with grilled chicken and cheese.</p>
+              <p>$9.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NachosChicken.jpg" alt="Nachos with Chicken" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosBeef')">
+            <div class="menu-item-details">
+              <h3>Nachos with Beef</h3>
+              <p>Crunchy nachos topped with seasoned beef and melted cheese.</p>
+              <p>$8.75</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NachosBeef.jpg" alt="Nachos with Beef" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosBeefChicken')">
+            <div class="menu-item-details">
+              <h3>Nachos with Beef & Chicken</h3>
+              <p>
+                A delicious combination of beef, chicken, and cheese on nachos.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/NachosBeefChicken.jpg"
+                alt="Nachos with Beef & Chicken"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosBeefBeans')">
+            <div class="menu-item-details">
+              <h3>Nachos with Beef & Beans</h3>
+              <p>Crunchy nachos loaded with beef, beans, and cheese.</p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/NachosBeefBeans.jpg"
+                alt="Nachos with Beef & Beans"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosChickenBeans')">
+            <div class="menu-item-details">
+              <h3>Nachos with Chicken & Beans</h3>
+              <p>Grilled chicken, beans, and cheese over crispy nachos.</p>
+              <p>$9.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/NachosChickenBeans.jpg"
+                alt="Nachos with Chicken & Beans"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cheeseSticks')">
+            <div class="menu-item-details">
+              <h3>Cheese Sticks (6 pcs)</h3>
+              <p>Golden-fried mozzarella sticks served with marinara sauce.</p>
+              <p>$6.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CheeseSticks.jpg" alt="Cheese Sticks" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chickenWings')">
+            <div class="menu-item-details">
+              <h3>Chicken Wings (6 pcs)</h3>
+              <p>Juicy, crispy wings served with your choice of sauce.</p>
+              <p>$8.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChickenWings.jpg" alt="Chicken Wings" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cheeseDip')">
+            <div class="menu-item-details">
+              <h3>Cheese Dip</h3>
+              <p>Creamy, rich melted cheese dip perfect for nachos.</p>
+              <p>$5.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CheeseDip.jpg" alt="Cheese Dip" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('frenchFries')">
+            <div class="menu-item-details">
+              <h3>French Fries</h3>
+              <p>Crispy, golden French fries.</p>
+              <p>$4.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FrenchFries.jpg" alt="French Fries" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('choriDip')">
+            <div class="menu-item-details">
+              <h3>Chori Dip</h3>
+              <p>Cheese dip mixed with flavorful Mexican chorizo.</p>
+              <p>$6.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChoriDip.jpg" alt="Chori Dip" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tortillas')">
+            <div class="menu-item-details">
+              <h3>Tortillas (3 pcs)</h3>
+              <p>Soft, warm tortillas, perfect as a side.</p>
+              <p>$2.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Tortillas.jpg" alt="Tortillas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('sourCream')">
+            <div class="menu-item-details">
+              <h3>Sour Cream</h3>
+              <p>Cool and creamy sour cream.</p>
+              <p>$2.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SourCream.jpg" alt="Sour Cream" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('jalapenos')">
+            <div class="menu-item-details">
+              <h3>Jalapenos</h3>
+              <p>Spicy jalapeno slices.</p>
+              <p>$2.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Jalapenos.jpg" alt="Jalapenos" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="openModal('picoDeGallo')">
+          <div class="menu-item-details">
+            <h3>Pico De Gallo</h3>
+            <p>Fresh diced tomatoes, onions, cilantro, and lime.</p>
+            <p>$2.25</p>
+          </div>
+          <div class="menu-item-image">
+            <img src="images/PicoDeGallo.jpg" alt="Pico De Gallo" />
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="openModal('shreddedCheese')">
+          <div class="menu-item-details">
+            <h3>Shredded Cheese</h3>
+            <p>Freshly shredded cheese, perfect for topping any dish.</p>
+            <p>$2.50</p>
+          </div>
+          <div class="menu-item-image">
+            <img src="images/ShreddedCheese.jpg" alt="Shredded Cheese" />
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="openModal('guacamoleDip')">
+          <div class="menu-item-details">
+            <h3>Guacamole Dip</h3>
+            <p>Fresh, creamy guacamole made with ripe avocados.</p>
+            <p>$4.99</p>
+          </div>
+          <div class="menu-item-image">
+            <img src="images/GuacamoleDip.jpg" alt="Guacamole Dip" />
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="openModal('blackBeans')">
+          <div class="menu-item-details">
+            <h3>Black Beans</h3>
+            <p>Flavorful, seasoned black beans served as a side.</p>
+            <p>$4.99</p>
+          </div>
+          <div class="menu-item-image">
+            <img src="images/BlackBeans.jpg" alt="Black Beans" />
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
+
+        <div class="menu-item" onclick="openModal('chileToriados')">
+          <div class="menu-item-details">
+            <h3>Chile Toriados</h3>
+            <p>Grilled spicy peppers with a smoky, bold flavor.</p>
+            <p>$2.50</p>
+          </div>
+          <div class="menu-item-image">
+            <img src="images/ChileToriados.jpg" alt="Chile Toriados" />
+            <button class="add-to-cart">+</button>
+          </div>
+        </div>
+        <!-- Drinks Section -->
+        <h2>Drinks</h2>
+
+        <div id="drinks" class="menu-category">
+          <div class="menu-item" onclick="openModal('softDrinks')">
+            <div class="menu-item-details">
+              <h3>Soft Drinks</h3>
+              <p>
+                Choice of Pepsi, Diet Pepsi, Starry, Dr. Pepper, Mountain Dew,
+                Pink Lemonade, or Orange Crush.
+              </p>
+              <p>$2.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SoftDrinks.jpg" alt="Soft Drinks" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('iceTeaCoffee')">
+            <div class="menu-item-details">
+              <h3>Ice Tea & Coffee</h3>
+              <p>Freshly brewed iced tea or hot coffee.</p>
+              <p>$2.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/IceTeaCoffee.jpg" alt="Ice Tea & Coffee" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('orangeJuice')">
+            <div class="menu-item-details">
+              <h3>Orange Juice</h3>
+              <p>Refreshing orange juice. (No free refills)</p>
+              <p>$3.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/OrangeJuice.jpg" alt="Orange Juice" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('milk')">
+            <div class="menu-item-details">
+              <h3>Milk (20 oz)</h3>
+              <p>Cold and fresh milk. (No free refills)</p>
+              <p>$3.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Milk.jpg" alt="Milk" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('jarritoToronja')">
+            <div class="menu-item-details">
+              <h3>Jarrito Toronja</h3>
+              <p>Authentic Mexican grapefruit soda. (No free refills)</p>
+              <p>$3.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/JarritoToronja.jpg" alt="Jarrito Toronja" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cherryTempo')">
+            <div class="menu-item-details">
+              <h3>Cherry Tempo</h3>
+              <p>Sweet and fruity cherry-flavored drink. (No free refills)</p>
+              <p>$3.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CherryTempo.jpg" alt="Cherry Tempo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('horchata')">
+            <div class="menu-item-details">
+              <h3>Horchata (20 oz)</h3>
+              <p>
+                Sweet and creamy rice-based drink with cinnamon. (No free
+                refills)
+              </p>
+              <p>$3.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Horchata.jpg" alt="Horchata" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mixed Drinks Section -->
+        <h2>Mixed Drinks</h2>
+
+        <div id="mixed-drinks" class="menu-category">
+          <div class="menu-item" onclick="openModal('pinaColada')">
+            <div class="menu-item-details">
+              <h3>Pina Colada</h3>
+              <p>Classic tropical blend of coconut, pineapple, and rum.</p>
+              <p>$8.75</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PinaColada.jpg" alt="Pina Colada" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tropicalDrink')">
+            <div class="menu-item-details">
+              <h3>Tropical Drink</h3>
+              <p>
+                Refreshing mix of vodka, gin, triple sec, Malibu rum, sweet &
+                sour, and pineapple juice.
+              </p>
+              <p>$8.75</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TropicalDrink.jpg" alt="Tropical Drink" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tequilaSunrise')">
+            <div class="menu-item-details">
+              <h3>Tequila Sunrise</h3>
+              <p>Vibrant tequila cocktail with orange juice and grenadine.</p>
+              <p>$8.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TequilaSunrise.jpg" alt="Tequila Sunrise" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('longIslandIcedTea')">
+            <div class="menu-item-details">
+              <h3>Long Island Iced Tea</h3>
+              <p>
+                Strong and refreshing blend of vodka, gin, rum, triple sec, and
+                cola.
+              </p>
+              <p>$9.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/LongIslandIcedTea.jpg"
+                alt="Long Island Iced Tea"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('bahamaMama')">
+            <div class="menu-item-details">
+              <h3>Bahama Mama</h3>
+              <p>
+                Delicious rum-based tropical cocktail with pineapple and coconut
+                flavors.
+              </p>
+              <p>$9.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BahamaMama.jpg" alt="Bahama Mama" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('whiteRussian')">
+            <div class="menu-item-details">
+              <h3>White Russian</h3>
+              <p>Rich and creamy vodka, coffee liqueur, and cream cocktail.</p>
+              <p>$8.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/WhiteRussian.jpg" alt="White Russian" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('screwdriver')">
+            <div class="menu-item-details">
+              <h3>Screwdriver</h3>
+              <p>Simple and refreshing vodka and orange juice mix.</p>
+              <p>$7.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Screwdriver.jpg" alt="Screwdriver" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('donJulioShot')">
+            <div class="menu-item-details">
+              <h3>Shot of Don Julio</h3>
+              <p>Premium tequila shot.</p>
+              <p>$8.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/DonJulio.jpg" alt="Shot of Don Julio" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div class="menu-item" onclick="openModal('joseCuervoShot')">
+            <div class="menu-item-details">
+              <h3>Shot of Jose Cuervo</h3>
+              <p>Classic and smooth tequila shot.</p>
+              <p>$6.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/JoseCuervo.jpg" alt="Shot of Jose Cuervo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('1800TequilaShot')">
+            <div class="menu-item-details">
+              <h3>Shot of 1800 Tequila</h3>
+              <p>Premium tequila with a bold flavor.</p>
+              <p>$7.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/1800Tequila.jpg" alt="Shot of 1800 Tequila" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('casaAmigoShot')">
+            <div class="menu-item-details">
+              <h3>Shot of Casa Amigo</h3>
+              <p>Ultra-smooth tequila with a refined taste.</p>
+              <p>$7.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CasaAmigo.jpg" alt="Shot of Casa Amigo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('sauzaShot')">
+            <div class="menu-item-details">
+              <h3>Shot of Sauza</h3>
+              <p>Rich and authentic tequila shot.</p>
+              <p>$7.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Sauza.jpg" alt="Shot of Sauza" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('caboWaboShot')">
+            <div class="menu-item-details">
+              <h3>Shot of Cabo Wabo</h3>
+              <p>Premium handcrafted tequila shot.</p>
+              <p>$8.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CaboWabo.jpg" alt="Shot of Cabo Wabo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('patronAnejoShot')">
+            <div class="menu-item-details">
+              <h3>Shot of Patron Añejo</h3>
+              <p>Rich and aged tequila with a smooth finish.</p>
+              <p>$9.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PatronAnejo.jpg" alt="Shot of Patron Añejo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('patronSilverShot')">
+            <div class="menu-item-details">
+              <h3>Shot of Patron Silver</h3>
+              <p>Smooth and refined tequila shot.</p>
+              <p>$9.75</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PatronSilver.jpg" alt="Shot of Patron Silver" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Salads Section -->
+        <h2>Salads</h2>
+
+        <div id="salads" class="menu-category">
+          <div class="menu-item" onclick="openModal('guacamoleSalad')">
+            <div class="menu-item-details">
+              <h3>Guacamole Salad</h3>
+              <p>Fresh guacamole served with crisp lettuce and tomatoes.</p>
+              <p>$3.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/GuacamoleSalad.jpg" alt="Guacamole Salad" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('saladRodeo')">
+            <div class="menu-item-details">
+              <h3>Salad Rodeo</h3>
+              <p>
+                Taco salad shell bowl filled with lettuce, tomato, onions,
+                carrots, cucumbers, bell peppers, and cheese.
+              </p>
+              <p>$5.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SaladRodeo.jpg" alt="Salad Rodeo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacoLoco')">
+            <div class="menu-item-details">
+              <h3>Taco Loco</h3>
+              <p>
+                Beef and chicken served in a baked shell with lettuce, sour
+                cream, tomato, and shredded cheese.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TacoLoco.jpg" alt="Taco Loco" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fajitaSalad')">
+            <div class="menu-item-details">
+              <h3>Fajita Salad</h3>
+              <p>
+                Lettuce, carrots, tomato, cheese, and your choice of steak or
+                chicken.
+              </p>
+              <p>$11.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FajitaSalad.jpg" alt="Fajita Salad" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fajitaSaladShrimp')">
+            <div class="menu-item-details">
+              <h3>Fajita Salad with Shrimp</h3>
+              <p>Lettuce, tomato, carrots, cheese, and shrimp on top.</p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/FajitaSaladShrimp.jpg"
+                alt="Fajita Salad with Shrimp"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('mushroomQuesadillaSalad')">
+            <div class="menu-item-details">
+              <h3>Mushroom Quesadilla Salad</h3>
+              <p>
+                Two quesadillas filled with mushrooms and cheese, served with
+                lettuce, tomato, sour cream, and guacamole.
+              </p>
+              <p>$10.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/MushroomQuesadillaSalad.jpg"
+                alt="Mushroom Quesadilla Salad"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vegetarian Section -->
+        <h2>Vegetarian</h2>
+
+        <div id="vegetarian" class="menu-category">
+          <div class="menu-item" onclick="openModal('veggie1')">
+            <div class="menu-item-details">
+              <h3>Veggie #1</h3>
+              <p>
+                One bean burrito, one cheese quesadilla, and one cheese
+                enchilada.
+              </p>
+              <p>$10.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Veggie1.jpg" alt="Veggie #1" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('veggie2')">
+            <div class="menu-item-details">
+              <h3>Veggie #2</h3>
+              <p>
+                One cheese burrito, one mushroom quesadilla, and one bean
+                chalupa.
+              </p>
+              <p>$10.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Veggie2.jpg" alt="Veggie #2" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('veggie3')">
+            <div class="menu-item-details">
+              <h3>Veggie #3</h3>
+              <p>
+                Bean burrito with cheese dip, cheese enchilada, rice, or beans.
+              </p>
+              <p>$10.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Veggie3.jpg" alt="Veggie #3" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('veggie4')">
+            <div class="menu-item-details">
+              <h3>Veggie #4</h3>
+              <p>
+                Burrito with spinach, mushroom quesadilla, and one cheese
+                enchilada.
+              </p>
+              <p>$10.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Veggie4.jpg" alt="Veggie #4" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('veggie5')">
+            <div class="menu-item-details">
+              <h3>Veggie #5</h3>
+              <p>One chalupa, one bean taco, rice, and beans.</p>
+              <p>$10.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Veggie5.jpg" alt="Veggie #5" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('veggieFajitas')">
+            <div class="menu-item-details">
+              <h3>Veggie Fajitas</h3>
+              <p>
+                Mix of potatoes, cactus, onions, bell pepper, mushrooms, and
+                tomato. Served with beans, guacamole salad, and 3 tortillas.
+              </p>
+              <p>$12.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/VeggieFajitas.jpg" alt="Veggie Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('veggieQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Veggie Quesadilla</h3>
+              <p>
+                Two quesadillas with cheese, bell peppers, onions, tomato,
+                mushrooms, and guacamole salad.
+              </p>
+              <p>$10.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/VeggieQuesadilla.jpg" alt="Veggie Quesadilla" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('veggieTacoLoco')">
+            <div class="menu-item-details">
+              <h3>Veggie Taco Loco</h3>
+              <p>
+                Rice, beans, lettuce, sour cream, tomato, mushrooms, and cheese
+                in a tortilla bowl.
+              </p>
+              <p>$8.75</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/VeggieTacoLoco.jpg" alt="Veggie Taco Loco" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        Here's your **Side Items** section formatted in HTML: ```html
+        <!-- Side Items Section -->
+        <h2>Side Items</h2>
+
+        <div id="side-items" class="menu-category">
+          <div class="menu-item" onclick="openModal('cheeseQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Cheese Quesadilla</h3>
+              <p>Classic cheese quesadilla, grilled to perfection.</p>
+              <p>(1) $3.99 | (2) $7.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CheeseQuesadilla.jpg" alt="Cheese Quesadilla" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chickenQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Chicken Quesadilla</h3>
+              <p>
+                Grilled flour tortilla filled with seasoned chicken and cheese.
+              </p>
+              <p>(1) $5.99 | (2) $11.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChickenQuesadilla.jpg"
+                alt="Chicken Quesadilla"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('beefQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Beef Quesadilla</h3>
+              <p>
+                Grilled flour tortilla filled with seasoned beef and cheese.
+              </p>
+              <p>(1) $5.99 | (2) $11.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BeefQuesadilla.jpg" alt="Beef Quesadilla" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('mushroomQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Mushroom Quesadilla</h3>
+              <p>Grilled flour tortilla filled with mushrooms and cheese.</p>
+              <p>(1) $5.99 | (2) $11.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/MushroomQuesadilla.jpg"
+                alt="Mushroom Quesadilla"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladas')">
+            <div class="menu-item-details">
+              <h3>Enchiladas</h3>
+              <p>
+                Soft corn tortillas filled with meat or cheese and topped with
+                sauce.
+              </p>
+              <p>(1) $3.50 | (3) $10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Enchiladas.jpg" alt="Enchiladas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritosBeefChicken')">
+            <div class="menu-item-details">
+              <h3>Burritos (Beef or Chicken)</h3>
+              <p>Large flour tortilla filled with seasoned beef or chicken.</p>
+              <p>(1) $5.95 | (2) $10.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Burrito.jpg" alt="Burrito" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('friedBurrito')">
+            <div class="menu-item-details">
+              <h3>Fried Burrito (Beef or Chicken)</h3>
+              <p>Crispy-fried burrito stuffed with beef or chicken.</p>
+              <p>$6.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FriedBurrito.jpg" alt="Fried Burrito" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('grilledSteakQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Grilled Steak Quesadilla</h3>
+              <p>Grilled flour tortilla filled with steak and cheese.</p>
+              <p>(1) $7.95 | (2) $14.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/GrilledSteakQuesadilla.jpg"
+                alt="Grilled Steak Quesadilla"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('shrimpQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Shrimp Quesadilla</h3>
+              <p>Grilled flour tortilla filled with shrimp and cheese.</p>
+              <p>(1) $7.95 | (2) $14.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ShrimpQuesadilla.jpg" alt="Shrimp Quesadilla" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoSpecial')">
+            <div class="menu-item-details">
+              <h3>Burrito Special</h3>
+              <p>
+                Beef or chicken burrito with beans, lettuce, tomato, and sour
+                cream.
+              </p>
+              <p>$7.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoSpecial.jpg" alt="Burrito Special" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('riceWithCheese')">
+            <div class="menu-item-details">
+              <h3>Rice with Cheese Dip</h3>
+              <p>Mexican-style rice topped with warm cheese dip.</p>
+              <p>$6.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/RiceWithCheese.jpg" alt="Rice with Cheese Dip" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('orderOfRice')">
+            <div class="menu-item-details">
+              <h3>Order of Rice</h3>
+              <p>Side portion of seasoned Mexican rice.</p>
+              <p>$4.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Rice.jpg" alt="Order of Rice" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('orderOfBeans')">
+            <div class="menu-item-details">
+              <h3>Order of Beans (Fried or Black)</h3>
+              <p>Side portion of refried or black beans.</p>
+              <p>$4.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Beans.jpg" alt="Order of Beans" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tamale')">
+            <div class="menu-item-details">
+              <h3>Tamale</h3>
+              <p>Traditional corn husk-wrapped tamale filled with meat.</p>
+              <p>(1) $3.50 | (3) $10.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Tamale.jpg" alt="Tamale" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Quick Dinners Section -->
+        <h2>Quick Dinners</h2>
+
+        <div id="quick-dinners" class="menu-category">
+          <div class="menu-item" onclick="openModal('twoEnchiladasOneTaco')">
+            <div class="menu-item-details">
+              <h3>Two Enchiladas & One Taco</h3>
+              <p>Two enchiladas and one taco served with beans or rice.</p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TwoEnchiladasOneTaco.jpg"
+                alt="Two Enchiladas & One Taco"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacoEnchiladaChalupa')">
+            <div class="menu-item-details">
+              <h3>One Taco, One Enchilada & One Chalupa</h3>
+              <p>
+                A taco, enchilada, and chalupa served together for a delicious
+                combination.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TacoEnchiladaChalupa.jpg"
+                alt="One Taco, One Enchilada & One Chalupa"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('chileRellenoEnchiladaRice')"
+          >
+            <div class="menu-item-details">
+              <h3>One Chile Relleno & One Enchilada with Rice</h3>
+              <p>
+                Traditional chile relleno and enchilada served with a side of
+                rice.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChileRellenoEnchiladaRice.jpg"
+                alt="Chile Relleno & Enchilada with Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladaTostadaRice')">
+            <div class="menu-item-details">
+              <h3>One Enchilada & One Tostada with Rice</h3>
+              <p>A flavorful enchilada and crunchy tostada served with rice.</p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/EnchiladaTostadaRice.jpg"
+                alt="Enchilada & Tostada with Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('twoEnchiladasBeansRice')">
+            <div class="menu-item-details">
+              <h3>Two Enchiladas with Beans & Rice</h3>
+              <p>
+                A hearty serving of two enchiladas paired with beans and rice.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TwoEnchiladasBeansRice.jpg"
+                alt="Two Enchiladas with Beans & Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacoEnchiladaBeansRice')">
+            <div class="menu-item-details">
+              <h3>One Taco & One Enchilada with Beans & Rice</h3>
+              <p>Classic taco and enchilada served with beans and rice.</p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TacoEnchiladaBeansRice.jpg"
+                alt="Taco & Enchilada with Beans & Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('chileRellenoEnchiladaBeansRice')"
+          >
+            <div class="menu-item-details">
+              <h3>One Chile Relleno & One Enchilada with Beans & Rice</h3>
+              <p>Chile relleno and enchilada served with beans and rice.</p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChileRellenoEnchiladaBeansRice.jpg"
+                alt="Chile Relleno & Enchilada with Beans & Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('tamaleEnchiladaBeansRice')"
+          >
+            <div class="menu-item-details">
+              <h3>One Tamale & One Enchilada with Beans & Rice</h3>
+              <p>
+                A traditional tamale paired with an enchilada, served with beans
+                and rice.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TamaleEnchiladaBeansRice.jpg"
+                alt="Tamale & Enchilada with Beans & Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('cheeseQuesadillaBurritoRice')"
+          >
+            <div class="menu-item-details">
+              <h3>Cheese Quesadilla & One Burrito with Rice</h3>
+              <p>
+                A delicious cheese quesadilla served alongside a burrito and
+                rice.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CheeseQuesadillaBurritoRice.jpg"
+                alt="Cheese Quesadilla & One Burrito with Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('twoHardTacosBeansRice')">
+            <div class="menu-item-details">
+              <h3>Two Hard Tacos with Beans & Rice</h3>
+              <p>Two crunchy tacos served with a side of beans and rice.</p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TwoHardTacosBeansRice.jpg"
+                alt="Two Hard Tacos with Beans & Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoTacoEnchilada')">
+            <div class="menu-item-details">
+              <h3>One Burrito, One Taco & One Enchilada</h3>
+              <p>A satisfying trio of a burrito, taco, and enchilada.</p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BurritoTacoEnchilada.jpg"
+                alt="One Burrito, One Taco & One Enchilada"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('chalupaChileRellenoBeans')"
+          >
+            <div class="menu-item-details">
+              <h3>One Chalupa & One Chile Relleno with Beans</h3>
+              <p>
+                A flavorful combination of a chalupa and chile relleno with
+                beans.
+              </p>
+              <p>$9.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChalupaChileRellenoBeans.jpg"
+                alt="Chalupa & Chile Relleno with Beans"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Quick Lunch Section -->
+        <h2>Quick Lunch</h2>
+
+        <div id="quick-lunch" class="menu-category">
+          <div class="menu-item" onclick="openModal('speedyGonzales')">
+            <div class="menu-item-details">
+              <h3>Speedy Gonzales</h3>
+              <p>One taco and one enchilada served with beans or rice.</p>
+              <p>$8.75</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SpeedyGonzales.jpg" alt="Speedy Gonzales" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chileRellenoTaco')">
+            <div class="menu-item-details">
+              <h3>Chile Relleno & Taco</h3>
+              <p>One chile relleno and one taco served with beans.</p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChileRellenoTaco.jpg"
+                alt="Chile Relleno & Taco"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoBeansRice')">
+            <div class="menu-item-details">
+              <h3>Burrito with Beans & Rice</h3>
+              <p>One burrito served with a side of beans and rice.</p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BurritoBeansRice.jpg"
+                alt="Burrito with Beans & Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('enchiladaOrTacoBeansRice')"
+          >
+            <div class="menu-item-details">
+              <h3>Enchilada OR Taco with Beans & Rice</h3>
+              <p>
+                Choice of one enchilada or one taco, served with beans and rice.
+              </p>
+              <p>$8.75</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/EnchiladaOrTacoBeansRice.jpg"
+                alt="Enchilada OR Taco with Beans & Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('twoChickenEnchiladasPoblano')"
+          >
+            <div class="menu-item-details">
+              <h3>Two Chicken Enchiladas with Poblano Sauce</h3>
+              <p>
+                Two chicken enchiladas covered with poblano sauce and onions,
+                served with rice.
+              </p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TwoChickenEnchiladasPoblano.jpg"
+                alt="Two Chicken Enchiladas with Poblano Sauce"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoTacoBeansRice')">
+            <div class="menu-item-details">
+              <h3>Burrito & Taco with Beans OR Rice</h3>
+              <p>
+                One burrito and one taco served with a choice of beans or rice.
+              </p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BurritoTacoBeansRice.jpg"
+                alt="Burrito & Taco with Beans OR Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('twoChickenEnchiladasRice')"
+          >
+            <div class="menu-item-details">
+              <h3>Two Chicken Enchiladas with Rice</h3>
+              <p>
+                Two chicken enchiladas topped with lettuce, tomato, and sour
+                cream, served with rice.
+              </p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TwoChickenEnchiladasRice.jpg"
+                alt="Two Chicken Enchiladas with Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('enchiladaCheeseQuesadillaRice')"
+          >
+            <div class="menu-item-details">
+              <h3>Enchilada & Cheese Quesadilla with Rice</h3>
+              <p>One enchilada and one cheese quesadilla served with rice.</p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/EnchiladaCheeseQuesadillaRice.jpg"
+                alt="Enchilada & Cheese Quesadilla with Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('burritoEnchiladaBeansRice')"
+          >
+            <div class="menu-item-details">
+              <h3>Burrito & Enchilada with Beans OR Rice</h3>
+              <p>One burrito and one enchilada served with beans or rice.</p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BurritoEnchiladaBeansRice.jpg"
+                alt="Burrito & Enchilada with Beans OR Rice"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('tacoEnchiladaCheeseQuesadilla')"
+          >
+            <div class="menu-item-details">
+              <h3>Taco, Enchilada & Cheese Quesadilla</h3>
+              <p>
+                A combination of one taco, one enchilada, and one cheese
+                quesadilla.
+              </p>
+              <p>$8.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TacoEnchiladaCheeseQuesadilla.jpg"
+                alt="Taco, Enchilada & Cheese Quesadilla"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Favorites Section -->
+        <h2>Our Favorites</h2>
+
+        <div id="favorites" class="menu-category">
+          <div class="menu-item" onclick="openModal('papasLokas')">
+            <div class="menu-item-details">
+              <h3>Papas Lokas</h3>
+              <p>
+                Choice of steak or grilled chicken, fries covered with cheese.
+              </p>
+              <p>Lunch $14.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PapasLokas.jpg" alt="Papas Lokas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fajitas')">
+            <div class="menu-item-details">
+              <h3>Fajitas</h3>
+              <p>
+                Sizzling fajitas with choice of steak, chicken, or mix, served
+                with two tortillas.
+              </p>
+              <p>Lunch $11.00 | Dinner $15.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Fajitas.jpg" alt="Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('texasFajitas')">
+            <div class="menu-item-details">
+              <h3>Texas Fajitas</h3>
+              <p>
+                Fajitas with steak, chicken, and shrimp, served with two flour
+                tortillas.
+              </p>
+              <p>Lunch $11.95 | Dinner $17.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TexasFajitas.jpg" alt="Texas Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('alambre')">
+            <div class="menu-item-details">
+              <h3>Alambre</h3>
+              <p>
+                Choice of chicken or steak fajita with tomato, onions, and
+                peppers, topped with cheese dip.
+              </p>
+              <p>Lunch $11.25 | Dinner $16.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Alambre.jpg" alt="Alambre" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoFajita')">
+            <div class="menu-item-details">
+              <h3>Burrito Fajita</h3>
+              <p>
+                Burrito stuffed with choice of steak or chicken, cheese sauce,
+                lettuce, tomato, sour cream, rice, or beans.
+              </p>
+              <p>Lunch $9.50 | Dinner $15.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoFajita.jpg" alt="Burrito Fajita" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoChucho')">
+            <div class="menu-item-details">
+              <h3>Burrito Chucho</h3>
+              <p>
+                Burrito filled with shredded beef and cheese dip, served with
+                rice or beans, lettuce, tomato, and sour cream.
+              </p>
+              <p>Lunch $9.99 | Dinner $14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoChucho.jpg" alt="Burrito Chucho" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoDeluxe')">
+            <div class="menu-item-details">
+              <h3>Burrito Deluxe</h3>
+              <p>
+                Two burritos (one chicken, one beef) topped with lettuce,
+                tomato, sour cream, and a side of rice or beans.
+              </p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoDeluxe.jpg" alt="Burrito Deluxe" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoOso')">
+            <div class="menu-item-details">
+              <h3>Burrito Oso</h3>
+              <p>
+                Two burritos filled with shredded chicken and vegetables, topped
+                with cheese dip, served with rice or beans.
+              </p>
+              <p>$13.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoOso.jpg" alt="Burrito Oso" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('carnitas')">
+            <div class="menu-item-details">
+              <h3>Carnitas</h3>
+              <p>
+                Golden-brown pork chunks with special seasoning, served with
+                rice, beans, and two tortillas.
+              </p>
+              <p>Lunch $11.75 | Dinner $14.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Carnitas.jpg" alt="Carnitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('polloLoco')">
+            <div class="menu-item-details">
+              <h3>Pollo Loco</h3>
+              <p>
+                Marinated grilled chicken breast served with rice, beans, and
+                two tortillas.
+              </p>
+              <p>Lunch $10.50 | Dinner $14.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PolloLoco.jpg" alt="Pollo Loco" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('polloAzado')">
+            <div class="menu-item-details">
+              <h3>Pollo Azado</h3>
+              <p>
+                Grilled chicken breast topped with grilled onions, served with
+                rice, beans, and two tortillas.
+              </p>
+              <p>Lunch $10.95 | Dinner $14.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PolloAzado.jpg" alt="Pollo Azado" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('polloJalisco')">
+            <div class="menu-item-details">
+              <h3>Pollo Jalisco</h3>
+              <p>
+                Grilled chicken with hot sauce, served with rice, lettuce,
+                tomato, sour cream, and two tortillas.
+              </p>
+              <p>Lunch $10.75 | Dinner $14.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PolloJalisco.jpg" alt="Pollo Jalisco" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div class="menu-item" onclick="openModal('choriPollo')">
+            <div class="menu-item-details">
+              <h3>Chori Pollo</h3>
+              <p>
+                Grilled chicken with homemade Mexican sausage topped with cheese
+                dip, served with rice, beans, and two tortillas.
+              </p>
+              <p>Lunch $11.75 | Dinner $15.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChoriPollo.jpg" alt="Chori Pollo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('arrozConPollo')">
+            <div class="menu-item-details">
+              <h3>Arroz con Pollo</h3>
+              <p>
+                Grilled chicken and rice topped with cheese dip, served with
+                lettuce, tomato, and sour cream.
+              </p>
+              <p>Lunch $10.95 | Dinner $14.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ArrozConPollo.jpg" alt="Arroz con Pollo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('huevosRancheros')">
+            <div class="menu-item-details">
+              <h3>Huevos Rancheros</h3>
+              <p>
+                Eggs cooked with homemade ranchero sauce, served with rice,
+                beans, and two tortillas.
+              </p>
+              <p>Lunch $9.50 | Dinner $11.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/HuevosRancheros.jpg" alt="Huevos Rancheros" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('huevosConChorizo')">
+            <div class="menu-item-details">
+              <h3>Huevos con Chorizo</h3>
+              <p>
+                Scrambled eggs with homemade Mexican sausage, served with rice,
+                beans, and two tortillas.
+              </p>
+              <p>Lunch $9.95 | Dinner $11.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/HuevosConChorizo.jpg" alt="Huevos con Chorizo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacoSalad')">
+            <div class="menu-item-details">
+              <h3>Taco Salad</h3>
+              <p>
+                Flour tortilla shell filled with beef or chicken and beans,
+                topped with lettuce, tomato, cheese, guacamole, and sour cream.
+              </p>
+              <p>Lunch $9.25 | Dinner $10.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TacoSalad.jpg" alt="Taco Salad" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chimichanga')">
+            <div class="menu-item-details">
+              <h3>Chimichanga</h3>
+              <p>
+                Fried or soft tortilla with chicken or beef, topped with sour
+                cream, served with rice or beans.
+              </p>
+              <p>Lunch $9.75 | Dinner $14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Chimichanga.jpg" alt="Chimichanga" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('taquitos')">
+            <div class="menu-item-details">
+              <h3>Taquitos</h3>
+              <p>
+                One beef and one chicken fried taquito, served with rice,
+                lettuce, tomato, guacamole, and sour cream.
+              </p>
+              <p>Lunch $9.75 | Dinner $13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Taquitos.jpg" alt="Taquitos" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chilaquiles')">
+            <div class="menu-item-details">
+              <h3>Chilaquiles</h3>
+              <p>
+                Fried tortilla with homemade ranchero sauce, topped with chicken
+                or beef, cheese, rice or beans, and salad.
+              </p>
+              <p>Lunch $9.95 | Dinner $13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Chilaquiles.jpg" alt="Chilaquiles" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesadillaRellena')">
+            <div class="menu-item-details">
+              <h3>Quesadilla Rellena</h3>
+              <p>
+                Quesadilla filled with beef tips and beans, served with rice or
+                beans, lettuce, tomato, and sour cream.
+              </p>
+              <p>Lunch $9.95 | Dinner $15.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/QuesadillaRellena.jpg"
+                alt="Quesadilla Rellena"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('steakQuesadilla')">
+            <div class="menu-item-details">
+              <h3>Steak Quesadilla</h3>
+              <p>
+                Steak quesadilla served with rice, lettuce, tomato, and sour
+                cream.
+              </p>
+              <p>Lunch $10.50 | Dinner $15.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakQuesadilla.jpg" alt="Steak Quesadilla" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesadillaLaGrande')">
+            <div class="menu-item-details">
+              <h3>Quesadilla La Grande</h3>
+              <p>
+                Quesadilla filled with chicken, cheese, and grilled mushrooms,
+                served with lettuce, tomato, pico de gallo, and sour cream.
+              </p>
+              <p>Lunch $9.75 | Dinner $13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/QuesadillaLaGrande.jpg"
+                alt="Quesadilla La Grande"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesaBirriaTacos')">
+            <div class="menu-item-details">
+              <h3>QuesaBirria Tacos</h3>
+              <p>
+                Traditional taco/quesadilla filled with beef and lamb, extra
+                cheese, served with cilantro, onions, croutons, and rice on the
+                side.
+              </p>
+              <p>Lunch $12.75 | Dinner $16.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/QuesaBirriaTacos.jpg" alt="QuesaBirria Tacos" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div class="menu-item" onclick="openModal('quesadillaVeracruzana')">
+            <div class="menu-item-details">
+              <h3>Quesadilla Veracruzana</h3>
+              <p>
+                Two quesadillas filled with cheese and shredded beef, served
+                with rice, lettuce, tomato, and guacamole.
+              </p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/QuesadillaVeracruzana.jpg"
+                alt="Quesadilla Veracruzana"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('accp')">
+            <div class="menu-item-details">
+              <h3>A.C.C.P.</h3>
+              <p>
+                Tortillas with slices of grilled chicken and shrimp, served with
+                rice, cheese dip, lettuce, tomato, and sour cream.
+              </p>
+              <p>Lunch $12.75 | Dinner $16.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ACCP.jpg" alt="A.C.C.P." />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosRodeo')">
+            <div class="menu-item-details">
+              <h3>Nachos Rodeo</h3>
+              <p>
+                Nachos topped with beef, chicken, lettuce, tomato, sour cream,
+                and guacamole.
+              </p>
+              <p>$11.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NachosRodeo.jpg" alt="Nachos Rodeo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosSupreme')">
+            <div class="menu-item-details">
+              <h3>Nachos Supreme</h3>
+              <p>
+                Nachos topped with beef or chicken, lettuce, tomato, sour cream,
+                guacamole, and shredded cheese.
+              </p>
+              <p>$11.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NachosSupreme.jpg" alt="Nachos Supreme" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladasSupreme')">
+            <div class="menu-item-details">
+              <h3>Enchiladas Supreme</h3>
+              <p>
+                Four enchiladas with beef, chicken, cheese, and beans, topped
+                with lettuce, tomato, and sour cream.
+              </p>
+              <p>$13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/EnchiladasSupreme.jpg"
+                alt="Enchiladas Supreme"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladasPoblanas')">
+            <div class="menu-item-details">
+              <h3>Enchiladas Poblanas</h3>
+              <p>
+                Two chicken enchiladas covered in poblano sauce, served with
+                lettuce, tomato, sour cream, and rice.
+              </p>
+              <p>$11.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/EnchiladasPoblanas.jpg"
+                alt="Enchiladas Poblanas"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladasToril')">
+            <div class="menu-item-details">
+              <h3>Enchiladas Toril</h3>
+              <p>
+                Two cheese enchiladas topped with shredded pork, peppers,
+                onions, served with rice and guacamole salad.
+              </p>
+              <p>$13.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/EnchiladasToril.jpg" alt="Enchiladas Toril" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladasVerdes')">
+            <div class="menu-item-details">
+              <h3>Enchiladas Verdes</h3>
+              <p>
+                Three enchiladas filled with shredded beef, topped with green
+                sauce, served with lettuce, tomato, guacamole, and rice.
+              </p>
+              <p>$13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/EnchiladasVerdes.jpg" alt="Enchiladas Verdes" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladasMiRodeo')">
+            <div class="menu-item-details">
+              <h3>Enchiladas Mi Rodeo</h3>
+              <p>
+                Five enchiladas with chicken, beef, cheese, beans, and shredded
+                beef, topped with lettuce, tomato, and sour cream.
+              </p>
+              <p>$15.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/EnchiladasMiRodeo.jpg"
+                alt="Enchiladas Mi Rodeo"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('yolandas')">
+            <div class="menu-item-details">
+              <h3>Yolandas</h3>
+              <p>
+                Three chicken enchiladas topped with lettuce, tomato, sour
+                cream, and guacamole, served with rice.
+              </p>
+              <p>$13.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Yolandas.jpg" alt="Yolandas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('taquitosMexicanos')">
+            <div class="menu-item-details">
+              <h3>Taquitos Mexicanos</h3>
+              <p>
+                Four corn tortillas fried tacos with two chicken and two beef,
+                served with lettuce, tomato, sour cream, guacamole, and rice.
+              </p>
+              <p>$13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TaquitosMexicanos.jpg"
+                alt="Taquitos Mexicanos"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chilaquilesMexicanos')">
+            <div class="menu-item-details">
+              <h3>Chilaquiles Mexicanos</h3>
+              <p>
+                Corn tortillas cooked with chicken and our special sauce, topped
+                with cheese, served with lettuce, tomato, guacamole, and rice.
+              </p>
+              <p>$13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ChilaquilesMexicanos.jpg"
+                alt="Chilaquiles Mexicanos"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('flautas')">
+            <div class="menu-item-details">
+              <h3>Flautas</h3>
+              <p>
+                Two fried burritos, one chicken, one shredded beef, served with
+                lettuce, tomato, guacamole, sour cream, and rice.
+              </p>
+              <p>$13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Flautas.jpg" alt="Flautas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('grandeSpecial')">
+            <div class="menu-item-details">
+              <h3>Grande Special</h3>
+              <p>
+                One burrito, enchilada, taco, chile relleno, chalupa, rice, and
+                beans.
+              </p>
+              <p>$16.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/GrandeSpecial.jpg" alt="Grande Special" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Fajitas Section -->
+        <h2>Fajitas</h2>
+
+        <div id="fajitas" class="menu-category">
+          <div class="menu-item" onclick="openModal('chickenFajita')">
+            <div class="menu-item-details">
+              <h3>Chicken Fajita</h3>
+              <p>
+                Tender grilled chicken with peppers, onions, tomatoes, sour
+                cream, lettuce, beans, and three tortillas.
+              </p>
+              <p>$14.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChickenFajita.jpg" alt="Chicken Fajita" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('steakFajitas')">
+            <div class="menu-item-details">
+              <h3>Steak Fajitas</h3>
+              <p>
+                Tender steak with peppers, onions, tomatoes, sour cream,
+                lettuce, beans, and three tortillas.
+              </p>
+              <p>$15.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakFajitas.jpg" alt="Steak Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('shrimpFajitas')">
+            <div class="menu-item-details">
+              <h3>Shrimp Fajitas</h3>
+              <p>
+                Shrimp with peppers, onions, tomatoes, sour cream, guacamole,
+                lettuce, beans, and three tortillas.
+              </p>
+              <p>$18.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ShrimpFajitas.jpg" alt="Shrimp Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('mixFajitas')">
+            <div class="menu-item-details">
+              <h3>Mix Fajitas</h3>
+              <p>
+                Tender chicken and steak with peppers, onions, tomatoes, sour
+                cream, lettuce, beans, and three tortillas.
+              </p>
+              <p>$15.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/MixFajitas.jpg" alt="Mix Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('texasFajitas')">
+            <div class="menu-item-details">
+              <h3>Texas Fajitas</h3>
+              <p>
+                Tender grilled steak, chicken, and shrimp with peppers, onions,
+                tomatoes, guacamole, sour cream, lettuce, beans, and three
+                tortillas.
+              </p>
+              <p>$17.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TexasFajitas.jpg" alt="Texas Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fajitasElRodeo')">
+            <div class="menu-item-details">
+              <h3>Fajitas El Rodeo</h3>
+              <p>
+                Tender steak, chicken, shrimp, and homemade sausage with
+                peppers, onions, tomatoes, guacamole, sour cream, lettuce,
+                beans, and three tortillas.
+              </p>
+              <p>$19.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FajitasElRodeo.jpg" alt="Fajitas El Rodeo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fajitasSpecial')">
+            <div class="menu-item-details">
+              <h3>Fajitas Special</h3>
+              <p>
+                Slices of grilled chicken, steak, and pork with peppers, onions,
+                tomatoes, sour cream, lettuce, rice or beans, and three
+                tortillas.
+              </p>
+              <p>$17.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FajitasSpecial.jpg" alt="Fajitas Special" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('hawaiianFajita')">
+            <div class="menu-item-details">
+              <h3>Hawaiian Fajita</h3>
+              <p>
+                Shrimp, steak, and chicken cooked with green peppers, mushrooms,
+                onions, zucchini, and pineapple, covered with cheese, and served
+                with rice and beans.
+              </p>
+              <p>$18.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/HawaiianFajita.jpg" alt="Hawaiian Fajita" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fajitaPinaLoka')">
+            <div class="menu-item-details">
+              <h3>Fajita Pina Loka</h3>
+              <p>
+                Grilled pineapple stuffed with chicken, steak, peppers, and
+                onions, topped with al pastor sauce and cheese, served with rice
+                and beans.
+              </p>
+              <p>$17.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FajitaPinaLoka.jpg" alt="Fajita Pina Loka" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('delMarFajitas')">
+            <div class="menu-item-details">
+              <h3>Del Mar Fajitas</h3>
+              <p>
+                Shrimp and scallops with peppers, onions, tomatoes, guacamole,
+                sour cream, lettuce, beans, and three tortillas.
+              </p>
+              <p>$19.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/DelMarFajitas.jpg" alt="Del Mar Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Steak Section -->
+        <h2>Steak</h2>
+
+        <div id="steak" class="menu-category">
+          <div class="menu-item" onclick="openModal('steakAndShrimp')">
+            <div class="menu-item-details">
+              <h3>Steak and Shrimp</h3>
+              <p>
+                Grilled ribeye steak topped with grilled shrimp, served with
+                rice, beans, and three tortillas (6 shrimp).
+              </p>
+              <p>$19.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakAndShrimp.jpg" alt="Steak and Shrimp" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('carneAzada')">
+            <div class="menu-item-details">
+              <h3>Carne Azada</h3>
+              <p>
+                Grilled sirloin served with beans, guacamole salad, and three
+                tortillas.
+              </p>
+              <p>$15.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CarneAzada.jpg" alt="Carne Azada" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('steakMiRodeo')">
+            <div class="menu-item-details">
+              <h3>Steak Mi Rodeo</h3>
+              <p>
+                Grilled ribeye steak with onions, tomatoes, bell peppers,
+                mushrooms, rice, beans, and three tortillas.
+              </p>
+              <p>$16.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakMiRodeo.jpg" alt="Steak Mi Rodeo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('steakMexicano')">
+            <div class="menu-item-details">
+              <h3>Steak Mexicano</h3>
+              <p>
+                Grilled tender steak with our special tomatillo sauce, served
+                with rice, beans, and three tortillas.
+              </p>
+              <p>$16.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakMexicano.jpg" alt="Steak Mexicano" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cazuelon')">
+            <div class="menu-item-details">
+              <h3>Cazuelon</h3>
+              <p>
+                Grilled steak and grilled chicken served with pico de gallo,
+                rice, beans, and three tortillas.
+              </p>
+              <p>$17.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Cazuelon.jpg" alt="Cazuelon" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('cazuelonMiRodeo')">
+            <div class="menu-item-details">
+              <h3>Cazuelon Mi Rodeo</h3>
+              <p>
+                Grilled steak, chicken, and shrimp served with rice, beans, pico
+                de gallo, and three tortillas (6 shrimp).
+              </p>
+              <p>$19.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/CazuelonMiRodeo.jpg" alt="Cazuelon Mi Rodeo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('steakRanchero')">
+            <div class="menu-item-details">
+              <h3>Steak Ranchero</h3>
+              <p>
+                Grilled ribeye steak covered with ranchero sauce, served with
+                beans, rice, and three tortillas.
+              </p>
+              <p>$17.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakRanchero.jpg" alt="Steak Ranchero" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('steakTampiqueno')">
+            <div class="menu-item-details">
+              <h3>Steak Tampiqueno</h3>
+              <p>
+                T-bone steak with grilled onions on top, served with rice,
+                beans, and three tortillas.
+              </p>
+              <p>$17.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakTampiqueno.jpg" alt="Steak Tampiqueno" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('carnitas')">
+            <div class="menu-item-details">
+              <h3>Carnitas</h3>
+              <p>
+                Pork chunks cooked golden brown and delicately seasoned with our
+                secret spices, served with rice, beans, and three tortillas.
+              </p>
+              <p>$14.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Carnitas.jpg" alt="Carnitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacosDeCarneAzada')">
+            <div class="menu-item-details">
+              <h3>Tacos de Carne Azada</h3>
+              <p>
+                Three folded soft corn tortillas filled with grilled steak,
+                served with tomatillo sauce, pico de gallo, and beans on the
+                side.
+              </p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/TacosDeCarneAzada.jpg"
+                alt="Tacos de Carne Azada"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacosAlPastor')">
+            <div class="menu-item-details">
+              <h3>Tacos Al Pastor</h3>
+              <p>
+                Three soft corn tortillas stuffed with tender strips of grilled
+                steak with pastor sauce, served with pico de gallo and beans.
+              </p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TacosAlPastor.jpg" alt="Tacos Al Pastor" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacosDeCarnitas')">
+            <div class="menu-item-details">
+              <h3>Tacos de Carnitas</h3>
+              <p>
+                Three soft corn tortilla tacos filled with carnitas, served with
+                beans on the side, pico de gallo, and tomatillo sauce.
+              </p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TacosDeCarnitas.jpg" alt="Tacos de Carnitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+          <div class="menu-item" onclick="openModal('burritoDonNacho')">
+            <div class="menu-item-details">
+              <h3>Burrito Don Nacho</h3>
+              <p>
+                Large burrito filled with carnitas, rice, beans, and cheese,
+                served with lettuce, tomato, sour cream, and guacamole.
+              </p>
+              <p>$14.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoDonNacho.jpg" alt="Burrito Don Nacho" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('alambre')">
+            <div class="menu-item-details">
+              <h3>Alambre</h3>
+              <p>
+                Grilled chicken or steak with tomatoes, onions, peppers, and
+                cheese dip on top, served with rice or beans, salad, sour cream,
+                and three tortillas.
+              </p>
+              <p>$16.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Alambre.jpg" alt="Alambre" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('steakQuesadillas')">
+            <div class="menu-item-details">
+              <h3>Steak Quesadillas</h3>
+              <p>
+                Two quesadillas filled with steak and cheese, served with rice,
+                lettuce, tomato, and sour cream.
+              </p>
+              <p>$15.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/SteakQuesadillas.jpg" alt="Steak Quesadillas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('nachosFajitas')">
+            <div class="menu-item-details">
+              <h3>Nachos Fajitas</h3>
+              <p>
+                Nachos with choice of grilled steak or chicken, topped with
+                cheese dip. Vegetables available on request.
+              </p>
+              <p>$14.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/NachosFajitas.jpg" alt="Nachos Fajitas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesadillaSpecial')">
+            <div class="menu-item-details">
+              <h3>Quesadilla Special</h3>
+              <p>
+                One large quesadilla with choice of chicken or steak, served
+                with lettuce, tomato, peppers, onions, and sour cream.
+              </p>
+              <p>$14.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/QuesadillaSpecial.jpg"
+                alt="Quesadilla Special"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoFajita')">
+            <div class="menu-item-details">
+              <h3>Burrito Fajita</h3>
+              <p>
+                Two burritos with choice of chicken or steak, topped with cheese
+                dip. Served with lettuce, tomato, sour cream, peppers, onions,
+                and choice of rice or beans.
+              </p>
+              <p>$15.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoFajita.jpg" alt="Burrito Fajita" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('fajitaTacoSalad')">
+            <div class="menu-item-details">
+              <h3>Fajita Taco Salad</h3>
+              <p>
+                Grilled chicken or steak served with beans, cheese, lettuce,
+                tomato, sour cream, and guacamole.
+              </p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FajitaTacoSalad.jpg" alt="Fajita Taco Salad" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoCalifornia')">
+            <div class="menu-item-details">
+              <h3>Burrito California</h3>
+              <p>
+                Large burrito filled with chicken or steak, rice, beans, and
+                cheese dip on top, with pico de gallo, lettuce, and tomato.
+              </p>
+              <p>$15.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BurritoCalifornia.jpg"
+                alt="Burrito California"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesadillaDeChorizo')">
+            <div class="menu-item-details">
+              <h3>Quesadilla de Chorizo</h3>
+              <p>
+                Two quesadillas filled with homemade sausage, served with
+                lettuce, tomato, and guacamole. Choice of rice or beans.
+              </p>
+              <p>$14.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/QuesadillaDeChorizo.jpg"
+                alt="Quesadilla de Chorizo"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoGrande')">
+            <div class="menu-item-details">
+              <h3>Burrito Grande</h3>
+              <p>
+                Large burrito with homemade sausage and pulled chicken, covered
+                with cheese sauce, enchilada sauce, and tomatillo sauce.
+              </p>
+              <p>$13.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoGrande.jpg" alt="Burrito Grande" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesabirriaTacos')">
+            <div class="menu-item-details">
+              <h3>QuesaBirria Tacos</h3>
+              <p>
+                Traditional taco/quesadilla filled with beef and lamb, extra
+                cheese, served with cilantro, onions, croutons, and rice on the
+                side.
+              </p>
+              <p>$16.00</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/QuesabirriaTacos.jpg" alt="QuesaBirria Tacos" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Chicken Section -->
+        <h2>Chicken</h2>
+
+        <div id="chicken" class="menu-category">
+          <div class="menu-item" onclick="openModal('polloAzado')">
+            <div class="menu-item-details">
+              <h3>Pollo Azado</h3>
+              <p>
+                Grilled chicken with onions on top, served with rice, beans, and
+                three tortillas.
+              </p>
+              <p>$14.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PolloAzado.jpg" alt="Pollo Azado" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('polloLoco')">
+            <div class="menu-item-details">
+              <h3>Pollo Loco</h3>
+              <p>
+                Grilled marinated chicken served with rice, beans, and three
+                tortillas.
+              </p>
+              <p>$14.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PolloLoco.jpg" alt="Pollo Loco" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('choriPollo')">
+            <div class="menu-item-details">
+              <h3>Chori Pollo</h3>
+              <p>
+                Grilled chicken with homemade sausage, cheese dip on top, served
+                with rice, beans, and three tortillas.
+              </p>
+              <p>$15.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChoriPollo.jpg" alt="Chori Pollo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesadillaLaGrande')">
+            <div class="menu-item-details">
+              <h3>Quesadilla La Grande</h3>
+              <p>
+                Large quesadilla filled with cheese, grilled mushrooms, and
+                chicken, served with lettuce, tomato, sour cream, and pico de
+                gallo.
+              </p>
+              <p>$13.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/QuesadillaLaGrande.jpg"
+                alt="Quesadilla La Grande"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('arrozConPollo')">
+            <div class="menu-item-details">
+              <h3>Arroz Con Pollo</h3>
+              <p>
+                Grilled chicken with rice and cheese dip on top, served with
+                lettuce, tomato, and sour cream.
+              </p>
+              <p>$14.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ArrozConPollo.jpg" alt="Arroz Con Pollo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoMiRodeo')">
+            <div class="menu-item-details">
+              <h3>Burrito Mi Rodeo</h3>
+              <p>
+                One burrito filled with grilled chicken, topped with cheese dip,
+                rice, and pico de gallo.
+              </p>
+              <p>$10.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoMiRodeo.jpg" alt="Burrito Mi Rodeo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('polloJalisco')">
+            <div class="menu-item-details">
+              <h3>Pollo Jalisco</h3>
+              <p>
+                Grilled chicken with our special hot sauce, served with lettuce,
+                tomato, sour cream, guacamole, rice, and three tortillas.
+              </p>
+              <p>$14.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/PolloJalisco.jpg" alt="Pollo Jalisco" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('oscarSpecial')">
+            <div class="menu-item-details">
+              <h3>Oscar Special</h3>
+              <p>
+                Grilled chicken topped with cheese dip, grilled onions, and
+                mushrooms, served with rice, guacamole salad, pico de gallo, and
+                tortillas.
+              </p>
+              <p>$15.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/OscarSpecial.jpg" alt="Oscar Special" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('grilledChickenVegetableMedley')"
+          >
+            <div class="menu-item-details">
+              <h3>Grilled Chicken & Vegetable Medley</h3>
+              <p>
+                Grilled and sliced chicken topped with broccoli, zucchini,
+                mushrooms, squash, and melted cheese, served with rice, beans,
+                and three tortillas.
+              </p>
+              <p>$15.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/GrilledChickenVegetableMedley.jpg"
+                alt="Grilled Chicken & Vegetable Medley"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('enchiladasBandera')">
+            <div class="menu-item-details">
+              <h3>Enchiladas Bandera</h3>
+              <p>
+                Three grilled chicken enchiladas: one topped with red sauce, one
+                with cheese dip, and one with green tomatillo sauce. Served with
+                rice, lettuce, tomatoes, and sour cream.
+              </p>
+              <p>$14.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/EnchiladasBandera.jpg"
+                alt="Enchiladas Bandera"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('hawaiianPollo')">
+            <div class="menu-item-details">
+              <h3>Hawaiian Pollo</h3>
+              <p>
+                Grilled chicken with homemade sausage, cheese dip on top, served
+                with rice, beans, pineapples, and three tortillas.
+              </p>
+              <p>$16.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/HawaiianPollo.jpg" alt="Hawaiian Pollo" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Seafood Section -->
+        <h2>Seafood</h2>
+
+        <div id="seafood" class="menu-category">
+          <div class="menu-item" onclick="openModal('burritoTexanos')">
+            <div class="menu-item-details">
+              <h3>Burrito Texanos</h3>
+              <p>
+                Two burritos with steak, chicken, shrimp, tomato, onions,
+                lettuce, sour cream, peppers, and cheese dip on top, served with
+                rice and beans.
+              </p>
+              <p>$16.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/BurritoTexanos.jpg" alt="Burrito Texanos" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('camaronesConQueso')">
+            <div class="menu-item-details">
+              <h3>Camarones con Queso</h3>
+              <p>
+                Eight jumbo shrimp topped with cheese dip, served with rice,
+                lettuce, tomato, pico de gallo, and three tortillas.
+              </p>
+              <p>$19.99</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CamaronesConQueso.jpg"
+                alt="Camarones con Queso"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('alambreDelMar')">
+            <div class="menu-item-details">
+              <h3>Alambre del Mar</h3>
+              <p>
+                Shrimp, tomato, peppers, onions, topped with cheese dip, served
+                with rice or beans, lettuce, tomato, guacamole, and sour cream.
+              </p>
+              <p>$18.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/AlambreDelMar.jpg" alt="Alambre del Mar" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('shrimpTacoSalad')">
+            <div class="menu-item-details">
+              <h3>Shrimp Taco Salad</h3>
+              <p>
+                Grilled shrimp served with beans, cheese, lettuce, tomato, sour
+                cream, guacamole, all inside a flour tortilla bowl.
+              </p>
+              <p>$13.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ShrimpTacoSalad.jpg" alt="Shrimp Taco Salad" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('scallopsConQueso')">
+            <div class="menu-item-details">
+              <h3>Scallops con Queso</h3>
+              <p>
+                Grilled scallops topped with cheese dip, served with rice,
+                lettuce, tomato, pico de gallo, and three tortillas.
+              </p>
+              <p>$21.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ScallopsConQueso.jpg" alt="Scallops con Queso" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div
+            class="menu-item"
+            onclick="openModal('burritoCaliforniaCamarones')"
+          >
+            <div class="menu-item-details">
+              <h3>Burrito California con Camarones</h3>
+              <p>
+                Large burrito filled with grilled shrimp, rice, beans, topped
+                with cheese dip, served with pico de gallo on the side.
+              </p>
+              <p>$16.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BurritoCaliforniaCamarones.jpg"
+                alt="Burrito California con Camarones"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('shrimpChimichangas')">
+            <div class="menu-item-details">
+              <h3>Shrimp Chimichangas</h3>
+              <p>
+                Fried or soft chimichangas filled with shrimp, topped with
+                cheese dip, served with rice or beans, lettuce, tomato,
+                guacamole, and sour cream.
+              </p>
+              <p>$16.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/ShrimpChimichangas.jpg"
+                alt="Shrimp Chimichangas"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('camaronesALaDiabla')">
+            <div class="menu-item-details">
+              <h3>Camarones a la Diabla</h3>
+              <p>
+                Grilled shrimp with hot sauce, served with lettuce, tomato,
+                guacamole, rice, and three tortillas.
+              </p>
+              <p>$16.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/CamaronesALaDiabla.jpg"
+                alt="Camarones a la Diabla"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('burritoConCamarones')">
+            <div class="menu-item-details">
+              <h3>Burrito con Camarones</h3>
+              <p>
+                Big burrito filled with shrimp, peppers, onions, tomatoes,
+                served with rice, lettuce, tomato, sour cream, and topped with
+                cheese dip.
+              </p>
+              <p>$16.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/BurritoConCamarones.jpg"
+                alt="Burrito con Camarones"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tierraYMar')">
+            <div class="menu-item-details">
+              <h3>Tierra y Mar</h3>
+              <p>
+                Grilled shrimp, scallops, chicken, peppers, onions, tomatoes,
+                squash, zucchini, and mushrooms, served on a bed of rice.
+              </p>
+              <p>$21.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TierraYMar.jpg" alt="Tierra y Mar" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('tacosDePescado')">
+            <div class="menu-item-details">
+              <h3>Tacos de Pescado</h3>
+              <p>
+                Two soft shell tacos with grilled tilapia filet, lettuce, and
+                cheese, served with pico de gallo, rice, and beans.
+              </p>
+              <p>$12.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/TacosDePescado.jpg" alt="Tacos de Pescado" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('quesadillaDelMar')">
+            <div class="menu-item-details">
+              <h3>Quesadilla del Mar</h3>
+              <p>
+                Grilled shrimp, tomato, onions, and peppers served with lettuce,
+                tomato, sour cream, and guacamole.
+              </p>
+              <p>$15.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/QuesadillaDelMar.jpg" alt="Quesadilla del Mar" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+        <!-- Children's Menu Section -->
+        <h2>Children's Menu</h2>
+
+        <div id="kids-menu" class="menu-category">
+          <div class="menu-item" onclick="openModal('kidsTaco')">
+            <div class="menu-item-details">
+              <h3>One Taco</h3>
+              <p>Served with rice and beans.</p>
+              <p>$6.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/KidsTaco.jpg" alt="One Taco" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kidsEnchilada')">
+            <div class="menu-item-details">
+              <h3>One Enchilada</h3>
+              <p>Served with rice and beans.</p>
+              <p>$6.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/KidsEnchilada.jpg" alt="One Enchilada" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kidsBurrito')">
+            <div class="menu-item-details">
+              <h3>One Burrito</h3>
+              <p>Served with rice or beans.</p>
+              <p>$6.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/KidsBurrito.jpg" alt="One Burrito" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kidsQuesadilla')">
+            <div class="menu-item-details">
+              <h3>One Cheese Quesadilla</h3>
+              <p>Served with rice or fries.</p>
+              <p>$6.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/KidsQuesadilla.jpg"
+                alt="One Cheese Quesadilla"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kidsBurger')">
+            <div class="menu-item-details">
+              <h3>Hamburger or Cheeseburger</h3>
+              <p>Served with fries.</p>
+              <p>$8.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img
+                src="images/KidsBurger.jpg"
+                alt="Hamburger or Cheeseburger"
+              />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kidsChickenFingers')">
+            <div class="menu-item-details">
+              <h3>Chicken Fingers</h3>
+              <p>Served with fries.</p>
+              <p>$8.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/KidsChickenFingers.jpg" alt="Chicken Fingers" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('kidsPepperoniPizza')">
+            <div class="menu-item-details">
+              <h3>Pepperoni Pizza</h3>
+              <p>Served with fries.</p>
+              <p>$8.95</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/KidsPepperoniPizza.jpg" alt="Pepperoni Pizza" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <h2>Desserts</h2>
+
+        <div id="desserts" class="menu-category">
+          <div class="menu-item" onclick="openModal('sopapillas')">
+            <div class="menu-item-details">
+              <h3>Sopapillas</h3>
+              <p>Flat puffy pastry pieces topped with honey and cinnamon.</p>
+              <p>$6.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Sopapillas.jpg" alt="Sopapillas" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('flan')">
+            <div class="menu-item-details">
+              <h3>Flan</h3>
+              <p>A delicious Mexican-style custard served in its own syrup.</p>
+              <p>$6.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Flan.jpg" alt="Flan" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('friedIceCream')">
+            <div class="menu-item-details">
+              <h3>Fried Ice Cream</h3>
+              <p>
+                French vanilla ice cream fried with a crunchy coating, honey,
+                whipped cream, chocolate syrup, and Rice Krispies.
+              </p>
+              <p>$7.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/FriedIceCream.jpg" alt="Fried Ice Cream" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('xangos')">
+            <div class="menu-item-details">
+              <h3>Xango’s</h3>
+              <p>
+                Creamy cheesecake wrapped in a pastry tortilla, fried until
+                flaky, golden, and dusted with cinnamon sugar.
+              </p>
+              <p>$6.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Xangos.jpg" alt="Xango’s" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('churros')">
+            <div class="menu-item-details">
+              <h3>Churros</h3>
+              <p>A tasty Mexican pastry with sweet cinnamon.</p>
+              <p>$6.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Churros.jpg" alt="Churros" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chocoChimichanga')">
+            <div class="menu-item-details">
+              <h3>Choco Chimichanga</h3>
+              <p>
+                Flour tortilla wrapped around a deep-fried chocolate bar, served
+                with ice cream and white sauce.
+              </p>
+              <p>$7.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/ChocoChimichanga.jpg" alt="Choco Chimichanga" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chips & Salsa Section -->
+        <h2>Chips & Salsa</h2>
+
+        <div id="chips-salsa" class="menu-category">
+          <div class="menu-item" onclick="openModal('chipsSmall')">
+            <div class="menu-item-details">
+              <h3>Chips (Small)</h3>
+              <p>Freshly made crispy tortilla chips.</p>
+              <p>$3.25</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Chips.jpg" alt="Small Chips" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chipsMedium')">
+            <div class="menu-item-details">
+              <h3>Chips (Medium)</h3>
+              <p>Freshly made crispy tortilla chips.</p>
+              <p>$4.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Chips.jpg" alt="Medium Chips" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('chipsLarge')">
+            <div class="menu-item-details">
+              <h3>Chips (Large)</h3>
+              <p>Freshly made crispy tortilla chips.</p>
+              <p>$5.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Chips.jpg" alt="Large Chips" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <!-- Salsa Options -->
+          <div class="menu-item" onclick="openModal('salsa4oz')">
+            <div class="menu-item-details">
+              <h3>Traditional Red Salsa or White Sauce (4oz)</h3>
+              <p>Classic house-made salsa or creamy white sauce.</p>
+              <p>$1.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Salsa.jpg" alt="Salsa 4oz" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('salsa8oz')">
+            <div class="menu-item-details">
+              <h3>Traditional Red Salsa or White Sauce (8oz)</h3>
+              <p>Classic house-made salsa or creamy white sauce.</p>
+              <p>$2.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Salsa.jpg" alt="Salsa 8oz" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+
+          <div class="menu-item" onclick="openModal('salsa12oz')">
+            <div class="menu-item-details">
+              <h3>Traditional Red Salsa or White Sauce (12oz)</h3>
+              <p>Classic house-made salsa or creamy white sauce.</p>
+              <p>$3.50</p>
+            </div>
+            <div class="menu-item-image">
+              <img src="images/Salsa.jpg" alt="Salsa 12oz" />
+              <button class="add-to-cart">+</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Enhanced Modal for Item Options -->
+    <div id="itemModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="item-name">Item Name</h2>
+
+        <!-- Options Container for Dynamic Options with Circular Options -->
+        <div id="options-container" class="options-container"></div>
+
+        <!-- Quantity Control -->
+        <div class="quantity-control">
+          <button onclick="decreaseQuantity()" class="quantity-btn">-</button>
+          <span id="item-quantity">1</span>
+          <button onclick="increaseQuantity()" class="quantity-btn">+</button>
+        </div>
+
+        <p class="total-price-label">
+          Total Price: <span id="total-price">$0.00</span>
+        </p>
+        <button id="add-to-cart" class="add-to-cart-btn" onclick="addToCart()">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <!-- Cart Button at Bottom -->
+    <aside
+      id="cart"
+      class="cart"
+      style="display: none"
+      onclick="toggleCartDetails()"
+    >
+      <span id="cart-count"
+        >Cart: <span id="cart-count-number">0 items</span></span
+      >
+    </aside>
+
+    <div id="cart-details" class="cart-details" style="display: none">
+      <button class="cart-close-btn" onclick="toggleCartDetails()">
+        Close Cart
+      </button>
+      <div class="cart-content">
+        <h2>Cart Details</h2>
+        <ul id="cart-items"></ul>
+        <div class="cart-summary">
+          <p id="subtotal">Subtotal: 0.00</p>
+          <p id="tax">Tax: 0.00</p>
+          <p id="total">Total: 0.00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© Mi Rodeo Mexican Grill</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
